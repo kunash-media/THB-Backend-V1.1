@@ -1,10 +1,10 @@
 package com.bakery.The.Home.Bakery.dto.request;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProductPatchRequestDTO {
+
     private String productName;
     private String productCategory;
     private String productFoodType;
@@ -27,28 +27,20 @@ public class ProductPatchRequestDTO {
     private String note;
     private BigDecimal productOldPrice;
     private BigDecimal productNewPrice;
-    private List<String> weights = new ArrayList<>();
-    private List<BigDecimal> weightPrices = new ArrayList<>();
-    private List<String> features = new ArrayList<>();
+    private List<String> weights;
+    private List<BigDecimal> weightPrices;
+    private List<String> features;
     private Double ratings;
     private Integer reviews;
     private String productDiscount;
     private String deliveryTime;
     private BigDecimal freeDeliveryThreshold;
     private byte[] productImage;
+    private List<byte[]> productSubImages;
     private boolean productImagePresent;
-    private String existingProductImage;
-    private List<byte[]> productSubImages = new ArrayList<>();
     private boolean productSubImagesPresent;
-    private List<String> existingProductSubImages = new ArrayList<>();
-
-    public String getNameOnCake() {
-        return nameOnCake;
-    }
-
-    public void setNameOnCake(String nameOnCake) {
-        this.nameOnCake = nameOnCake;
-    }
+    private String existingProductImage;
+    private List<String> existingProductSubImages;
 
     public String getProductName() {
         return productName;
@@ -80,6 +72,14 @@ public class ProductPatchRequestDTO {
 
     public void setSkuNumber(String skuNumber) {
         this.skuNumber = skuNumber;
+    }
+
+    public String getNameOnCake() {
+        return nameOnCake;
+    }
+
+    public void setNameOnCake(String nameOnCake) {
+        this.nameOnCake = nameOnCake;
     }
 
     public Integer getOrderCount() {
@@ -290,22 +290,6 @@ public class ProductPatchRequestDTO {
         this.productImage = productImage;
     }
 
-    public boolean isProductImagePresent() {
-        return productImagePresent;
-    }
-
-    public void setProductImagePresent(boolean productImagePresent) {
-        this.productImagePresent = productImagePresent;
-    }
-
-    public String getExistingProductImage() {
-        return existingProductImage;
-    }
-
-    public void setExistingProductImage(String existingProductImage) {
-        this.existingProductImage = existingProductImage;
-    }
-
     public List<byte[]> getProductSubImages() {
         return productSubImages;
     }
@@ -314,12 +298,28 @@ public class ProductPatchRequestDTO {
         this.productSubImages = productSubImages;
     }
 
+    public boolean isProductImagePresent() {
+        return productImagePresent;
+    }
+
+    public void setProductImagePresent(boolean productImagePresent) {
+        this.productImagePresent = productImagePresent;
+    }
+
     public boolean isProductSubImagesPresent() {
         return productSubImagesPresent;
     }
 
     public void setProductSubImagesPresent(boolean productSubImagesPresent) {
         this.productSubImagesPresent = productSubImagesPresent;
+    }
+
+    public String getExistingProductImage() {
+        return existingProductImage;
+    }
+
+    public void setExistingProductImage(String existingProductImage) {
+        this.existingProductImage = existingProductImage;
     }
 
     public List<String> getExistingProductSubImages() {
