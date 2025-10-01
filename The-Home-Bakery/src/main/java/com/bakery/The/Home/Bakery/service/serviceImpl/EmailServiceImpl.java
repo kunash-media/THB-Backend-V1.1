@@ -104,8 +104,35 @@ public class EmailServiceImpl implements EmailService {
         return "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
+                "<meta charset='UTF-8'>" +
+                "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
+                "<title>OTP Verification - The Home Bakery</title>" +
                 "<style>" +
-                // ... (CSS styles)
+                "body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; color: #333; }" +
+                ".container { max-width: 600px; margin: 0 auto; background-color: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }" +
+                ".header { text-align: center; padding: 40px 30px 30px 30px; background-color: white; }" +
+                ".logo { max-width: 120px; height: auto; margin-bottom: 25px; }" +
+                ".company-name { font-size: 28px; font-weight: bold; color: #d35400; margin-bottom: 20px; display: none; }" +
+                ".title { font-size: 28px; font-weight: 600; color: #d35400; margin: 15px 0 10px 0; }" +
+                ".subtitle { font-size: 16px; color: #d35400; margin: 5px 0 20px 0; opacity: 0.8; }" +
+                ".content { padding: 0 30px; }" +
+                ".greeting { color: #666; font-size: 16px; margin: 20px 0; line-height: 1.6; }" +
+                ".otp-section { background-color: #fff; border-left: 4px solid #d35400; padding: 25px; margin: 25px 0; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }" +
+                ".otp-title { font-size: 20px; font-weight: 600; color: #d35400; margin-bottom: 20px; text-decoration: underline; }" +
+                ".otp-box { background: linear-gradient(135deg, #d35400 0%, #e67e22 100%); color: white; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; }" +
+                ".otp-code { font-size: 24px; font-weight: 700; letter-spacing: 2px; }" +
+                ".info { color: #666; font-size: 15px; line-height: 1.5; margin: 15px 0; }" +
+                ".info ul { padding-left: 20px; }" +
+                ".info li { margin-bottom: 10px; }" +
+                ".footer { text-align: center; background-color: #f8f9fa; padding: 25px 30px; color: #6c757d; font-size: 12px; line-height: 1.4; }" +
+                ".footer p { margin: 5px 0; }" +
+                "@media (max-width: 600px) {" +
+                ".container { margin: 10px; }" +
+                ".header, .content { padding: 20px; }" +
+                ".title { font-size: 24px; }" +
+                ".otp-box { padding: 15px; }" +
+                ".otp-code { font-size: 20px; }" +
+                "}" +
                 "</style>" +
                 "</head>" +
                 "<body>" +
@@ -113,12 +140,17 @@ public class EmailServiceImpl implements EmailService {
                 "<div class='header'>" +
                 "<img src='cid:logo' alt='The Home Bakery Logo' class='logo' onerror='this.style.display=\"none\"; document.querySelector(\".company-name\").style.display=\"block\";'>" +
                 "<div class='company-name'>The Home Bakery</div>" +
-                "<h1>OTP Verification</h1>" +
+                "<div class='title'>OTP Verification</div>" +
+                "<div class='subtitle'>Secure your account with this one-time password</div>" +
                 "</div>" +
-                "<div class='info'>" +
-                "<p>Hello,</p>" +
-                "<p>You have requested an OTP for verification. Please use the following code:</p>" +
+                "<div class='content'>" +
+                "<div class='greeting'>" +
+                "Hello," +
+                "<br>" +
+                "You have requested an OTP for verification. Please use the following code to proceed." +
                 "</div>" +
+                "<div class='otp-section'>" +
+                "<div class='otp-title'>Your OTP Code:</div>" +
                 "<div class='otp-box'>" +
                 "<div class='otp-code'>" + otp + "</div>" +
                 "</div>" +
@@ -130,8 +162,10 @@ public class EmailServiceImpl implements EmailService {
                 "<li>If you didn't request this OTP, please ignore this email</li>" +
                 "</ul>" +
                 "</div>" +
+                "</div>" +
+                "</div>" +
                 "<div class='footer'>" +
-                "<p>© 2025 The Home Bakery. All rights reserved.</p>" +
+                "<p>&copy; 2025 The Home Bakery. All rights reserved.</p>" +
                 "<p>This is an automated email, please do not reply.</p>" +
                 "</div>" +
                 "</div>" +

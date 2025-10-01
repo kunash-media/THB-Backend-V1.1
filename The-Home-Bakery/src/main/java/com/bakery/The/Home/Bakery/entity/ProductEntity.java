@@ -115,12 +115,14 @@ public class ProductEntity {
    @Column(name = "free_delivery_threshold")
    private BigDecimal freeDeliveryThreshold;
 
-   @Column(name = "product_image", columnDefinition = "LONGTEXT")
+   @Lob
+   @Column(name = "product_image", columnDefinition = "LONGBLOB")
    private byte[] productImage;
 
    @ElementCollection
    @CollectionTable(name = "product_sub_images", joinColumns = @JoinColumn(name = "product_id"))
-   @Column(name = "sub_image",columnDefinition = "LONGTEXT")
+   @Lob
+   @Column(name = "sub_image", columnDefinition = "LONGBLOB")
    private List<byte[]> productSubImages = new ArrayList<>();
 
    @Column(name = "is_deleted", nullable = false)

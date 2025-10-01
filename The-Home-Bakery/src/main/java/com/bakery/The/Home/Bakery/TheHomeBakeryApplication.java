@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.util.TimeZone;
+
 @SpringBootApplication
 @PropertySource(value="classpath:config/application.secrets.properties",ignoreResourceNotFound = true)
 @EnableScheduling
@@ -24,6 +26,8 @@ public class TheHomeBakeryApplication {
 		);
 
 		// Now start Spring application
+
+		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Kolkata"));
 		SpringApplication.run(TheHomeBakeryApplication.class, args);
 	}
 }

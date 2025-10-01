@@ -2,7 +2,6 @@ package com.bakery.The.Home.Bakery.dto.request;
 
 import java.math.BigDecimal;
 import java.util.List;
-
 public class ProductPatchRequestDTO {
 
     private String productName;

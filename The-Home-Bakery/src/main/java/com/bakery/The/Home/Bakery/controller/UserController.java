@@ -79,6 +79,7 @@ public class UserController {
 
     /**
      * Get total count of all users
+     *
      * @return ResponseEntity with user count
      */
     @GetMapping("/user-count")
@@ -93,6 +94,7 @@ public class UserController {
 
     /**
      * Get count of users by status
+     *
      * @param status - User status (active/inactive)
      * @return ResponseEntity with user count by status
      */
