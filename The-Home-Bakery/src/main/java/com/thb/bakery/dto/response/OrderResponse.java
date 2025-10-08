@@ -1,122 +1,300 @@
 package com.thb.bakery.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
 public class OrderResponse {
+
     private boolean success;
+    private String status;
+    private String message;
     private Long orderId;
     private BigDecimal totalAmount;
-    private BigDecimal discountAmount;
-    private BigDecimal taxAmount;
+    private BigDecimal tax;
+    private BigDecimal couponApplied;
     private BigDecimal convenienceFee;
+    private BigDecimal discountPercent;
+    private BigDecimal discountAmount;
     private String orderStatus;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate orderDate;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate deliveryDate;
-
     private String deliveryTime;
     private String paymentMethod;
     private String customerName;
     private String customerPhone;
+    private String customerEmail;
     private String shippingAddress;
+    private String shippingAddress2;
+    private String shippingCity;
+    private String shippingState;
+    private String shippingPincode;
+    private String shippingCountry;
+    private String shippingCustomerName;
+    private String shippingEmail;
+    private String shippingPhone;
     private String specialInstructions;
     private String cakeMessage;
-    private String contactNumber = "8983448510"; // For delivery issues
-
     private List<OrderItemResponse> items;
-    private String message;
-    private String error;
-    private Long productId; // For error responses
 
-    // Success constructor
-    public OrderResponse(boolean success, Long orderId, BigDecimal totalAmount, String orderStatus,
-                         LocalDate orderDate, String message) {
+    // Constructors
+    public OrderResponse() {}
+
+    public OrderResponse(boolean success, Long orderId, BigDecimal totalAmount, String orderStatus, LocalDate orderDate, String message) {
         this.success = success;
         this.orderId = orderId;
         this.totalAmount = totalAmount;
         this.orderStatus = orderStatus;
         this.orderDate = orderDate;
         this.message = message;
+        this.status = success ? "success" : "error";
     }
 
-    // Error constructor
-    public OrderResponse(boolean success, String error, String message, Long productId) {
+    public OrderResponse(boolean success, String status, String message, Long orderId) {
         this.success = success;
-        this.error = error;
+        this.status = status;
         this.message = message;
-        this.productId = productId;
+        this.orderId = orderId;
     }
-
-    // Constructors
-    public OrderResponse() {}
 
     // Getters and Setters
-    public boolean isSuccess() { return success; }
-    public void setSuccess(boolean success) { this.success = success; }
+    public boolean isSuccess() {
+        return success;
+    }
 
-    public Long getOrderId() { return orderId; }
-    public void setOrderId(Long orderId) { this.orderId = orderId; }
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
 
-    public BigDecimal getTotalAmount() { return totalAmount; }
-    public void setTotalAmount(BigDecimal totalAmount) { this.totalAmount = totalAmount; }
+    public String getStatus() {
+        return status;
+    }
 
-    public BigDecimal getDiscountAmount() { return discountAmount; }
-    public void setDiscountAmount(BigDecimal discountAmount) { this.discountAmount = discountAmount; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-    public BigDecimal getTaxAmount() { return taxAmount; }
-    public void setTaxAmount(BigDecimal taxAmount) { this.taxAmount = taxAmount; }
+    public String getMessage() {
+        return message;
+    }
 
-    public BigDecimal getConvenienceFee() { return convenienceFee; }
-    public void setConvenienceFee(BigDecimal convenienceFee) { this.convenienceFee = convenienceFee; }
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-    public String getOrderStatus() { return orderStatus; }
-    public void setOrderStatus(String orderStatus) { this.orderStatus = orderStatus; }
+    public Long getOrderId() {
+        return orderId;
+    }
 
-    public LocalDate getOrderDate() { return orderDate; }
-    public void setOrderDate(LocalDate orderDate) { this.orderDate = orderDate; }
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
 
-    public LocalDate getDeliveryDate() { return deliveryDate; }
-    public void setDeliveryDate(LocalDate deliveryDate) { this.deliveryDate = deliveryDate; }
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
 
-    public String getDeliveryTime() { return deliveryTime; }
-    public void setDeliveryTime(String deliveryTime) { this.deliveryTime = deliveryTime; }
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
 
-    public String getPaymentMethod() { return paymentMethod; }
-    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
+    public BigDecimal getTax() {
+        return tax;
+    }
 
-    public String getCustomerName() { return customerName; }
-    public void setCustomerName(String customerName) { this.customerName = customerName; }
+    public void setTax(BigDecimal tax) {
+        this.tax = tax;
+    }
 
-    public String getCustomerPhone() { return customerPhone; }
-    public void setCustomerPhone(String customerPhone) { this.customerPhone = customerPhone; }
+    public BigDecimal getCouponApplied() {
+        return couponApplied;
+    }
 
-    public String getShippingAddress() { return shippingAddress; }
-    public void setShippingAddress(String shippingAddress) { this.shippingAddress = shippingAddress; }
+    public void setCouponApplied(BigDecimal couponApplied) {
+        this.couponApplied = couponApplied;
+    }
 
-    public String getSpecialInstructions() { return specialInstructions; }
-    public void setSpecialInstructions(String specialInstructions) { this.specialInstructions = specialInstructions; }
+    public BigDecimal getConvenienceFee() {
+        return convenienceFee;
+    }
 
-    public String getCakeMessage() { return cakeMessage; }
-    public void setCakeMessage(String cakeMessage) { this.cakeMessage = cakeMessage; }
+    public void setConvenienceFee(BigDecimal convenienceFee) {
+        this.convenienceFee = convenienceFee;
+    }
 
-    public String getContactNumber() { return contactNumber; }
-    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
+    public BigDecimal getDiscountPercent() {
+        return discountPercent;
+    }
 
-    public List<OrderItemResponse> getItems() { return items; }
-    public void setItems(List<OrderItemResponse> items) { this.items = items; }
+    public void setDiscountPercent(BigDecimal discountPercent) {
+        this.discountPercent = discountPercent;
+    }
 
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
+    public BigDecimal getDiscountAmount() {
+        return discountAmount;
+    }
 
-    public String getError() { return error; }
-    public void setError(String error) { this.error = error; }
+    public void setDiscountAmount(BigDecimal discountAmount) {
+        this.discountAmount = discountAmount;
+    }
 
-    public Long getProductId() { return productId; }
-    public void setProductId(Long productId) { this.productId = productId; }
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
+
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+    }
+
+    public String getCustomerEmail() {
+        return customerEmail;
+    }
+
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public String getShippingAddress2() {
+        return shippingAddress2;
+    }
+
+    public void setShippingAddress2(String shippingAddress2) {
+        this.shippingAddress2 = shippingAddress2;
+    }
+
+    public String getShippingCity() {
+        return shippingCity;
+    }
+
+    public void setShippingCity(String shippingCity) {
+        this.shippingCity = shippingCity;
+    }
+
+    public String getShippingState() {
+        return shippingState;
+    }
+
+    public void setShippingState(String shippingState) {
+        this.shippingState = shippingState;
+    }
+
+    public String getShippingPincode() {
+        return shippingPincode;
+    }
+
+    public void setShippingPincode(String shippingPincode) {
+        this.shippingPincode = shippingPincode;
+    }
+
+    public String getShippingCountry() {
+        return shippingCountry;
+    }
+
+    public void setShippingCountry(String shippingCountry) {
+        this.shippingCountry = shippingCountry;
+    }
+
+    public String getShippingCustomerName() {
+        return shippingCustomerName;
+    }
+
+    public void setShippingCustomerName(String shippingCustomerName) {
+        this.shippingCustomerName = shippingCustomerName;
+    }
+
+    public String getShippingEmail() {
+        return shippingEmail;
+    }
+
+    public void setShippingEmail(String shippingEmail) {
+        this.shippingEmail = shippingEmail;
+    }
+
+    public String getShippingPhone() {
+        return shippingPhone;
+    }
+
+    public void setShippingPhone(String shippingPhone) {
+        this.shippingPhone = shippingPhone;
+    }
+
+    public String getSpecialInstructions() {
+        return specialInstructions;
+    }
+
+    public void setSpecialInstructions(String specialInstructions) {
+        this.specialInstructions = specialInstructions;
+    }
+
+    public String getCakeMessage() {
+        return cakeMessage;
+    }
+
+    public void setCakeMessage(String cakeMessage) {
+        this.cakeMessage = cakeMessage;
+    }
+
+    public List<OrderItemResponse> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItemResponse> items) {
+        this.items = items;
+    }
 }

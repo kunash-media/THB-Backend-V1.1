@@ -150,6 +150,22 @@ public class OrderController {
         }
     }
 
+    @PatchMapping("/{orderId}/cancel-order")
+    public ResponseEntity<Map<String, String>> cancelOrderPatch(@PathVariable Long orderId) {
+        try {
+            logger.info("Canceling order with ID: {} via PATCH", orderId);
+            orderService.cancelOrder(orderId);
+            return ResponseEntity.ok(Map.of(
+                    "message", "Order canceled successfully. In case of any issues, contact: 8983448510",
+                    "orderId", orderId.toString()
+            ));
+        } catch (Exception e) {
+            logger.error("Error canceling order with ID: {} via PATCH", orderId, e);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("error", e.getMessage()));
+        }
+    }
+
     @PatchMapping("/{orderId}/status")
     public ResponseEntity<OrderResponse> updateOrderStatus(@PathVariable Long orderId,
                                                            @RequestParam String status) {

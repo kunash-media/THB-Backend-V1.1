@@ -1,123 +1,226 @@
 package com.thb.bakery.dto.request;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class CreateOrderRequest {
+
     private Long userId;
-    private String customerName;
-    //private String customerLastName;
-    private String customerPhone;
-    private String customerEmail;
     private String shippingAddress;
+    private String shippingAddress2;
     private String shippingCity;
     private String shippingState;
     private String shippingPincode;
-    private String shippingCountry = "India";
-
-    // Billing address (if different from shipping)
-    private String billingCustomerName;
-//    private String billingLastName;
-    private String billingAddress;
-    private String billingCity;
-    private String billingState;
-    private String billingPincode;
-    private String billingCountry;
-    private String billingEmail;
-    private String billingPhone;
-    private Boolean shippingIsBilling = true;
-
-    private String paymentMethod; // cod, prepaid
+    private String shippingCountry;
+    private String shippingCustomerName;
+    private String shippingEmail;
+    private String shippingPhone;
+    private String customerName;
+    private String customerPhone;
+    private String customerEmail;
+    private String paymentMethod;
+    private BigDecimal couponApplied;
+    private BigDecimal discountPercent;
+    private BigDecimal discountAmount;
+    private LocalDate orderDate;
+    private LocalDate deliveryDate;
     private String deliveryTime;
     private String specialInstructions;
     private String cakeMessage;
     private String couponAppliedCode;
-    private BigDecimal discountAmount = BigDecimal.ZERO;
-
     private List<OrderItemRequest> items;
 
-    // Constructors
-    public CreateOrderRequest() {}
-
     // Getters and Setters
-    public Long getUserId() { return userId; }
-    public void setUserId(Long userId) { this.userId = userId; }
+    public Long getUserId() {
+        return userId;
+    }
 
-    public String getCustomerName() { return customerName; }
-    public void setCustomerName(String customerName) { this.customerName = customerName; }
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-//    public String getCustomerLastName() { return customerLastName; }
-//    public void setCustomerLastName(String customerLastName) { this.customerLastName = customerLastName; }
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
 
-    public String getCustomerPhone() { return customerPhone; }
-    public void setCustomerPhone(String customerPhone) { this.customerPhone = customerPhone; }
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
 
-    public String getCustomerEmail() { return customerEmail; }
-    public void setCustomerEmail(String customerEmail) { this.customerEmail = customerEmail; }
+    public String getShippingAddress2() {
+        return shippingAddress2;
+    }
 
-    public String getShippingAddress() { return shippingAddress; }
-    public void setShippingAddress(String shippingAddress) { this.shippingAddress = shippingAddress; }
+    public void setShippingAddress2(String shippingAddress2) {
+        this.shippingAddress2 = shippingAddress2;
+    }
 
-    public String getShippingCity() { return shippingCity; }
-    public void setShippingCity(String shippingCity) { this.shippingCity = shippingCity; }
+    public String getShippingCity() {
+        return shippingCity;
+    }
 
-    public String getShippingState() { return shippingState; }
-    public void setShippingState(String shippingState) { this.shippingState = shippingState; }
+    public void setShippingCity(String shippingCity) {
+        this.shippingCity = shippingCity;
+    }
 
-    public String getShippingPincode() { return shippingPincode; }
-    public void setShippingPincode(String shippingPincode) { this.shippingPincode = shippingPincode; }
+    public String getShippingState() {
+        return shippingState;
+    }
 
-    public String getShippingCountry() { return shippingCountry; }
-    public void setShippingCountry(String shippingCountry) { this.shippingCountry = shippingCountry; }
+    public void setShippingState(String shippingState) {
+        this.shippingState = shippingState;
+    }
 
-    public String getBillingCustomerName() { return billingCustomerName; }
-    public void setBillingCustomerName(String billingCustomerName) { this.billingCustomerName = billingCustomerName; }
+    public String getShippingPincode() {
+        return shippingPincode;
+    }
 
-//    public String getBillingLastName() { return billingLastName; }
-//    public void setBillingLastName(String billingLastName) { this.billingLastName = billingLastName; }
+    public void setShippingPincode(String shippingPincode) {
+        this.shippingPincode = shippingPincode;
+    }
 
-    public String getBillingAddress() { return billingAddress; }
-    public void setBillingAddress(String billingAddress) { this.billingAddress = billingAddress; }
+    public String getShippingCountry() {
+        return shippingCountry;
+    }
 
-    public String getBillingCity() { return billingCity; }
-    public void setBillingCity(String billingCity) { this.billingCity = billingCity; }
+    public void setShippingCountry(String shippingCountry) {
+        this.shippingCountry = shippingCountry;
+    }
 
-    public String getBillingState() { return billingState; }
-    public void setBillingState(String billingState) { this.billingState = billingState; }
+    public String getShippingCustomerName() {
+        return shippingCustomerName;
+    }
 
-    public String getBillingPincode() { return billingPincode; }
-    public void setBillingPincode(String billingPincode) { this.billingPincode = billingPincode; }
+    public void setShippingCustomerName(String shippingCustomerName) {
+        this.shippingCustomerName = shippingCustomerName;
+    }
 
-    public String getBillingCountry() { return billingCountry; }
-    public void setBillingCountry(String billingCountry) { this.billingCountry = billingCountry; }
+    public String getShippingEmail() {
+        return shippingEmail;
+    }
 
-    public String getBillingEmail() { return billingEmail; }
-    public void setBillingEmail(String billingEmail) { this.billingEmail = billingEmail; }
+    public void setShippingEmail(String shippingEmail) {
+        this.shippingEmail = shippingEmail;
+    }
 
-    public String getBillingPhone() { return billingPhone; }
-    public void setBillingPhone(String billingPhone) { this.billingPhone = billingPhone; }
+    public String getShippingPhone() {
+        return shippingPhone;
+    }
 
-    public Boolean getShippingIsBilling() { return shippingIsBilling; }
-    public void setShippingIsBilling(Boolean shippingIsBilling) { this.shippingIsBilling = shippingIsBilling; }
+    public void setShippingPhone(String shippingPhone) {
+        this.shippingPhone = shippingPhone;
+    }
 
-    public String getPaymentMethod() { return paymentMethod; }
-    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
+    public String getCustomerName() {
+        return customerName;
+    }
 
-    public String getDeliveryTime() { return deliveryTime; }
-    public void setDeliveryTime(String deliveryTime) { this.deliveryTime = deliveryTime; }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
-    public String getSpecialInstructions() { return specialInstructions; }
-    public void setSpecialInstructions(String specialInstructions) { this.specialInstructions = specialInstructions; }
+    public String getCustomerPhone() {
+        return customerPhone;
+    }
 
-    public String getCakeMessage() { return cakeMessage; }
-    public void setCakeMessage(String cakeMessage) { this.cakeMessage = cakeMessage; }
+    public void setCustomerPhone(String customerPhone) {
+        this.customerPhone = customerPhone;
+    }
 
-    public String getCouponAppliedCode() { return couponAppliedCode; }
-    public void setCouponAppliedCode(String couponAppliedCode) { this.couponAppliedCode = couponAppliedCode; }
+    public String getCustomerEmail() {
+        return customerEmail;
+    }
 
-    public BigDecimal getDiscountAmount() { return discountAmount; }
-    public void setDiscountAmount(BigDecimal discountAmount) { this.discountAmount = discountAmount; }
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
+    }
 
-    public List<OrderItemRequest> getItems() { return items; }
-    public void setItems(List<OrderItemRequest> items) { this.items = items; }
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public BigDecimal getCouponApplied() {
+        return couponApplied;
+    }
+
+    public void setCouponApplied(BigDecimal couponApplied) {
+        this.couponApplied = couponApplied;
+    }
+
+    public BigDecimal getDiscountPercent() {
+        return discountPercent;
+    }
+
+    public void setDiscountPercent(BigDecimal discountPercent) {
+        this.discountPercent = discountPercent;
+    }
+
+    public BigDecimal getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public void setDiscountAmount(BigDecimal discountAmount) {
+        this.discountAmount = discountAmount;
+    }
+
+    public LocalDate getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(LocalDate orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public String getSpecialInstructions() {
+        return specialInstructions;
+    }
+
+    public void setSpecialInstructions(String specialInstructions) {
+        this.specialInstructions = specialInstructions;
+    }
+
+    public String getCakeMessage() {
+        return cakeMessage;
+    }
+
+    public void setCakeMessage(String cakeMessage) {
+        this.cakeMessage = cakeMessage;
+    }
+
+    public String getCouponAppliedCode() {
+        return couponAppliedCode;
+    }
+
+    public void setCouponAppliedCode(String couponAppliedCode) {
+        this.couponAppliedCode = couponAppliedCode;
+    }
+
+    public List<OrderItemRequest> getItems() {
+        return items;
+    }
+
+    public void setItems(List<OrderItemRequest> items) {
+        this.items = items;
+    }
 }

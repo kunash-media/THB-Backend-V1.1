@@ -22,8 +22,13 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
-import java.util.*;
 import java.util.stream.Collectors;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -81,7 +86,7 @@ public class OrderServiceImpl implements OrderService {
 
     private void validateOrderRequest(CreateOrderRequest request) {
         if (request.getCustomerName() == null || request.getCustomerName().trim().isEmpty()) {
-            throw new RuntimeException("Customer first name is required");
+            throw new RuntimeException("Customer name is required");
         }
         if (request.getCustomerPhone() == null || request.getCustomerPhone().trim().isEmpty()) {
             throw new RuntimeException("Customer phone is required");
@@ -119,49 +124,22 @@ public class OrderServiceImpl implements OrderService {
         order.setCustomerPhone(request.getCustomerPhone());
         order.setCustomerEmail(request.getCustomerEmail());
         order.setShippingAddress(request.getShippingAddress());
+        order.setShippingAddress2(request.getShippingAddress2());
         order.setShippingCity(request.getShippingCity());
         order.setShippingState(request.getShippingState());
         order.setShippingPincode(request.getShippingPincode());
         order.setShippingCountry(request.getShippingCountry());
-
-        // Handle billing address
-        if (Boolean.TRUE.equals(request.getShippingIsBilling())) {
-            copyShippingToBilling(order);
-        } else {
-            setBillingAddress(order, request);
-        }
-
-        order.setShippingIsBilling(request.getShippingIsBilling());
+        order.setShippingCustomerName(request.getShippingCustomerName());
+        order.setShippingEmail(request.getShippingEmail());
+        order.setShippingPhone(request.getShippingPhone());
         order.setPaymentMethod(request.getPaymentMethod());
-        order.setDeliveryTime(request.getDeliveryTime());
-        order.setSpecialInstructions(request.getSpecialInstructions());
-        order.setCakeMessage(request.getCakeMessage());
-        order.setCouponAppliedCode(request.getCouponAppliedCode());
+        order.setCouponApplied(request.getCouponApplied());
+        order.setDiscountPercent(request.getDiscountPercent());
         order.setDiscountAmount(request.getDiscountAmount());
-
+        order.setOrderDate(request.getOrderDate());
+        order.setDeliveryDate(request.getDeliveryDate());
+        order.setOrderStatus("placed");
         return order;
-    }
-
-    private void copyShippingToBilling(OrderEntity order) {
-        order.setBillingCustomerName(order.getCustomerName());
-        order.setBillingAddress(order.getShippingAddress());
-        order.setBillingCity(order.getShippingCity());
-        order.setBillingState(order.getShippingState());
-        order.setBillingPincode(order.getShippingPincode());
-        order.setBillingCountry(order.getShippingCountry());
-        order.setBillingEmail(order.getCustomerEmail());
-        order.setBillingPhone(order.getCustomerPhone());
-    }
-
-    private void setBillingAddress(OrderEntity order, CreateOrderRequest request) {
-        order.setBillingCustomerName(request.getBillingCustomerName());
-        order.setBillingAddress(request.getBillingAddress());
-        order.setBillingCity(request.getBillingCity());
-        order.setBillingState(request.getBillingState());
-        order.setBillingPincode(request.getBillingPincode());
-        order.setBillingCountry(request.getBillingCountry());
-        order.setBillingEmail(request.getBillingEmail());
-        order.setBillingPhone(request.getBillingPhone());
     }
 
     private void processOrderItems(OrderEntity order, List<OrderItemRequest> itemRequests) {
@@ -172,8 +150,6 @@ public class OrderServiceImpl implements OrderService {
             ProductEntity product = productRepository.findById(itemRequest.getProductId())
                     .orElseThrow(() -> new RuntimeException("Product not found with id: " + itemRequest.getProductId()));
 
-            // For cakes, we don't check stock as they're made to order
-            // But we can check if product is available
             if (product.isDeleted()) {
                 throw new RuntimeException("Product '" + product.getProductName() + "' is not available");
             }
@@ -209,7 +185,8 @@ public class OrderServiceImpl implements OrderService {
 
     private void calculateOrderTotals(OrderEntity order, BigDecimal productTotal) {
         // Apply discount
-        BigDecimal discountedTotal = productTotal.subtract(order.getDiscountAmount());
+        BigDecimal discountAmount = order.getDiscountAmount() != null ? order.getDiscountAmount() : BigDecimal.ZERO;
+        BigDecimal discountedTotal = productTotal.subtract(discountAmount);
 
         // Calculate tax (5% GST for food items)
         BigDecimal taxRate = new BigDecimal("0.05");
@@ -223,11 +200,8 @@ public class OrderServiceImpl implements OrderService {
         BigDecimal grandTotal = discountedTotal.add(taxAmount).add(convenienceFee);
 
         order.setTotalAmount(grandTotal);
-        order.setTaxAmount(taxAmount);
+        order.setTax(taxAmount);
         order.setConvenienceFee(convenienceFee);
-
-        logger.info("Order calculation - Product Total: {}, Discount: {}, Tax: {}, Convenience: {}, Grand Total: {}",
-                productTotal, order.getDiscountAmount(), taxAmount, convenienceFee, grandTotal);
     }
 
     private OrderResponse createSuccessResponse(OrderEntity order) {
@@ -240,26 +214,28 @@ public class OrderServiceImpl implements OrderService {
                 "Order placed successfully! In case of any delivery issues, please contact: 8983448510"
         );
 
-        response.setDiscountAmount(order.getDiscountAmount());
-        response.setTaxAmount(order.getTaxAmount());
+        response.setTax(order.getTax());
+        response.setCouponApplied(order.getCouponApplied());
         response.setConvenienceFee(order.getConvenienceFee());
-        response.setDeliveryTime(order.getDeliveryTime());
+        response.setDiscountPercent(order.getDiscountPercent());
+        response.setDiscountAmount(order.getDiscountAmount());
+        response.setDeliveryDate(order.getDeliveryDate());
         response.setPaymentMethod(order.getPaymentMethod());
         response.setCustomerName(order.getCustomerName());
         response.setCustomerPhone(order.getCustomerPhone());
-        response.setShippingAddress(formatShippingAddress(order));
-        response.setSpecialInstructions(order.getSpecialInstructions());
-        response.setCakeMessage(order.getCakeMessage());
+        response.setCustomerEmail(order.getCustomerEmail());
+        response.setShippingAddress(order.getShippingAddress());
+        response.setShippingAddress2(order.getShippingAddress2());
+        response.setShippingCity(order.getShippingCity());
+        response.setShippingState(order.getShippingState());
+        response.setShippingPincode(order.getShippingPincode());
+        response.setShippingCountry(order.getShippingCountry());
+        response.setShippingCustomerName(order.getShippingCustomerName());
+        response.setShippingEmail(order.getShippingEmail());
+        response.setShippingPhone(order.getShippingPhone());
         response.setItems(createOrderItemResponses(order.getOrderItems()));
 
         return response;
-    }
-
-    private String formatShippingAddress(OrderEntity order) {
-        return String.format("%s, %s, %s - %s, %s",
-                order.getShippingAddress(), order.getShippingCity(),
-                order.getShippingState(), order.getShippingPincode(),
-                order.getShippingCountry());
     }
 
     private List<OrderItemResponse> createOrderItemResponses(List<OrderItemEntity> orderItems) {
@@ -313,15 +289,6 @@ public class OrderServiceImpl implements OrderService {
             // Update fields if provided
             if (request.getOrderStatus() != null) {
                 order.setOrderStatus(request.getOrderStatus());
-            }
-            if (request.getDeliveryDate() != null) {
-                order.setDeliveryDate(request.getDeliveryDate());
-            }
-            if (request.getDeliveryTime() != null) {
-                order.setDeliveryTime(request.getDeliveryTime());
-            }
-            if (request.getSpecialInstructions() != null) {
-                order.setSpecialInstructions(request.getSpecialInstructions());
             }
 
             OrderEntity updatedOrder = orderRepository.save(order);
@@ -393,7 +360,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     @Transactional
-    public void cancelOrder(Long orderId) {
+    public Map<String, String> cancelOrder(Long orderId) {
         try {
             OrderEntity order = orderRepository.findById(orderId)
                     .orElseThrow(() -> new RuntimeException("Order not found with id: " + orderId));
@@ -407,9 +374,15 @@ public class OrderServiceImpl implements OrderService {
             orderRepository.save(order);
 
             logger.info("Order cancelled successfully with id: {}", orderId);
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Order canceled successfully. In case of any issues, contact: 8983448510");
+            response.put("orderId", orderId.toString());
+            return response;
         } catch (Exception e) {
             logger.error("Error cancelling order with id: {}", orderId, e);
-            throw new RuntimeException("Failed to cancel order: " + e.getMessage());
+            Map<String, String> response = new HashMap<>();
+            response.put("error", "Failed to cancel order: " + e.getMessage());
+            return response;
         }
     }
 
