@@ -9,15 +9,13 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import java.util.TimeZone;
 
 @SpringBootApplication
-@PropertySource(value="classpath:config/application.secrets.properties",ignoreResourceNotFound = true)
 @EnableScheduling
 public class TheHomeBakeryApplication {
 
 	public static void main(String[] args) {
 		// Load .env file BEFORE Spring starts
 		Dotenv dotenv = Dotenv.configure()
-				.directory("./") // Look in root folder
-				.ignoreIfMissing() // Don't crash if .env file is missing
+				.directory("./The-Home-Bakery/") // Look in root folder
 				.load();
 
 		// Set system properties from .env
@@ -26,7 +24,6 @@ public class TheHomeBakeryApplication {
 		);
 
 		// Now start Spring application
-
 		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Kolkata"));
 		SpringApplication.run(TheHomeBakeryApplication.class, args);
 	}

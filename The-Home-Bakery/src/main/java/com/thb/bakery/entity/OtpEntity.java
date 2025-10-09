@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Opt_Entity")
+@Table(name = "Otp_Entity")
 public class OtpEntity {
 
     @Id
@@ -53,8 +53,8 @@ public class OtpEntity {
         this.expiresAt = expiresAt;
         this.email = email;
         this.purpose = purpose;
-        this.createdAt = LocalDateTime.now(); // Set createdAt to current time
-        this.isUsed = false; // Default value
+        this.createdAt = LocalDateTime.now();
+        this.isUsed = false;
     }
 
     public OtpEntity(UserEntity user, AdminEntity admin, String hashedOtp, Object o, LocalDateTime localDateTime, String email, String passwordReset) {}
@@ -134,5 +134,11 @@ public class OtpEntity {
     public String getPurpose() { return purpose; }
     public void setPurpose(String purpose) { this.purpose = purpose; }
 
+    public String getMobile() {
+        return mobile;
+    }
 
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 }
