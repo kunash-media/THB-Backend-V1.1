@@ -48,7 +48,8 @@ public class CustomizationRequestDTO {
         return isGuest;
     }
 
-    public void setGuest(boolean guest) {
+    public void setIsGuest(boolean guest) {
         isGuest = guest;
     }
+
 }

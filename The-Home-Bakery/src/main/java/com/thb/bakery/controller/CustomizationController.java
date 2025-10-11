@@ -62,9 +62,9 @@ public class CustomizationController {
     }
 
     @DeleteMapping("/delete-custom-order/{id}")
-    public ResponseEntity<Void> deleteCustomization(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCustomization(@PathVariable Long id) {
         logger.info("Received DELETE request for customization with ID: {}", id);
         customizationService.deleteCustomization(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("Order Deleted Successfully!! With Id : "+ id ,HttpStatus.OK);
     }
 }
