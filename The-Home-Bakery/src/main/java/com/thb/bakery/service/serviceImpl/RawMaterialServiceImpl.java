@@ -227,6 +227,7 @@ public class RawMaterialServiceImpl implements RawMaterialService {
         logger.info("Creating history entry for material ID: {} with action: {}", entity.getId(), action);
 
         MaterialHistoryEntity history = new MaterialHistoryEntity();
+
         history.setDate(LocalDate.now());
         history.setMaterialId(entity.getId());
         history.setMaterialName(entity.getName());

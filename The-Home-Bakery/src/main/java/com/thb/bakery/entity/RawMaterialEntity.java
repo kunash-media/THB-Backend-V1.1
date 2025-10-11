@@ -1,13 +1,14 @@
 package com.thb.bakery.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.action.internal.OrphanRemovalAction;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "raw_inventory")
+@Table(name = "raw_material_inventory")
 public class RawMaterialEntity {
 
     @Id
