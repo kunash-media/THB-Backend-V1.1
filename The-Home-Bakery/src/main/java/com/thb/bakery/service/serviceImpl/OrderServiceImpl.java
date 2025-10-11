@@ -5,10 +5,7 @@ import com.thb.bakery.dto.request.OrderItemRequest;
 import com.thb.bakery.dto.request.UpdateOrderRequest;
 import com.thb.bakery.dto.response.OrderItemResponse;
 import com.thb.bakery.dto.response.OrderResponse;
-import com.thb.bakery.entity.OrderEntity;
-import com.thb.bakery.entity.OrderItemEntity;
-import com.thb.bakery.entity.ProductEntity;
-import com.thb.bakery.entity.UserEntity;
+import com.thb.bakery.entity.*;
 import com.thb.bakery.repository.OrderItemRepository;
 import com.thb.bakery.repository.OrderRepository;
 import com.thb.bakery.repository.ProductRepository;
@@ -29,6 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 @Service
 @Transactional
@@ -133,7 +131,8 @@ public class OrderServiceImpl implements OrderService {
         order.setShippingEmail(request.getShippingEmail());
         order.setShippingPhone(request.getShippingPhone());
         order.setPaymentMethod(request.getPaymentMethod());
-        order.setCouponApplied(request.getCouponApplied());
+        order.setCouponAmount(request.getDiscountAmount()); // Map discountAmount to couponAmount
+        order.setCouponAppliedCode(request.getCouponApplied() != null ? request.getCouponApplied() : request.getCouponAppliedCode());
         order.setDiscountPercent(request.getDiscountPercent());
         order.setDiscountAmount(request.getDiscountAmount());
         order.setOrderDate(request.getOrderDate());
@@ -159,6 +158,13 @@ public class OrderServiceImpl implements OrderService {
 
             BigDecimal itemSubtotal = orderItem.getSubtotal();
             productTotal = productTotal.add(itemSubtotal);
+
+            // Process party items
+            List<PartyItemEntity> partyItems = createPartyItems(orderItem, itemRequest.getPartyItems());
+            orderItem.setPartyItems(partyItems);
+            for (PartyItemEntity partyItem : partyItems) {
+                productTotal = productTotal.add(partyItem.getPartyItemSubtotal());
+            }
         }
 
         // Calculate final totals
@@ -181,6 +187,26 @@ public class OrderServiceImpl implements OrderService {
         orderItem.setSubtotal(subtotal);
 
         return orderItem;
+    }
+
+    private List<PartyItemEntity> createPartyItems(OrderItemEntity orderItem, List<OrderItemRequest.PartyItems> partyItemRequests) {
+        List<PartyItemEntity> partyItems = new ArrayList<>();
+        if (partyItemRequests != null) {
+            for (OrderItemRequest.PartyItems partyItemRequest : partyItemRequests) {
+                PartyItemEntity partyItem = new PartyItemEntity();
+                partyItem.setOrderItem(orderItem);
+                partyItem.setItemId(partyItemRequest.getItemId());
+                partyItem.setPartyItemName(partyItemRequest.getPartItemName());
+                partyItem.setPartyItemQuantity(partyItemRequest.getPartyItemQuantity());
+                partyItem.setPartyItemPrice(partyItemRequest.getPartyItemPrice());
+                BigDecimal partyItemSubtotal = partyItemRequest.getPartyItemPrice()
+                        .multiply(BigDecimal.valueOf(partyItemRequest.getPartyItemQuantity()))
+                        .setScale(2, RoundingMode.HALF_UP);
+                partyItem.setPartyItemSubtotal(partyItemSubtotal);
+                partyItems.add(partyItem);
+            }
+        }
+        return partyItems;
     }
 
     private void calculateOrderTotals(OrderEntity order, BigDecimal productTotal) {
@@ -215,7 +241,8 @@ public class OrderServiceImpl implements OrderService {
         );
 
         response.setTax(order.getTax());
-        response.setCouponApplied(order.getCouponApplied());
+        response.setCouponApplied(order.getCouponAmount());
+        response.setCouponAppliedCode(order.getCouponAppliedCode());
         response.setConvenienceFee(order.getConvenienceFee());
         response.setDiscountPercent(order.getDiscountPercent());
         response.setDiscountAmount(order.getDiscountAmount());
@@ -250,7 +277,20 @@ public class OrderServiceImpl implements OrderService {
             itemResponse.setSelectedWeight(item.getSelectedWeight());
             itemResponse.setCakeMessage(item.getCakeMessage());
             itemResponse.setSpecialInstructions(item.getSpecialInstructions());
+            itemResponse.setPartyItems(createPartyItemResponses(item.getPartyItems()));
             return itemResponse;
+        }).collect(Collectors.toList());
+    }
+
+    private List<OrderItemResponse.PartyItem> createPartyItemResponses(List<PartyItemEntity> partyItems) {
+        return partyItems.stream().map(partyItem -> {
+            OrderItemResponse.PartyItem partyItemResponse = new OrderItemResponse.PartyItem();
+            partyItemResponse.setPartyItemId(partyItem.getPartyItemId());
+            partyItemResponse.setPartyItemName(partyItem.getPartyItemName());
+            partyItemResponse.setPartyItemQuantity(partyItem.getPartyItemQuantity());
+            partyItemResponse.setPartyItemPrice(partyItem.getPartyItemPrice());
+            partyItemResponse.setPartyItemSubtotal(partyItem.getPartyItemSubtotal());
+            return partyItemResponse;
         }).collect(Collectors.toList());
     }
 

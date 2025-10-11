@@ -11,7 +11,6 @@ public class OrderItemRequest {
     private String specialInstructions;
 
     //party items
-
     private List<PartyItems> partyItems;
 
     // Constructors

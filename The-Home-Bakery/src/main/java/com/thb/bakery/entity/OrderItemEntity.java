@@ -3,6 +3,8 @@ package com.thb.bakery.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "order_items")
@@ -40,44 +42,90 @@ public class OrderItemEntity {
     @Column(name = "special_instructions")
     private String specialInstructions;
 
+    @OneToMany(mappedBy = "orderItem", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<PartyItemEntity> partyItems = new ArrayList<>();
+
     // Constructors
     public OrderItemEntity() {}
 
-    public OrderItemEntity(OrderEntity order, ProductEntity product, Integer quantity,
-                           BigDecimal unitPrice, BigDecimal subtotal, String selectedWeight) {
+    // Getters and Setters
+    public Long getOrderItemId() {
+        return orderItemId;
+    }
+
+    public void setOrderItemId(Long orderItemId) {
+        this.orderItemId = orderItemId;
+    }
+
+    public OrderEntity getOrder() {
+        return order;
+    }
+
+    public void setOrder(OrderEntity order) {
         this.order = order;
+    }
+
+    public ProductEntity getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductEntity product) {
         this.product = product;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public BigDecimal getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
+    }
+
+    public String getSelectedWeight() {
+        return selectedWeight;
+    }
+
+    public void setSelectedWeight(String selectedWeight) {
         this.selectedWeight = selectedWeight;
     }
 
-    // Getters and Setters
-    public Long getOrderItemId() { return orderItemId; }
-    public void setOrderItemId(Long orderItemId) { this.orderItemId = orderItemId; }
+    public String getCakeMessage() {
+        return cakeMessage;
+    }
 
-    public OrderEntity getOrder() { return order; }
-    public void setOrder(OrderEntity order) { this.order = order; }
+    public void setCakeMessage(String cakeMessage) {
+        this.cakeMessage = cakeMessage;
+    }
 
-    public ProductEntity getProduct() { return product; }
-    public void setProduct(ProductEntity product) { this.product = product; }
+    public String getSpecialInstructions() {
+        return specialInstructions;
+    }
 
-    public Integer getQuantity() { return quantity; }
-    public void setQuantity(Integer quantity) { this.quantity = quantity; }
+    public void setSpecialInstructions(String specialInstructions) {
+        this.specialInstructions = specialInstructions;
+    }
 
-    public BigDecimal getUnitPrice() { return unitPrice; }
-    public void setUnitPrice(BigDecimal unitPrice) { this.unitPrice = unitPrice; }
+    public List<PartyItemEntity> getPartyItems() {
+        return partyItems;
+    }
 
-    public BigDecimal getSubtotal() { return subtotal; }
-    public void setSubtotal(BigDecimal subtotal) { this.subtotal = subtotal; }
-
-    public String getSelectedWeight() { return selectedWeight; }
-    public void setSelectedWeight(String selectedWeight) { this.selectedWeight = selectedWeight; }
-
-    public String getCakeMessage() { return cakeMessage; }
-    public void setCakeMessage(String cakeMessage) { this.cakeMessage = cakeMessage; }
-
-    public String getSpecialInstructions() { return specialInstructions; }
-    public void setSpecialInstructions(String specialInstructions) { this.specialInstructions = specialInstructions; }
+    public void setPartyItems(List<PartyItemEntity> partyItems) {
+        this.partyItems = partyItems;
+    }
 }

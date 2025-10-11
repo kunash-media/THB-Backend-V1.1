@@ -41,8 +41,11 @@ public class OrderEntity {
     @Column(name = "tax", precision = 10, scale = 2)
     private BigDecimal tax;
 
-    @Column(name = "coupon_applied", precision = 10, scale = 2)
-    private BigDecimal couponApplied;
+    @Column(name = "coupon_amount", precision = 10, scale = 2) // Renamed from couponApplied
+    private BigDecimal couponAmount;
+
+    @Column(name = "coupon_applied_code") // Added to store coupon code
+    private String couponAppliedCode;
 
     @Column(name = "convenience_fee", nullable = false, precision = 10, scale = 2)
     private BigDecimal convenienceFee;
@@ -204,12 +207,20 @@ public class OrderEntity {
         this.tax = tax;
     }
 
-    public BigDecimal getCouponApplied() {
-        return couponApplied;
+    public BigDecimal getCouponAmount() {
+        return couponAmount;
     }
 
-    public void setCouponApplied(BigDecimal couponApplied) {
-        this.couponApplied = couponApplied;
+    public void setCouponAmount(BigDecimal couponAmount) {
+        this.couponAmount = couponAmount;
+    }
+
+    public String getCouponAppliedCode() {
+        return couponAppliedCode;
+    }
+
+    public void setCouponAppliedCode(String couponAppliedCode) {
+        this.couponAppliedCode = couponAppliedCode;
     }
 
     public BigDecimal getConvenienceFee() {

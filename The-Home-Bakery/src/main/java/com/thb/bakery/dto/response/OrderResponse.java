@@ -13,6 +13,7 @@ public class OrderResponse {
     private BigDecimal totalAmount;
     private BigDecimal tax;
     private BigDecimal couponApplied;
+    private String couponAppliedCode;
     private BigDecimal convenienceFee;
     private BigDecimal discountPercent;
     private BigDecimal discountAmount;
@@ -112,6 +113,14 @@ public class OrderResponse {
 
     public void setCouponApplied(BigDecimal couponApplied) {
         this.couponApplied = couponApplied;
+    }
+
+    public String getCouponAppliedCode() {
+        return couponAppliedCode;
+    }
+
+    public void setCouponAppliedCode(String couponAppliedCode) {
+        this.couponAppliedCode = couponAppliedCode;
     }
 
     public BigDecimal getConvenienceFee() {

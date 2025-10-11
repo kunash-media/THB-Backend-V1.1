@@ -20,7 +20,7 @@ public class CreateOrderRequest {
     private String customerPhone;
     private String customerEmail;
     private String paymentMethod;
-    private BigDecimal couponApplied;
+    private String couponApplied;
     private BigDecimal discountPercent;
     private BigDecimal discountAmount;
     private LocalDate orderDate;
@@ -30,6 +30,9 @@ public class CreateOrderRequest {
     private String cakeMessage;
     private String couponAppliedCode;
     private List<OrderItemRequest> items;
+
+    // Constructors
+    public CreateOrderRequest() {}
 
     // Getters and Setters
     public Long getUserId() {
@@ -144,11 +147,11 @@ public class CreateOrderRequest {
         this.paymentMethod = paymentMethod;
     }
 
-    public BigDecimal getCouponApplied() {
+    public String getCouponApplied() {
         return couponApplied;
     }
 
-    public void setCouponApplied(BigDecimal couponApplied) {
+    public void setCouponApplied(String couponApplied) {
         this.couponApplied = couponApplied;
     }
 
