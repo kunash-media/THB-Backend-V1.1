@@ -12,6 +12,9 @@ public class ProductDataDTO {
     @JsonProperty("productCategory")
     private String productCategory;
 
+    @JsonProperty("productSubCategory")
+    private String productSubCategory;
+
     @JsonProperty("productFoodType")
     private String productFoodType;
 
@@ -186,4 +189,12 @@ public class ProductDataDTO {
 
     public BigDecimal getFreeDeliveryThreshold() { return freeDeliveryThreshold; }
     public void setFreeDeliveryThreshold(BigDecimal freeDeliveryThreshold) { this.freeDeliveryThreshold = freeDeliveryThreshold; }
+
+    public String getProductSubCategory() {
+        return productSubCategory;
+    }
+
+    public void setProductSubCategory(String productSubCategory) {
+        this.productSubCategory = productSubCategory;
+    }
 }

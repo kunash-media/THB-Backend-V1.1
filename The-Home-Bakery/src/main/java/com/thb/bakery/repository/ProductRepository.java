@@ -18,16 +18,21 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     List<ProductEntity> findByProductNameContainingIgnoreCase(String name);
 
 
-
     @Query("SELECT p FROM ProductEntity p WHERE p.productCategory = :category AND p.deleted = false")
     List<ProductEntity> findByProductCategoryAndNotDeleted(String category);
+
+    @Query("SELECT p FROM ProductEntity p WHERE p.productCategory = :category AND p.deleted = false")
+    List<ProductEntity> findByProductSubCategoryAndNotDeleted(String productSubCategory);
 
 
     // Update to return Page for pagination
     @Query("SELECT p FROM ProductEntity p WHERE p.productCategory = :category AND p.deleted = false")
     Page<ProductEntity> findByProductCategoryAndNotDeleted(String category, Pageable pageable);
 
-    List<ProductEntity> findByProductFoodType(String foodType);
 
+    @Query("SELECT p FROM ProductEntity p WHERE p.productSubCategory = :subCategory AND p.deleted = false")
+    Page<ProductEntity> findByProductSubCategoryAndNotDeleted(String subCategory, Pageable pageable);
+
+    List<ProductEntity> findByProductFoodType(String foodType);
 
 }

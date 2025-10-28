@@ -34,4 +34,12 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
 
     @Query("SELECT COUNT(o) FROM OrderEntity o WHERE o.paymentMethod = :method")
     Long countOrdersByPaymentMethod(String method);
+
+
+     // ======= new method added ==========//
+    @Query("SELECT COUNT(o) FROM OrderEntity o WHERE o.user.userId = :userId")
+    long countOrdersByUserId(@Param("userId") Long userId);
+
+    @Query("SELECT SUM(o.totalAmount) FROM OrderEntity o WHERE o.user.userId = :userId")
+    BigDecimal sumSpendsByUserId(@Param("userId") Long userId);
 }

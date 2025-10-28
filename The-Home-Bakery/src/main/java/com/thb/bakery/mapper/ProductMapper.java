@@ -4,23 +4,30 @@ import com.thb.bakery.dto.request.ProductCreateRequestDTO;
 import com.thb.bakery.dto.request.ProductDTO;
 import com.thb.bakery.dto.request.ProductPatchRequestDTO;
 import com.thb.bakery.entity.ProductEntity;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.NullValuePropertyMappingStrategy;
+import org.mapstruct.*;
 import org.mapstruct.factory.Mappers;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+@Mapper(
+        componentModel = "spring",
+        nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE
+)
 public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    // FIXED: Changed target from "isDeleted" to "deleted"
-    @Mapping(target = "deleted", ignore = true)
+    // EXPLICIT mapping for all required fields
     @Mapping(target = "productId", ignore = true)
+    @Mapping(target = "deleted", ignore = true)
+    @Mapping(source = "productCategory", target = "productCategory")
+    @Mapping(source = "productSubCategory", target = "productSubCategory")  // EXPLICIT!
+    @Mapping(source = "productFoodType", target = "productFoodType")
+    @Mapping(source = "skuNumber", target = "skuNumber")
+    @Mapping(source = "defaultWeight", target = "defaultWeight")
+    @Mapping(source = "productNewPrice", target = "productNewPrice")
     ProductEntity toEntity(ProductCreateRequestDTO dto);
 
     @Mapping(target = "productImageUrl", expression = "java(generateImageUrl(entity.getProductId(), entity.getProductImage()))")
@@ -29,14 +36,13 @@ public interface ProductMapper {
 
     List<ProductDTO> toDTOList(List<ProductEntity> entities);
 
-    // FIXED: Changed target from "isDeleted" to "deleted"
-    @Mapping(target = "deleted", ignore = true)
     @Mapping(target = "productId", ignore = true)
+    @Mapping(target = "deleted", ignore = true)
+    @Mapping(source = "productSubCategory", target = "productSubCategory")  // EXPLICIT!
     void updateEntityFromDTO(ProductCreateRequestDTO dto, @MappingTarget ProductEntity entity);
 
-    // FIXED: Changed target from "isDeleted" to "deleted"
-    @Mapping(target = "deleted", ignore = true)
     @Mapping(target = "productId", ignore = true)
+    @Mapping(target = "deleted", ignore = true)
     void updateEntityFromPatchDTO(ProductPatchRequestDTO dto, @MappingTarget ProductEntity entity);
 
     // Image URL generation methods

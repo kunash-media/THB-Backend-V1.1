@@ -16,6 +16,9 @@ public class ProductDTO {
     @JsonProperty("productCategory")
     private String productCategory;
 
+    @JsonProperty("productSubCategory")
+    private String productSubCategory;
+
     @JsonProperty("productFoodType")
     private String productFoodType;
 
@@ -113,18 +116,16 @@ public class ProductDTO {
     public ProductDTO() {}
 
     // Full constructor
-    public ProductDTO(Long productId, String productName, String productCategory, String productFoodType,
-                      String skuNumber, String nameOnCake, Integer orderCount, String description,
+
+    public ProductDTO(Long productId, String productName, String productCategory,
+                      String productSubCategory, String productFoodType, String skuNumber,
+                      String nameOnCake, Integer orderCount, String description,
                       String productIngredients, String allergenInfo, String careInstructions,
-                      String storageInstructions, String shelfLife, String bestServed, String preparationTime,
-                      String flavor, String shape, String defaultWeight, String layers, String serves,
-                      String note, BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights,
-                      List<BigDecimal> weightPrices, List<String> features, Double ratings, Integer reviews,
-                      String productDiscount, String deliveryTime, BigDecimal freeDeliveryThreshold,
-                      String productImageUrl, List<String> productSubImageUrls, boolean deleted) {
+                      String storageInstructions, String shelfLife, String bestServed, String preparationTime, String flavor, String shape, String defaultWeight, String layers, String serves, String note, BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights, List<BigDecimal> weightPrices, List<String> features, Double ratings, Integer reviews, String productDiscount, String deliveryTime, BigDecimal freeDeliveryThreshold, String productImageUrl, List<String> productSubImageUrls, boolean deleted) {
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
+        this.productSubCategory = productSubCategory;
         this.productFoodType = productFoodType;
         this.skuNumber = skuNumber;
         this.nameOnCake = nameOnCake;
@@ -145,121 +146,301 @@ public class ProductDTO {
         this.note = note;
         this.productOldPrice = productOldPrice;
         this.productNewPrice = productNewPrice;
-        this.weights = weights != null ? weights : new ArrayList<>();
-        this.weightPrices = weightPrices != null ? weightPrices : new ArrayList<>();
-        this.features = features != null ? features : new ArrayList<>();
+        this.weights = weights;
+        this.weightPrices = weightPrices;
+        this.features = features;
         this.ratings = ratings;
         this.reviews = reviews;
         this.productDiscount = productDiscount;
         this.deliveryTime = deliveryTime;
         this.freeDeliveryThreshold = freeDeliveryThreshold;
         this.productImageUrl = productImageUrl;
-        this.productSubImageUrls = productSubImageUrls != null ? productSubImageUrls : new ArrayList<>();
+        this.productSubImageUrls = productSubImageUrls;
         this.deleted = deleted;
     }
 
     // Getters and Setters
-    public Long getProductId() { return productId; }
-    public void setProductId(Long productId) { this.productId = productId; }
 
-    public String getProductName() { return productName; }
-    public void setProductName(String productName) { this.productName = productName; }
 
-    public String getProductCategory() { return productCategory; }
-    public void setProductCategory(String productCategory) { this.productCategory = productCategory; }
+    public Long getProductId() {
+        return productId;
+    }
 
-    public String getProductFoodType() { return productFoodType; }
-    public void setProductFoodType(String productFoodType) { this.productFoodType = productFoodType; }
+    public void setProductId(Long productId) {
+        this.productId = productId;
+    }
 
-    public String getSkuNumber() { return skuNumber; }
-    public void setSkuNumber(String skuNumber) { this.skuNumber = skuNumber; }
+    public String getProductName() {
+        return productName;
+    }
 
-    public String getNameOnCake() { return nameOnCake; }
-    public void setNameOnCake(String nameOnCake) { this.nameOnCake = nameOnCake; }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
-    public Integer getOrderCount() { return orderCount; }
-    public void setOrderCount(Integer orderCount) { this.orderCount = orderCount; }
+    public String getProductCategory() {
+        return productCategory;
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
+    }
 
-    public String getProductIngredients() { return productIngredients; }
-    public void setProductIngredients(String productIngredients) { this.productIngredients = productIngredients; }
+    public String getProductSubCategory() {
+        return productSubCategory;
+    }
 
-    public String getAllergenInfo() { return allergenInfo; }
-    public void setAllergenInfo(String allergenInfo) { this.allergenInfo = allergenInfo; }
+    public void setProductSubCategory(String productSubCategory) {
+        this.productSubCategory = productSubCategory;
+    }
 
-    public String getCareInstructions() { return careInstructions; }
-    public void setCareInstructions(String careInstructions) { this.careInstructions = careInstructions; }
+    public String getProductFoodType() {
+        return productFoodType;
+    }
 
-    public String getStorageInstructions() { return storageInstructions; }
-    public void setStorageInstructions(String storageInstructions) { this.storageInstructions = storageInstructions; }
+    public void setProductFoodType(String productFoodType) {
+        this.productFoodType = productFoodType;
+    }
 
-    public String getShelfLife() { return shelfLife; }
-    public void setShelfLife(String shelfLife) { this.shelfLife = shelfLife; }
+    public String getSkuNumber() {
+        return skuNumber;
+    }
 
-    public String getBestServed() { return bestServed; }
-    public void setBestServed(String bestServed) { this.bestServed = bestServed; }
+    public void setSkuNumber(String skuNumber) {
+        this.skuNumber = skuNumber;
+    }
 
-    public String getPreparationTime() { return preparationTime; }
-    public void setPreparationTime(String preparationTime) { this.preparationTime = preparationTime; }
+    public String getNameOnCake() {
+        return nameOnCake;
+    }
 
-    public String getFlavor() { return flavor; }
-    public void setFlavor(String flavor) { this.flavor = flavor; }
+    public void setNameOnCake(String nameOnCake) {
+        this.nameOnCake = nameOnCake;
+    }
 
-    public String getShape() { return shape; }
-    public void setShape(String shape) { this.shape = shape; }
+    public Integer getOrderCount() {
+        return orderCount;
+    }
 
-    public String getDefaultWeight() { return defaultWeight; }
-    public void setDefaultWeight(String defaultWeight) { this.defaultWeight = defaultWeight; }
+    public void setOrderCount(Integer orderCount) {
+        this.orderCount = orderCount;
+    }
 
-    public String getLayers() { return layers; }
-    public void setLayers(String layers) { this.layers = layers; }
+    public String getDescription() {
+        return description;
+    }
 
-    public String getServes() { return serves; }
-    public void setServes(String serves) { this.serves = serves; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public String getNote() { return note; }
-    public void setNote(String note) { this.note = note; }
+    public String getProductIngredients() {
+        return productIngredients;
+    }
 
-    public BigDecimal getProductOldPrice() { return productOldPrice; }
-    public void setProductOldPrice(BigDecimal productOldPrice) { this.productOldPrice = productOldPrice; }
+    public void setProductIngredients(String productIngredients) {
+        this.productIngredients = productIngredients;
+    }
 
-    public BigDecimal getProductNewPrice() { return productNewPrice; }
-    public void setProductNewPrice(BigDecimal productNewPrice) { this.productNewPrice = productNewPrice; }
+    public String getAllergenInfo() {
+        return allergenInfo;
+    }
 
-    public List<String> getWeights() { return weights; }
-    public void setWeights(List<String> weights) { this.weights = weights != null ? weights : new ArrayList<>(); }
+    public void setAllergenInfo(String allergenInfo) {
+        this.allergenInfo = allergenInfo;
+    }
 
-    public List<BigDecimal> getWeightPrices() { return weightPrices; }
-    public void setWeightPrices(List<BigDecimal> weightPrices) { this.weightPrices = weightPrices != null ? weightPrices : new ArrayList<>(); }
+    public String getCareInstructions() {
+        return careInstructions;
+    }
 
-    public List<String> getFeatures() { return features; }
-    public void setFeatures(List<String> features) { this.features = features != null ? features : new ArrayList<>(); }
+    public void setCareInstructions(String careInstructions) {
+        this.careInstructions = careInstructions;
+    }
 
-    public Double getRatings() { return ratings; }
-    public void setRatings(Double ratings) { this.ratings = ratings; }
+    public String getStorageInstructions() {
+        return storageInstructions;
+    }
 
-    public Integer getReviews() { return reviews; }
-    public void setReviews(Integer reviews) { this.reviews = reviews; }
+    public void setStorageInstructions(String storageInstructions) {
+        this.storageInstructions = storageInstructions;
+    }
 
-    public String getProductDiscount() { return productDiscount; }
-    public void setProductDiscount(String productDiscount) { this.productDiscount = productDiscount; }
+    public String getShelfLife() {
+        return shelfLife;
+    }
 
-    public String getDeliveryTime() { return deliveryTime; }
-    public void setDeliveryTime(String deliveryTime) { this.deliveryTime = deliveryTime; }
+    public void setShelfLife(String shelfLife) {
+        this.shelfLife = shelfLife;
+    }
 
-    public BigDecimal getFreeDeliveryThreshold() { return freeDeliveryThreshold; }
-    public void setFreeDeliveryThreshold(BigDecimal freeDeliveryThreshold) { this.freeDeliveryThreshold = freeDeliveryThreshold; }
+    public String getBestServed() {
+        return bestServed;
+    }
 
-    public String getProductImageUrl() { return productImageUrl; }
-    public void setProductImageUrl(String productImageUrl) { this.productImageUrl = productImageUrl; }
+    public void setBestServed(String bestServed) {
+        this.bestServed = bestServed;
+    }
 
-    public List<String> getProductSubImageUrls() { return productSubImageUrls; }
-    public void setProductSubImageUrls(List<String> productSubImageUrls) { this.productSubImageUrls = productSubImageUrls != null ? productSubImageUrls : new ArrayList<>(); }
+    public String getPreparationTime() {
+        return preparationTime;
+    }
 
-    public boolean isDeleted() { return deleted; }
-    public void setDeleted(boolean deleted) { this.deleted = deleted; }
+    public void setPreparationTime(String preparationTime) {
+        this.preparationTime = preparationTime;
+    }
+
+    public String getFlavor() {
+        return flavor;
+    }
+
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
+    }
+
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    public String getDefaultWeight() {
+        return defaultWeight;
+    }
+
+    public void setDefaultWeight(String defaultWeight) {
+        this.defaultWeight = defaultWeight;
+    }
+
+    public String getLayers() {
+        return layers;
+    }
+
+    public void setLayers(String layers) {
+        this.layers = layers;
+    }
+
+    public String getServes() {
+        return serves;
+    }
+
+    public void setServes(String serves) {
+        this.serves = serves;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public BigDecimal getProductOldPrice() {
+        return productOldPrice;
+    }
+
+    public void setProductOldPrice(BigDecimal productOldPrice) {
+        this.productOldPrice = productOldPrice;
+    }
+
+    public BigDecimal getProductNewPrice() {
+        return productNewPrice;
+    }
+
+    public void setProductNewPrice(BigDecimal productNewPrice) {
+        this.productNewPrice = productNewPrice;
+    }
+
+    public List<String> getWeights() {
+        return weights;
+    }
+
+    public void setWeights(List<String> weights) {
+        this.weights = weights;
+    }
+
+    public List<BigDecimal> getWeightPrices() {
+        return weightPrices;
+    }
+
+    public void setWeightPrices(List<BigDecimal> weightPrices) {
+        this.weightPrices = weightPrices;
+    }
+
+    public List<String> getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(List<String> features) {
+        this.features = features;
+    }
+
+    public Double getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(Double ratings) {
+        this.ratings = ratings;
+    }
+
+    public Integer getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Integer reviews) {
+        this.reviews = reviews;
+    }
+
+    public String getProductDiscount() {
+        return productDiscount;
+    }
+
+    public void setProductDiscount(String productDiscount) {
+        this.productDiscount = productDiscount;
+    }
+
+    public String getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public BigDecimal getFreeDeliveryThreshold() {
+        return freeDeliveryThreshold;
+    }
+
+    public void setFreeDeliveryThreshold(BigDecimal freeDeliveryThreshold) {
+        this.freeDeliveryThreshold = freeDeliveryThreshold;
+    }
+
+    public String getProductImageUrl() {
+        return productImageUrl;
+    }
+
+    public void setProductImageUrl(String productImageUrl) {
+        this.productImageUrl = productImageUrl;
+    }
+
+    public List<String> getProductSubImageUrls() {
+        return productSubImageUrls;
+    }
+
+    public void setProductSubImageUrls(List<String> productSubImageUrls) {
+        this.productSubImageUrls = productSubImageUrls;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 
     @Override
     public String toString() {

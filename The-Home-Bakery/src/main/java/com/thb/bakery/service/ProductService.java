@@ -35,5 +35,7 @@ public interface ProductService {
     Page<ProductDTO> getProductsByCategory(String category, Pageable pageable);
 
     List<ProductDTO> getProductsByFoodType(String foodType);
+
+    Page<ProductDTO> getProductsBySubCategory(String productSubCategory, Pageable pageable);
 }
 

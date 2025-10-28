@@ -32,9 +32,14 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductMapper productMapper;
 
+
     @Override
     public ProductDTO createProduct(ProductCreateRequestDTO requestDTO) {
+        logger.info("=== PRODUCT CREATION STARTED ===");
         logger.info("Creating new product with SKU: {}", requestDTO.getSkuNumber());
+
+        // Log all incoming DTO fields
+        logProductRequestDTO(requestDTO);
 
         try {
             validateProductRequest(requestDTO);
@@ -46,9 +51,20 @@ public class ProductServiceImpl implements ProductService {
                 throw new IllegalArgumentException("Product with this SKU number already exists");
             }
 
+            logger.info("=== BEFORE MAPPING TO ENTITY ===");
             ProductEntity productEntity = productMapper.toEntity(requestDTO);
-            logger.debug("Mapped DTO to entity for product: {}", productEntity.getProductName());
 
+            // MANUAL FIX: Ensure productSubCategory is set
+            if (productEntity.getProductSubCategory() == null && requestDTO.getProductSubCategory() != null) {
+                logger.warn("MapStruct failed to map productSubCategory, setting manually");
+                productEntity.setProductSubCategory(requestDTO.getProductSubCategory());
+            }
+
+            // Log the entity after mapping
+            logProductEntity(productEntity);
+            logger.info("Mapped DTO to entity for product: {}", productEntity.getProductName());
+
+            logger.info("=== ATTEMPTING DATABASE SAVE ===");
             ProductEntity savedEntity = productRepository.save(productEntity);
             logger.info("Product saved successfully with ID: {} and name: {}",
                     savedEntity.getProductId(), savedEntity.getProductName());
@@ -59,11 +75,74 @@ public class ProductServiceImpl implements ProductService {
             logger.error("Validation failed for product creation: {}", e.getMessage());
             throw e;
         } catch (Exception e) {
+            logger.error("=== DATABASE ERROR OCCURRED ===");
             logger.error("Unexpected error during product creation for SKU {}: {}",
                     requestDTO.getSkuNumber(), e.getMessage(), e);
             throw new RuntimeException("Failed to create product: " + e.getMessage(), e);
         }
     }
+
+    private void logProductRequestDTO(ProductCreateRequestDTO dto) {
+        logger.info("=== INCOMING DTO FIELDS ===");
+        logger.info("productName: {}", dto.getProductName());
+        logger.info("productCategory: {}", dto.getProductCategory());
+        logger.info("productSubCategory: {}", dto.getProductSubCategory()); // CRITICAL FIELD
+        logger.info("productFoodType: {}", dto.getProductFoodType());
+        logger.info("skuNumber: {}", dto.getSkuNumber());
+        logger.info("productNewPrice: {}", dto.getProductNewPrice());
+        logger.info("defaultWeight: {}", dto.getDefaultWeight());
+        logger.info("productImage Present: {}", dto.isProductImagePresent());
+        logger.info("productSubImages Present: {}", dto.isProductSubImagesPresent());
+        logger.info("productImage array: {}", dto.getProductImage() != null ? "Present, length: " + dto.getProductImage().length : "NULL");
+        logger.info("=== END DTO FIELDS ===");
+    }
+
+    private void logProductEntity(ProductEntity entity) {
+        logger.info("=== ENTITY FIELDS AFTER MAPPING ===");
+        logger.info("productName: {}", entity.getProductName());
+        logger.info("productCategory: {}", entity.getProductCategory());
+        logger.info("productSubCategory: {}", entity.getProductSubCategory()); // CRITICAL FIELD
+        logger.info("productFoodType: {}", entity.getProductFoodType());
+        logger.info("skuNumber: {}", entity.getSkuNumber());
+        logger.info("productNewPrice: {}", entity.getProductNewPrice());
+        logger.info("defaultWeight: {}", entity.getDefaultWeight());
+        logger.info("productImage array: {}", entity.getProductImage() != null ? "Present, length: " + entity.getProductImage().length : "NULL");
+        logger.info("isDeleted: {}", entity.isDeleted());
+        logger.info("=== END ENTITY FIELDS ===");
+    }
+
+//    @Override
+//    public ProductDTO createProduct(ProductCreateRequestDTO requestDTO) {
+//        logger.info("Creating new product with SKU: {}", requestDTO.getSkuNumber());
+//
+//        try {
+//            validateProductRequest(requestDTO);
+//            logger.debug("Product validation passed for: {}", requestDTO.getProductName());
+//
+//            Optional<ProductEntity> existingProduct = productRepository.findBySkuNumber(requestDTO.getSkuNumber());
+//            if (existingProduct.isPresent()) {
+//                logger.warn("Product creation failed - SKU already exists: {}", requestDTO.getSkuNumber());
+//                throw new IllegalArgumentException("Product with this SKU number already exists");
+//            }
+//
+//            ProductEntity productEntity = productMapper.toEntity(requestDTO);
+//            logger.debug("Mapped DTO to entity for product: {}", productEntity.getProductName());
+//
+//            ProductEntity savedEntity = productRepository.save(productEntity);
+//            logger.info("Product saved successfully with ID: {} and name: {}",
+//                    savedEntity.getProductId(), savedEntity.getProductName());
+//
+//            return productMapper.toDTO(savedEntity);
+//
+//        } catch (IllegalArgumentException e) {
+//            logger.error("Validation failed for product creation: {}", e.getMessage());
+//            throw e;
+//        } catch (Exception e) {
+//            logger.error("Unexpected error during product creation for SKU {}: {}",
+//                    requestDTO.getSkuNumber(), e.getMessage(), e);
+//            throw new RuntimeException("Failed to create product: " + e.getMessage(), e);
+//        }
+//    }
 
     @Override
     @Transactional(readOnly = true)
@@ -337,6 +416,44 @@ public class ProductServiceImpl implements ProductService {
         }
     }
 
+
+    //============================== get products by sub-category ================================//
+
+    @Override
+    public Page<ProductDTO> getProductsBySubCategory(String productSubCategory, Pageable pageable) {
+        logger.info("Fetching products by category: '{}' with pagination - page: {}, size: {}",
+                productSubCategory, pageable.getPageNumber(), pageable.getPageSize());
+
+        try {
+            if (!StringUtils.hasText(productSubCategory)) {
+                logger.warn("Empty or null category provided");
+                throw new IllegalArgumentException("Category cannot be null or empty");
+            }
+
+            String searchCategory = productSubCategory.trim();
+            Page<ProductEntity> entities = productRepository.findByProductSubCategoryAndNotDeleted(searchCategory, pageable);
+
+            logger.info("Found {} products in category '{}' for page {} of {} with {} total elements",
+                    entities.getNumberOfElements(), searchCategory, entities.getNumber() + 1,
+                    entities.getTotalPages(), entities.getTotalElements());
+
+            return entities.map(productMapper::toDTO);
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid category parameter: {}", e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Unexpected error fetching paginated products by category '{}': {}",
+                    productSubCategory, e.getMessage(), e);
+            throw new RuntimeException("Failed to fetch products by category: " + e.getMessage(), e);
+        }
+    }
+
+    //================================================================================================//
+
+
+
+
     @Override
     @Transactional(readOnly = true)
     public List<ProductDTO> getProductsByFoodType(String foodType) {
@@ -363,6 +480,8 @@ public class ProductServiceImpl implements ProductService {
             throw new RuntimeException("Failed to fetch products by food type: " + e.getMessage(), e);
         }
     }
+
+
 
     private void validateProductId(Long productId) {
         if (productId == null || productId <= 0) {

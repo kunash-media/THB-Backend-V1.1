@@ -43,16 +43,18 @@ public class ProductController {
 
     @PostMapping(value = "/create-product", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ApiResponse<ProductDTO>> createProduct(
-            @RequestPart("productData") String productData,
+            @RequestPart("productData") ProductDataDTO productDataDTO,
             @RequestPart(value = "productImage", required = false) MultipartFile productImage,
             @RequestPart(value = "productSubImages", required = false) MultipartFile[] productSubImages) {
 
-        logger.info("Creating new product with data: {}", productData);
+        logger.debug("Received ProductDataDTO - productName: {}, productCategory: {}, productSubCategory: {}, productFoodType: {}, skuNumber: {}",
+                productDataDTO.getProductName(),
+                productDataDTO.getProductCategory(),
+                productDataDTO.getProductSubCategory(),
+                productDataDTO.getProductFoodType(),
+                productDataDTO.getSkuNumber());
 
         try {
-            ProductDataDTO productDataDTO = objectMapper.readValue(productData, ProductDataDTO.class);
-            logger.debug("Parsed product data: {}", productDataDTO.getProductName());
-
             validateWeightsAndPrices(productDataDTO);
             ProductCreateRequestDTO requestDTO = mapToCreateRequest(productDataDTO, productImage, productSubImages);
             ProductDTO createdProduct = productService.createProduct(requestDTO);
@@ -70,6 +72,71 @@ public class ProductController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(ApiResponse.error("Failed to create product: " + e.getMessage()));
         }
+    }
+
+
+    private ProductCreateRequestDTO mapToCreateRequest(ProductDataDTO productDataDTO,
+                                                       MultipartFile productImage, MultipartFile[] productSubImages) {
+        ProductCreateRequestDTO requestDTO = new ProductCreateRequestDTO();
+
+        // Manually set fields using setters
+        requestDTO.setProductName(productDataDTO.getProductName());
+        requestDTO.setProductCategory(productDataDTO.getProductCategory());
+        requestDTO.setProductSubCategory(productDataDTO.getProductSubCategory());
+        requestDTO.setProductFoodType(productDataDTO.getProductFoodType());
+        requestDTO.setSkuNumber(productDataDTO.getSkuNumber());
+        requestDTO.setNameOnCake(productDataDTO.getNameOnCake());
+        requestDTO.setOrderCount(productDataDTO.getOrderCount());
+        requestDTO.setDescription(productDataDTO.getDescription());
+        requestDTO.setProductIngredients(productDataDTO.getProductIngredients());
+        requestDTO.setAllergenInfo(productDataDTO.getAllergenInfo());
+        requestDTO.setCareInstructions(productDataDTO.getCareInstructions());
+        requestDTO.setStorageInstructions(productDataDTO.getStorageInstructions());
+        requestDTO.setShelfLife(productDataDTO.getShelfLife());
+        requestDTO.setBestServed(productDataDTO.getBestServed());
+        requestDTO.setPreparationTime(productDataDTO.getPreparationTime());
+        requestDTO.setFlavor(productDataDTO.getFlavor());
+        requestDTO.setShape(productDataDTO.getShape());
+        requestDTO.setDefaultWeight(productDataDTO.getDefaultWeight());
+        requestDTO.setLayers(productDataDTO.getLayers());
+        requestDTO.setServes(productDataDTO.getServes());
+        requestDTO.setNote(productDataDTO.getNote());
+        requestDTO.setProductOldPrice(productDataDTO.getProductOldPrice());
+        requestDTO.setProductNewPrice(productDataDTO.getProductNewPrice());
+        requestDTO.setWeights(productDataDTO.getWeights());
+        requestDTO.setWeightPrices(productDataDTO.getWeightPrices());
+        requestDTO.setFeatures(productDataDTO.getFeatures());
+        requestDTO.setRatings(productDataDTO.getRatings());
+        requestDTO.setReviews(productDataDTO.getReviews());
+        requestDTO.setProductDiscount(productDataDTO.getProductDiscount());
+        requestDTO.setDeliveryTime(productDataDTO.getDeliveryTime());
+        requestDTO.setFreeDeliveryThreshold(productDataDTO.getFreeDeliveryThreshold());
+
+        // Handle product image
+        if (productImage != null && !productImage.isEmpty()) {
+            try {
+                requestDTO.setProductImage(productImage.getBytes());
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to process product image", e);
+            }
+        }
+
+        // Handle product sub-images
+        if (productSubImages != null && productSubImages.length > 0) {
+            List<byte[]> subImages = new ArrayList<>();
+            for (MultipartFile subImage : productSubImages) {
+                try {
+                    if (!subImage.isEmpty()) {
+                        subImages.add(subImage.getBytes());
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException("Failed to process product sub-image", e);
+                }
+            }
+            requestDTO.setProductSubImages(subImages);
+        }
+
+        return requestDTO;
     }
 
     @GetMapping("/get-all-products")
@@ -121,7 +188,7 @@ public class ProductController {
     @PatchMapping(value = "/update-product/{productId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ApiResponse<ProductDTO>> patchProduct(
             @PathVariable Long productId,
-            @RequestPart(value = "productData", required = false) String productData,
+            @RequestPart(value = "productData", required = false) ProductDataDTO productDataDTO,
             @RequestPart(value = "productImage", required = false) MultipartFile productImage,
             @RequestPart(value = "productSubImages", required = false) MultipartFile[] productSubImages,
             @RequestPart(value = "existingProductImage", required = false) String existingProductImage,
@@ -131,7 +198,7 @@ public class ProductController {
 
         try {
             ProductPatchRequestDTO patchRequest = buildPatchRequest(
-                    productData, productImage, productSubImages, existingProductImage, existingProductSubImages);
+                    productDataDTO, productImage, productSubImages, existingProductImage, existingProductSubImages);
 
             ProductDTO updatedProduct = productService.patchProduct(productId, patchRequest);
             logger.info("Product updated successfully: {}", updatedProduct.getProductName());
@@ -152,15 +219,13 @@ public class ProductController {
     @PutMapping(value = "/update-product/{productId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ApiResponse<ProductDTO>> updateProduct(
             @PathVariable Long productId,
-            @RequestPart("productData") String productData,
+            @RequestPart("productData") ProductDataDTO productDataDTO,
             @RequestPart(value = "productImage", required = false) MultipartFile productImage,
             @RequestPart(value = "productSubImages", required = false) MultipartFile[] productSubImages) {
 
         logger.info("Fully updating product with ID: {}", productId);
 
         try {
-            ProductDataDTO productDataDTO = objectMapper.readValue(productData, ProductDataDTO.class);
-
             validateWeightsAndPrices(productDataDTO);
             ProductCreateRequestDTO requestDTO = mapToCreateRequest(productDataDTO, productImage, productSubImages);
             ProductDTO updatedProduct = productService.updateProduct(productId, requestDTO);
@@ -290,6 +355,35 @@ public class ProductController {
         }
     }
 
+    @GetMapping("/sub-category/{productSubCategory}")
+    public ResponseEntity<ApiResponse<Page<ProductDTO>>> getProductsBySubCategory(
+            @PathVariable String productSubCategory,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
+
+        logger.info("Fetching products by sub-category: {}, page: {}, size: {}", productSubCategory, page, size);
+
+        try {
+            Pageable pageable = PageRequest.of(page, size);
+            Page<ProductDTO> productPage = productService.getProductsBySubCategory(productSubCategory, pageable);
+            logger.info("Found {} products in sub-category '{}', page: {}, total elements: {}",
+                    productPage.getNumberOfElements(), productSubCategory, page, productPage.getTotalElements());
+
+            return ResponseEntity.ok(ApiResponse.success(
+                    String.format("Found %d products in sub-category '%s'", productPage.getNumberOfElements(), productSubCategory),
+                    productPage));
+
+        } catch (IllegalArgumentException e) {
+            logger.warn("Invalid sub-category parameter: {}", e.getMessage());
+            return ResponseEntity.badRequest()
+                    .body(ApiResponse.error("Invalid input: " + e.getMessage()));
+        } catch (Exception e) {
+            logger.error("Error fetching products by sub-category '{}': {}", productSubCategory, e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ApiResponse.error("Failed to fetch products by sub-category: " + e.getMessage()));
+        }
+    }
+
     @GetMapping("/food-type/{foodType}")
     public ResponseEntity<ApiResponse<List<ProductDTO>>> getProductsByFoodType(@PathVariable String foodType) {
         logger.info("Fetching products by food type: {}", foodType);
@@ -361,58 +455,16 @@ public class ProductController {
         }
     }
 
-    private ProductCreateRequestDTO mapToCreateRequest(ProductDataDTO productDataDTO,
-                                                       MultipartFile productImage, MultipartFile[] productSubImages) throws Exception {
-
-        ProductCreateRequestDTO requestDTO = new ProductCreateRequestDTO();
-        requestDTO.setProductName(productDataDTO.getProductName());
-        requestDTO.setProductCategory(productDataDTO.getProductCategory());
-        requestDTO.setProductFoodType(productDataDTO.getProductFoodType());
-        requestDTO.setSkuNumber(productDataDTO.getSkuNumber());
-        requestDTO.setNameOnCake(productDataDTO.getNameOnCake());
-        requestDTO.setOrderCount(productDataDTO.getOrderCount());
-        requestDTO.setDescription(productDataDTO.getDescription());
-        requestDTO.setProductIngredients(productDataDTO.getProductIngredients());
-        requestDTO.setAllergenInfo(productDataDTO.getAllergenInfo());
-        requestDTO.setCareInstructions(productDataDTO.getCareInstructions());
-        requestDTO.setStorageInstructions(productDataDTO.getStorageInstructions());
-        requestDTO.setShelfLife(productDataDTO.getShelfLife());
-        requestDTO.setBestServed(productDataDTO.getBestServed());
-        requestDTO.setPreparationTime(productDataDTO.getPreparationTime());
-        requestDTO.setFlavor(productDataDTO.getFlavor());
-        requestDTO.setShape(productDataDTO.getShape());
-        requestDTO.setDefaultWeight(productDataDTO.getDefaultWeight());
-        requestDTO.setLayers(productDataDTO.getLayers());
-        requestDTO.setServes(productDataDTO.getServes());
-        requestDTO.setNote(productDataDTO.getNote());
-        requestDTO.setProductOldPrice(productDataDTO.getProductOldPrice());
-        requestDTO.setProductNewPrice(productDataDTO.getProductNewPrice());
-        requestDTO.setWeights(productDataDTO.getWeights());
-        requestDTO.setWeightPrices(productDataDTO.getWeightPrices());
-        requestDTO.setFeatures(productDataDTO.getFeatures());
-        requestDTO.setRatings(productDataDTO.getRatings());
-        requestDTO.setReviews(productDataDTO.getReviews());
-        requestDTO.setProductDiscount(productDataDTO.getProductDiscount());
-        requestDTO.setDeliveryTime(productDataDTO.getDeliveryTime());
-        requestDTO.setFreeDeliveryThreshold(productDataDTO.getFreeDeliveryThreshold());
-
-        setImageFields(requestDTO, productImage, productSubImages);
-
-        return requestDTO;
-    }
-
-    private ProductPatchRequestDTO buildPatchRequest(String productData, MultipartFile productImage,
-                                                     MultipartFile[] productSubImages, String existingProductImage,
-                                                     String existingProductSubImages) throws Exception {
-
+    private ProductPatchRequestDTO buildPatchRequest(ProductDataDTO productDataDTO,
+                                                     MultipartFile productImage, MultipartFile[] productSubImages,
+                                                     String existingProductImage, String existingProductSubImages) {
         ProductPatchRequestDTO patchRequest = new ProductPatchRequestDTO();
 
-        if (productData != null) {
-            ProductDataDTO productDataDTO = objectMapper.readValue(productData, ProductDataDTO.class);
-            validateWeightsAndPrices(productDataDTO);
-
+        // Set fields only if provided in productDataDTO
+        if (productDataDTO != null) {
             if (productDataDTO.getProductName() != null) patchRequest.setProductName(productDataDTO.getProductName());
             if (productDataDTO.getProductCategory() != null) patchRequest.setProductCategory(productDataDTO.getProductCategory());
+            if (productDataDTO.getProductSubCategory() != null) patchRequest.setProductSubCategory(productDataDTO.getProductSubCategory());
             if (productDataDTO.getProductFoodType() != null) patchRequest.setProductFoodType(productDataDTO.getProductFoodType());
             if (productDataDTO.getSkuNumber() != null) patchRequest.setSkuNumber(productDataDTO.getSkuNumber());
             if (productDataDTO.getNameOnCake() != null) patchRequest.setNameOnCake(productDataDTO.getNameOnCake());
@@ -443,9 +495,14 @@ public class ProductController {
             if (productDataDTO.getFreeDeliveryThreshold() != null) patchRequest.setFreeDeliveryThreshold(productDataDTO.getFreeDeliveryThreshold());
         }
 
+        // Handle image fields
         if (productImage != null && !productImage.isEmpty()) {
-            patchRequest.setProductImage(productImage.getBytes());
-            patchRequest.setProductImagePresent(true);
+            try {
+                patchRequest.setProductImage(productImage.getBytes());
+                patchRequest.setProductImagePresent(true);
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to process product image", e);
+            }
         } else if (existingProductImage != null && !existingProductImage.trim().isEmpty()) {
             patchRequest.setExistingProductImage(existingProductImage.trim());
         }
@@ -453,15 +510,23 @@ public class ProductController {
         if (productSubImages != null && productSubImages.length > 0) {
             List<byte[]> subImages = new ArrayList<>();
             for (MultipartFile file : productSubImages) {
-                if (!file.isEmpty()) {
-                    subImages.add(file.getBytes());
+                try {
+                    if (!file.isEmpty()) {
+                        subImages.add(file.getBytes());
+                    }
+                } catch (Exception e) {
+                    throw new RuntimeException("Failed to process product sub-image", e);
                 }
             }
             patchRequest.setProductSubImages(subImages);
             patchRequest.setProductSubImagesPresent(true);
         } else if (existingProductSubImages != null && !existingProductSubImages.trim().isEmpty()) {
-            List<String> subImageUrls = objectMapper.readValue(existingProductSubImages, new TypeReference<List<String>>(){});
-            patchRequest.setExistingProductSubImages(subImageUrls);
+            try {
+                List<String> subImageUrls = objectMapper.readValue(existingProductSubImages, new TypeReference<List<String>>(){});
+                patchRequest.setExistingProductSubImages(subImageUrls);
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to parse existing product sub-images", e);
+            }
         }
 
         return patchRequest;

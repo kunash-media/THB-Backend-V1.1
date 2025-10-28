@@ -6,6 +6,7 @@ public class ProductPatchRequestDTO {
 
     private String productName;
     private String productCategory;
+    private String productSubCategory;
     private String productFoodType;
     private String skuNumber;
     private String nameOnCake;
@@ -327,5 +328,13 @@ public class ProductPatchRequestDTO {
 
     public void setExistingProductSubImages(List<String> existingProductSubImages) {
         this.existingProductSubImages = existingProductSubImages;
+    }
+
+    public String getProductSubCategory() {
+        return productSubCategory;
+    }
+
+    public void setProductSubCategory(String productSubCategory) {
+        this.productSubCategory = productSubCategory;
     }
 }

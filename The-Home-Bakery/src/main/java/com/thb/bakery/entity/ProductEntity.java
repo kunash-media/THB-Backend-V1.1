@@ -25,6 +25,9 @@ public class ProductEntity {
    @Column(name = "product_category", nullable = false)
    private String productCategory;
 
+   @Column(name = "product_sub_category", nullable = false)
+   private String productSubCategory;
+
    @Column(name = "product_food_type", nullable = false)
    private String productFoodType;
 
@@ -130,20 +133,13 @@ public class ProductEntity {
 
    public ProductEntity() {}
 
+
    public ProductEntity(Long productId, String productName, String productCategory,
-                        String productFoodType, String skuNumber, String nameOnCake,
-                        Integer orderCount, String description, String productIngredients,
-                        String allergenInfo, String careInstructions, String storageInstructions,
-                        String shelfLife, String bestServed, String preparationTime, String flavor,
-                        String shape, String defaultWeight, String layers, String serves, String note,
-                        BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights,
-                        List<BigDecimal> weightPrices, List<String> features, Double ratings,
-                        Integer reviews, String productDiscount, String deliveryTime,
-                        BigDecimal freeDeliveryThreshold, byte[] productImage, List<byte[]> productSubImages,
-                        boolean deleted) {
+                        String productSubCategory, String productFoodType, String skuNumber, String nameOnCake, Integer orderCount, String description, String productIngredients, String allergenInfo, String careInstructions, String storageInstructions, String shelfLife, String bestServed, String preparationTime, String flavor, String shape, String defaultWeight, String layers, String serves, String note, BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights, List<BigDecimal> weightPrices, List<String> features, Double ratings, Integer reviews, String productDiscount, String deliveryTime, BigDecimal freeDeliveryThreshold, byte[] productImage, List<byte[]> productSubImages, boolean deleted) {
       this.productId = productId;
       this.productName = productName;
       this.productCategory = productCategory;
+      this.productSubCategory = productSubCategory;
       this.productFoodType = productFoodType;
       this.skuNumber = skuNumber;
       this.nameOnCake = nameOnCake;
@@ -174,7 +170,7 @@ public class ProductEntity {
       this.freeDeliveryThreshold = freeDeliveryThreshold;
       this.productImage = productImage;
       this.productSubImages = productSubImages;
-      this.deleted = deleted; // Updated parameter name
+      this.deleted = deleted;
    }
 
    // Getters and Setters
@@ -448,5 +444,13 @@ public class ProductEntity {
 
    public void setDeleted(boolean deleted) {
       this.deleted = deleted;
+   }
+
+   public String getProductSubCategory() {
+      return productSubCategory;
+   }
+
+   public void setProductSubCategory(String productSubCategory) {
+      this.productSubCategory = productSubCategory;
    }
 }
