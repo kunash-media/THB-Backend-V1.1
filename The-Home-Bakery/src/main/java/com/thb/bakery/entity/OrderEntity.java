@@ -2,7 +2,6 @@ package com.thb.bakery.entity;
 
 import jakarta.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,6 @@ public class OrderEntity {
     private UserEntity user;
 
     private String shippingAddress;
-    private String shippingAddress2;
     private String shippingCity;
     private String shippingState;
     private String shippingPincode;
@@ -58,17 +56,47 @@ public class OrderEntity {
 
     private String orderStatus;
 
-    @Column(name = "order_date")
-    private LocalDate orderDate;
 
-    @Column(name = "delivery_date")
-    private LocalDate deliveryDate;
+    //====== NEW Fields added ======//
+
+    @Column(name = "order_date_time")
+    private String orderDateTime;
+
+    @Column(name = "delivery_date_time")
+    private String deliveryDateTime;
+
+    @Column(name = "recipient_name")
+    private String recipientName;
+
+    @Column(name = "recipient_mobile")
+    private String recipientMobile;
+
+    @Column(name = "gift_msg", columnDefinition = "LONGTEXT")
+    private String giftMessage;
+
+    @Column(name = "order_type")
+    private String orderType;
+
+    @Column(name = "address_type")
+    private String addressType;
+
+    @Column(name = "house_no")
+    private String houseNo;
+
+    @Column(name = "street_area")
+    private String streetArea;
+
+    @Column(name = "landmark")
+    private String landmark;
+
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<OrderItemEntity> orderItems = new ArrayList<>();
 
+
     // Constructors
     public OrderEntity() {}
+
 
     // Getters and Setters
     public Long getOrderId() {
@@ -95,13 +123,6 @@ public class OrderEntity {
         this.shippingAddress = shippingAddress;
     }
 
-    public String getShippingAddress2() {
-        return shippingAddress2;
-    }
-
-    public void setShippingAddress2(String shippingAddress2) {
-        this.shippingAddress2 = shippingAddress2;
-    }
 
     public String getShippingCity() {
         return shippingCity;
@@ -255,21 +276,6 @@ public class OrderEntity {
         this.orderStatus = orderStatus;
     }
 
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public LocalDate getDeliveryDate() {
-        return deliveryDate;
-    }
-
-    public void setDeliveryDate(LocalDate deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
 
     public List<OrderItemEntity> getOrderItems() {
         return orderItems;
@@ -277,5 +283,85 @@ public class OrderEntity {
 
     public void setOrderItems(List<OrderItemEntity> orderItems) {
         this.orderItems = orderItems;
+    }
+
+    public String getRecipientName() {
+        return recipientName;
+    }
+
+    public void setRecipientName(String recipientName) {
+        this.recipientName = recipientName;
+    }
+
+    public String getRecipientMobile() {
+        return recipientMobile;
+    }
+
+    public void setRecipientMobile(String recipientMobile) {
+        this.recipientMobile = recipientMobile;
+    }
+
+    public String getGiftMessage() {
+        return giftMessage;
+    }
+
+    public void setGiftMessage(String giftMessage) {
+        this.giftMessage = giftMessage;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
+    }
+
+    public String getDeliveryDateTime() {
+        return deliveryDateTime;
+    }
+
+    public void setDeliveryDateTime(String deliveryDateTime) {
+        this.deliveryDateTime = deliveryDateTime;
+    }
+
+    public String getOrderDateTime() {
+        return orderDateTime;
+    }
+
+    public void setOrderDateTime(String orderDateTime) {
+        this.orderDateTime = orderDateTime;
+    }
+
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreetArea() {
+        return streetArea;
+    }
+
+    public void setStreetArea(String streetArea) {
+        this.streetArea = streetArea;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
     }
 }

@@ -1,31 +1,23 @@
-2025-10-27T00:13:50.808+05:30  INFO 19468 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.CouponController   : Received request to get all coupons
-2025-10-27T00:13:50.839+05:30  INFO 19468 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.CouponServiceImpl    : Fetching all coupons
-2025-10-27T00:13:50.884+05:30  INFO 19468 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.CouponServiceImpl    : Retrieved 0 coupons
-2025-10-27T00:34:38.129+05:30  INFO 19468 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-27T00:34:38.152+05:30  INFO 19468 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-10-27T00:34:38.190+05:30  INFO 19468 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-27T00:34:38.214+05:30  INFO 19468 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-10-27T00:34:38.231+05:30  INFO 19468 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-10-27T01:04:20.688+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 18392 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-10-27T01:04:20.693+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-10-27T01:04:20.812+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-10-27T01:04:20.813+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-10-27T01:04:20.813+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-10-27T01:04:23.234+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-27T01:04:23.798+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 529 ms. Found 25 JPA repository interfaces.
-2025-10-27T01:04:25.825+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-10-27T01:04:25.866+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-27T01:04:25.867+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-10-27T01:04:26.030+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-27T01:04:26.031+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5217 ms
-2025-10-27T01:04:26.652+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-27T01:04:26.930+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-10-27T01:04:27.050+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-27T01:04:28.090+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-27T01:04:28.184+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-27T01:04:29.163+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@775ec43b
-2025-10-27T01:04:29.170+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-10-27T01:04:29.476+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-10-30T00:05:44.548+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 18540 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-10-30T00:05:44.562+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-30T00:05:44.679+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-10-30T00:05:44.680+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-30T00:05:44.680+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-30T00:05:46.316+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-30T00:05:46.698+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 364 ms. Found 25 JPA repository interfaces.
+2025-10-30T00:05:47.883+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-10-30T00:05:47.909+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-30T00:05:47.909+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-30T00:05:47.986+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-30T00:05:47.986+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3304 ms
+2025-10-30T00:05:48.375+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-30T00:05:48.467+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-30T00:05:48.525+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-30T00:05:49.068+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-30T00:05:49.116+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-30T00:05:49.417+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bc58dac
+2025-10-30T00:05:49.420+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-30T00:05:49.571+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -33,39 +25,44 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-10-27T01:04:34.283+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-27T01:04:34.841+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-27T01:04:35.985+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-10-27T01:04:41.548+05:30  WARN 18392 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-27T01:04:42.625+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-10-27T01:04:42.990+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-10-27T01:04:43.092+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-10-27T01:04:43.125+05:30  INFO 18392 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 23.603 seconds (process running for 24.68)
-2025-10-27T01:05:00.340+05:30  INFO 18392 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-27T01:05:00.353+05:30  INFO 18392 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-10-27T01:05:00.368+05:30  INFO 18392 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-27T01:05:00.382+05:30  INFO 18392 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-10-27T01:05:00.407+05:30  INFO 18392 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-10-27T01:12:15.192+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 18492 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-10-27T01:12:15.196+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-10-27T01:12:15.318+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-10-27T01:12:15.319+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-10-27T01:12:15.320+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-10-27T01:12:17.109+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-27T01:12:17.415+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 282 ms. Found 25 JPA repository interfaces.
-2025-10-27T01:12:18.678+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-10-27T01:12:18.709+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-27T01:12:18.709+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-10-27T01:12:18.811+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-27T01:12:18.812+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3490 ms
-2025-10-27T01:12:19.216+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-27T01:12:19.316+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-10-27T01:12:19.382+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-27T01:12:20.073+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-27T01:12:20.146+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-27T01:12:20.546+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12801d43
-2025-10-27T01:12:20.549+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-10-27T01:12:20.752+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-10-30T00:05:52.327+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-30T00:05:52.621+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-30T00:05:53.247+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-30T00:05:56.678+05:30  WARN 18540 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30T00:05:57.328+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-10-30T00:05:57.522+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-30T00:05:57.595+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-10-30T00:05:57.614+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 14.03 seconds (process running for 15.031)
+2025-10-30T00:06:14.729+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30T00:06:14.730+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-30T00:06:14.732+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-30T00:06:14.857+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Canceling order with ID: 6
+2025-10-30T00:06:15.170+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 6
+2025-10-30T00:10:05.867+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-30T00:10:05.884+05:30  INFO 18540 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-30T00:10:05.908+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-30T00:10:05.927+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-30T00:10:05.962+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-30T00:10:17.287+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 12988 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-10-30T00:10:17.293+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-30T00:10:17.416+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-10-30T00:10:17.416+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-30T00:10:17.417+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-30T00:10:19.279+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-30T00:10:19.691+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 386 ms. Found 25 JPA repository interfaces.
+2025-10-30T00:10:21.002+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-10-30T00:10:21.041+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-30T00:10:21.042+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-30T00:10:21.131+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-30T00:10:21.131+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3713 ms
+2025-10-30T00:10:21.497+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-30T00:10:21.585+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-30T00:10:21.647+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-30T00:10:22.191+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-30T00:10:22.245+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-30T00:10:22.552+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@93de3cd
+2025-10-30T00:10:22.555+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-30T00:10:22.671+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -73,21 +70,65 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-10-27T01:12:24.233+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-27T01:12:24.766+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-27T01:12:25.530+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-10-27T01:12:29.147+05:30  WARN 18492 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-27T01:12:29.877+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-10-27T01:12:30.087+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-10-27T01:12:30.134+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-10-27T01:12:30.149+05:30  INFO 18492 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 15.993 seconds (process running for 18.606)
-2025-10-27T01:12:41.171+05:30  INFO 18492 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-27T01:12:41.173+05:30  INFO 18492 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-10-27T01:12:41.179+05:30  INFO 18492 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2025-10-27T01:12:41.369+05:30  INFO 18492 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Get cart request received for userId: 1
-2025-10-27T01:12:41.933+05:30  INFO 18492 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 1
-2025-10-27T01:12:56.070+05:30  INFO 18492 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-27T01:12:56.091+05:30  INFO 18492 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-10-27T01:12:56.119+05:30  INFO 18492 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-27T01:12:56.139+05:30  INFO 18492 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-10-27T01:12:56.172+05:30  INFO 18492 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-30T00:10:25.244+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-30T00:10:25.555+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-30T00:10:26.227+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-30T00:10:29.442+05:30  WARN 12988 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30T00:10:30.026+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-10-30T00:10:30.190+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-30T00:10:30.235+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-10-30T00:10:30.253+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 13.978 seconds (process running for 15.092)
+2025-10-30T00:10:37.085+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30T00:10:37.086+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-30T00:10:37.089+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-30T00:10:37.199+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Canceling order with ID: 5
+2025-10-30T00:10:37.424+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 5
+2025-10-30T00:12:44.645+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-30T00:12:44.672+05:30  INFO 12988 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-30T00:12:44.697+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-30T00:12:44.718+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-30T00:12:44.761+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-30T00:12:54.892+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 5356 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-10-30T00:12:54.897+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-10-30T00:12:55.010+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-10-30T00:12:55.011+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-30T00:12:55.011+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-30T00:12:58.120+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-30T00:12:58.737+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 558 ms. Found 25 JPA repository interfaces.
+2025-10-30T00:13:01.308+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-10-30T00:13:01.359+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-30T00:13:01.359+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-30T00:13:01.516+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-30T00:13:01.518+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6505 ms
+2025-10-30T00:13:02.154+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-30T00:13:02.320+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-30T00:13:02.425+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-30T00:13:03.417+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-30T00:13:03.519+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-30T00:13:04.063+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@93de3cd
+2025-10-30T00:13:04.070+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-30T00:13:04.328+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-30T00:13:08.691+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-30T00:13:09.205+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-30T00:13:10.310+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-10-30T00:13:16.239+05:30  WARN 5356 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-30T00:13:17.187+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-10-30T00:13:17.483+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-30T00:13:17.568+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-10-30T00:13:17.600+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 23.744 seconds (process running for 24.82)
+2025-10-30T00:14:21.055+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-30T00:14:21.056+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-30T00:14:21.058+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-10-30T00:14:21.158+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.OrderController  : Fetching order with id: 1
+2025-10-30T00:53:11.185+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-30T00:53:11.197+05:30  INFO 5356 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-30T00:53:11.205+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-30T00:53:11.210+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-30T00:53:11.214+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

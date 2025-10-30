@@ -49,6 +49,10 @@ public class OrderRequestDTO {
     private String specialInstructions;
     private String deliveryType = "HOME_DELIVERY";
 
+    private String recipientName;
+    private String recipientMobile;
+    private String giftMessage;
+
     @NotEmpty(message = "Order items cannot be empty")
     private List<OrderItemRequest> items;
 
@@ -57,7 +61,12 @@ public class OrderRequestDTO {
 
     public OrderRequestDTO(Long userId, String customerName, String customerPhone, String customerEmail,
                            String shippingAddress, String shippingCity, String shippingState,
-                           String shippingPincode, String paymentMethod, List<OrderItemRequest> items) {
+                           String shippingPincode, String shippingCountry, String paymentMethod,
+                           String billingAddress, String billingCity, String billingState,
+                           String billingPincode, String billingCountry, Boolean shippingIsBilling,
+                           String couponCode, String specialInstructions, String deliveryType,
+                           String recipientName, String recipientMobile, String giftMessage,
+                           List<OrderItemRequest> items) {
         this.userId = userId;
         this.customerName = customerName;
         this.customerPhone = customerPhone;
@@ -66,7 +75,20 @@ public class OrderRequestDTO {
         this.shippingCity = shippingCity;
         this.shippingState = shippingState;
         this.shippingPincode = shippingPincode;
+        this.shippingCountry = shippingCountry;
         this.paymentMethod = paymentMethod;
+        this.billingAddress = billingAddress;
+        this.billingCity = billingCity;
+        this.billingState = billingState;
+        this.billingPincode = billingPincode;
+        this.billingCountry = billingCountry;
+        this.shippingIsBilling = shippingIsBilling;
+        this.couponCode = couponCode;
+        this.specialInstructions = specialInstructions;
+        this.deliveryType = deliveryType;
+        this.recipientName = recipientName;
+        this.recipientMobile = recipientMobile;
+        this.giftMessage = giftMessage;
         this.items = items;
     }
 
@@ -131,19 +153,27 @@ public class OrderRequestDTO {
     public List<OrderItemRequest> getItems() { return items; }
     public void setItems(List<OrderItemRequest> items) { this.items = items; }
 
-    @Override
-    public String toString() {
-        return "OrderRequestDTO{" +
-                "userId=" + userId +
-                ", customerName='" + customerName + '\'' +
-                ", customerPhone='" + customerPhone + '\'' +
-                ", customerEmail='" + customerEmail + '\'' +
-                ", shippingAddress='" + shippingAddress + '\'' +
-                ", shippingCity='" + shippingCity + '\'' +
-                ", shippingState='" + shippingState + '\'' +
-                ", shippingPincode='" + shippingPincode + '\'' +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", itemsCount=" + (items != null ? items.size() : 0) +
-                '}';
+    public String getRecipientName() {
+        return recipientName;
+    }
+
+    public void setRecipientName(String recipientName) {
+        this.recipientName = recipientName;
+    }
+
+    public String getRecipientMobile() {
+        return recipientMobile;
+    }
+
+    public void setRecipientMobile(String recipientMobile) {
+        this.recipientMobile = recipientMobile;
+    }
+
+    public String getGiftMessage() {
+        return giftMessage;
+    }
+
+    public void setGiftMessage(String giftMessage) {
+        this.giftMessage = giftMessage;
     }
 }

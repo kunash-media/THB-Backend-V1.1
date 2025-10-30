@@ -193,6 +193,28 @@ public class ShippingAddressServiceImpl implements ShippingAddressService {
                 logger.debug("Updated shipping country");
             }
 
+            // === NEW FIELDS ADDED ===
+            if (StringUtils.hasText(addressDTO.getAddressType())) {
+                addressEntity.setAddressType(addressDTO.getAddressType());
+                updateCount++;
+                logger.debug("Updated address type");
+            }
+            if (StringUtils.hasText(addressDTO.getHouseNo())) {
+                addressEntity.setHouseNo(addressDTO.getHouseNo());
+                updateCount++;
+                logger.debug("Updated house no");
+            }
+            if (StringUtils.hasText(addressDTO.getStreetArea())) {
+                addressEntity.setStreetArea(addressDTO.getStreetArea());
+                updateCount++;
+                logger.debug("Updated street area");
+            }
+            if (StringUtils.hasText(addressDTO.getLandmark())) {
+                addressEntity.setLandmark(addressDTO.getLandmark());
+                updateCount++;
+                logger.debug("Updated landmark");
+            }
+
             if (updateCount == 0) {
                 logger.warn("No fields to update for address ID: {}", shippingId);
                 throw new RuntimeException("No valid fields provided for update");
@@ -281,6 +303,14 @@ public class ShippingAddressServiceImpl implements ShippingAddressService {
             validationErrors.add("Shipping country is required");
         }
 
+        // === NEW: Required for create ===
+        if (!StringUtils.hasText(addressDTO.getAddressType())) {
+            validationErrors.add("Address type is required");
+        }
+        if (!StringUtils.hasText(addressDTO.getHouseNo())) {
+            validationErrors.add("House no is required");
+        }
+
         if (!validationErrors.isEmpty()) {
             String errorMessage = String.join(", ", validationErrors);
             logger.warn("Address validation failed: {}", errorMessage);
@@ -304,7 +334,11 @@ public class ShippingAddressServiceImpl implements ShippingAddressService {
                 StringUtils.hasText(addressDTO.getShippingCity()) ||
                 StringUtils.hasText(addressDTO.getShippingState()) ||
                 StringUtils.hasText(addressDTO.getShippingPincode()) ||
-                StringUtils.hasText(addressDTO.getShippingCountry());
+                StringUtils.hasText(addressDTO.getShippingCountry()) ||
+                StringUtils.hasText(addressDTO.getAddressType()) ||
+                StringUtils.hasText(addressDTO.getHouseNo()) ||
+                StringUtils.hasText(addressDTO.getStreetArea()) ||
+                StringUtils.hasText(addressDTO.getLandmark());
 
         if (!hasValidField) {
             logger.warn("No valid fields provided for address update");

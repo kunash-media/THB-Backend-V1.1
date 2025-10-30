@@ -12,6 +12,11 @@ public class ShippingAddressDTO {
     private String shippingPincode;
     private String shippingCountry;
 
+    private String addressType;
+    private String houseNo;
+    private String streetArea;
+    private String landmark;
+
     public Long getShippingId() {
         return shippingId;
     }
@@ -74,5 +79,37 @@ public class ShippingAddressDTO {
 
     public void setShippingCountry(String shippingCountry) {
         this.shippingCountry = shippingCountry;
+    }
+
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreetArea() {
+        return streetArea;
+    }
+
+    public void setStreetArea(String streetArea) {
+        this.streetArea = streetArea;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
     }
 }

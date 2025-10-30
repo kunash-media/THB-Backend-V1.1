@@ -1,14 +1,13 @@
 package com.thb.bakery.dto.request;
 
+
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 public class CreateOrderRequest {
 
     private Long userId;
     private String shippingAddress;
-    private String shippingAddress2;
     private String shippingCity;
     private String shippingState;
     private String shippingPincode;
@@ -23,12 +22,22 @@ public class CreateOrderRequest {
     private String couponApplied;
     private BigDecimal discountPercent;
     private BigDecimal discountAmount;
-    private LocalDate orderDate;
-    private LocalDate deliveryDate;
-    private String deliveryTime;
-    private String specialInstructions;
-    private String cakeMessage;
+
     private String couponAppliedCode;
+
+    private String addressType;
+    private String houseNo;
+    private String streetArea;
+    private String landmark;
+
+    private String orderDateTime;
+    private String deliveryDateTime;
+    private String recipientName;
+    private String recipientMobile;
+    private String giftMessage;
+
+    private String orderType;
+
     private List<OrderItemRequest> items;
 
     // Constructors
@@ -51,13 +60,6 @@ public class CreateOrderRequest {
         this.shippingAddress = shippingAddress;
     }
 
-    public String getShippingAddress2() {
-        return shippingAddress2;
-    }
-
-    public void setShippingAddress2(String shippingAddress2) {
-        this.shippingAddress2 = shippingAddress2;
-    }
 
     public String getShippingCity() {
         return shippingCity;
@@ -171,47 +173,8 @@ public class CreateOrderRequest {
         this.discountAmount = discountAmount;
     }
 
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
 
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public LocalDate getDeliveryDate() {
-        return deliveryDate;
-    }
-
-    public void setDeliveryDate(LocalDate deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-
-    public String getDeliveryTime() {
-        return deliveryTime;
-    }
-
-    public void setDeliveryTime(String deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
-
-    public String getSpecialInstructions() {
-        return specialInstructions;
-    }
-
-    public void setSpecialInstructions(String specialInstructions) {
-        this.specialInstructions = specialInstructions;
-    }
-
-    public String getCakeMessage() {
-        return cakeMessage;
-    }
-
-    public void setCakeMessage(String cakeMessage) {
-        this.cakeMessage = cakeMessage;
-    }
-
-    public String getCouponAppliedCode() {
+      public String getCouponAppliedCode() {
         return couponAppliedCode;
     }
 
@@ -226,4 +189,86 @@ public class CreateOrderRequest {
     public void setItems(List<OrderItemRequest> items) {
         this.items = items;
     }
+
+    public String getDeliveryDateTime() {
+        return deliveryDateTime;
+    }
+
+    public void setDeliveryDateTime(String deliveryDateTime) {
+        this.deliveryDateTime = deliveryDateTime;
+    }
+
+    public String getRecipientName() {
+        return recipientName;
+    }
+
+    public void setRecipientName(String recipientName) {
+        this.recipientName = recipientName;
+    }
+
+    public String getRecipientMobile() {
+        return recipientMobile;
+    }
+
+    public void setRecipientMobile(String recipientMobile) {
+        this.recipientMobile = recipientMobile;
+    }
+
+    public String getGiftMessage() {
+        return giftMessage;
+    }
+
+    public void setGiftMessage(String giftMessage) {
+        this.giftMessage = giftMessage;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
+    }
+
+    public String getOrderDateTime() {
+        return orderDateTime;
+    }
+
+    public void setOrderDateTime(String orderDateTime) {
+        this.orderDateTime = orderDateTime;
+    }
+
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreetArea() {
+        return streetArea;
+    }
+
+    public void setStreetArea(String streetArea) {
+        this.streetArea = streetArea;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
+    }
+
+
 }

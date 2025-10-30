@@ -41,14 +41,29 @@ public class ShippingAddressEntity {
     @Column(name = "shipping_country")
     private String shippingCountry;
 
+    @Column(name = "address_type")
+    private String addressType;
+
+    @Column(name = "house_no")
+    private String houseNo;
+
+    @Column(name = "street_area")
+    private String streetArea;
+
+    @Column(name = "landmark")
+    private String landmark;
+
     // Default constructor
     public ShippingAddressEntity() {
     }
 
     // Parameterized constructor
-    public ShippingAddressEntity(UserEntity user, String customerPhone, String customerEmail, String shippingAddress,
-                                 String shippingCity, String shippingState, String shippingPincode,
-                                 String shippingCountry) {
+
+    public ShippingAddressEntity(Long shippingId, UserEntity user, String customerPhone,
+                                 String customerEmail, String shippingAddress, String shippingCity,
+                                 String shippingState, String shippingPincode, String shippingCountry,
+                                 String addressType, String houseNo, String streetArea, String landmark) {
+        this.shippingId = shippingId;
         this.user = user;
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
@@ -57,6 +72,10 @@ public class ShippingAddressEntity {
         this.shippingState = shippingState;
         this.shippingPincode = shippingPincode;
         this.shippingCountry = shippingCountry;
+        this.addressType = addressType;
+        this.houseNo = houseNo;
+        this.streetArea = streetArea;
+        this.landmark = landmark;
     }
 
     @Override
@@ -145,4 +164,35 @@ public class ShippingAddressEntity {
         this.shippingCountry = shippingCountry;
     }
 
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreetArea() {
+        return streetArea;
+    }
+
+    public void setStreetArea(String streetArea) {
+        this.streetArea = streetArea;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
+    }
 }

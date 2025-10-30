@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
+
 import java.util.List;
 import java.util.Map;
 
@@ -118,21 +118,21 @@ public class OrderController {
         }
     }
 
-    @GetMapping("/date-range")
-    public ResponseEntity<List<OrderResponse>> getOrdersByDateRange(
-            @RequestParam String startDate,
-            @RequestParam String endDate) {
-        try {
-            logger.info("Fetching orders by date range: {} to {}", startDate, endDate);
-            LocalDate start = LocalDate.parse(startDate);
-            LocalDate end = LocalDate.parse(endDate);
-            List<OrderResponse> orders = orderService.getOrdersByDateRange(start, end);
-            return ResponseEntity.ok(orders);
-        } catch (Exception e) {
-            logger.error("Error fetching orders by date range: {} to {}", startDate, endDate, e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
+//    @GetMapping("/date-range")
+//    public ResponseEntity<List<OrderResponse>> getOrdersByDateRange(
+//            @RequestParam String startDate,
+//            @RequestParam String endDate) {
+//        try {
+//            logger.info("Fetching orders by date range: {} to {}", startDate, endDate);
+//            LocalDate start = LocalDate.parse(startDate);
+//            LocalDate end = LocalDate.parse(endDate);
+//            List<OrderResponse> orders = orderService.getOrdersByDateRange(start, end);
+//            return ResponseEntity.ok(orders);
+//        } catch (Exception e) {
+//            logger.error("Error fetching orders by date range: {} to {}", startDate, endDate, e);
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+//        }
+//    }
 
     @PostMapping("/{orderId}/cancel")
     public ResponseEntity<Map<String, String>> cancelOrder(@PathVariable Long orderId) {
@@ -140,7 +140,7 @@ public class OrderController {
             logger.info("Canceling order with ID: {}", orderId);
             orderService.cancelOrder(orderId);
             return ResponseEntity.ok(Map.of(
-                    "message", "Order canceled successfully. In case of any issues, contact: 8983448510",
+                    "message", "Order cancelled successfully",
                     "orderId", orderId.toString()
             ));
         } catch (Exception e) {
@@ -156,7 +156,7 @@ public class OrderController {
             logger.info("Canceling order with ID: {} via PATCH", orderId);
             orderService.cancelOrder(orderId);
             return ResponseEntity.ok(Map.of(
-                    "message", "Order canceled successfully. In case of any issues, contact: 8983448510",
+                    "message", "Order cancelled successfully.",
                     "orderId", orderId.toString()
             ));
         } catch (Exception e) {

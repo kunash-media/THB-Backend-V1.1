@@ -26,7 +26,7 @@ public interface OrderService {
 
     List<OrderResponse> getOrdersByStatus(String orderStatus);
 
-    List<OrderResponse> getOrdersByDateRange(LocalDate startDate, LocalDate endDate);
+//    List<OrderResponse> getOrdersByDateRange(LocalDate startDate, LocalDate endDate);
 
     OrderResponse updateOrderStatus(Long orderId, String status);
 

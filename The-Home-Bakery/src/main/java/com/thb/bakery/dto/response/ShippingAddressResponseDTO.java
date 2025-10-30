@@ -10,13 +10,19 @@ public class ShippingAddressResponseDTO {
     private String shippingPincode;
     private String shippingCountry;
 
+    private String addressType;
+    private String houseNo;
+    private String streetArea;
+    private String landmark;
+
     // Default constructor
     public ShippingAddressResponseDTO() {}
 
     // Parameterized constructor
     public ShippingAddressResponseDTO(Long shippingId, String customerPhone, String customerEmail,
                                       String shippingAddress, String shippingCity, String shippingState,
-                                      String shippingPincode, String shippingCountry) {
+                                      String shippingPincode, String shippingCountry, String addressType,
+                                      String houseNo, String streetArea, String landmark) {
         this.shippingId = shippingId;
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
@@ -25,6 +31,10 @@ public class ShippingAddressResponseDTO {
         this.shippingState = shippingState;
         this.shippingPincode = shippingPincode;
         this.shippingCountry = shippingCountry;
+        this.addressType = addressType;
+        this.houseNo = houseNo;
+        this.streetArea = streetArea;
+        this.landmark = landmark;
     }
 
     // Getters and Setters
@@ -51,4 +61,36 @@ public class ShippingAddressResponseDTO {
 
     public String getShippingCountry() { return shippingCountry; }
     public void setShippingCountry(String shippingCountry) { this.shippingCountry = shippingCountry; }
+
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreetArea() {
+        return streetArea;
+    }
+
+    public void setStreetArea(String streetArea) {
+        this.streetArea = streetArea;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
+    }
 }

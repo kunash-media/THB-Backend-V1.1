@@ -117,12 +117,12 @@ public class OrderServiceImpl implements OrderService {
 
     private OrderEntity createOrderEntity(CreateOrderRequest request, UserEntity user) {
         OrderEntity order = new OrderEntity();
+
         order.setUser(user);
         order.setCustomerName(request.getCustomerName());
         order.setCustomerPhone(request.getCustomerPhone());
         order.setCustomerEmail(request.getCustomerEmail());
         order.setShippingAddress(request.getShippingAddress());
-        order.setShippingAddress2(request.getShippingAddress2());
         order.setShippingCity(request.getShippingCity());
         order.setShippingState(request.getShippingState());
         order.setShippingPincode(request.getShippingPincode());
@@ -131,12 +131,23 @@ public class OrderServiceImpl implements OrderService {
         order.setShippingEmail(request.getShippingEmail());
         order.setShippingPhone(request.getShippingPhone());
         order.setPaymentMethod(request.getPaymentMethod());
-        order.setCouponAmount(request.getDiscountAmount()); // Map discountAmount to couponAmount
+        order.setCouponAmount(request.getDiscountAmount());
         order.setCouponAppliedCode(request.getCouponApplied() != null ? request.getCouponApplied() : request.getCouponAppliedCode());
         order.setDiscountPercent(request.getDiscountPercent());
         order.setDiscountAmount(request.getDiscountAmount());
-        order.setOrderDate(request.getOrderDate());
-        order.setDeliveryDate(request.getDeliveryDate());
+
+        // NEW FIELDS MAPPED
+        order.setOrderDateTime(request.getOrderDateTime());
+        order.setDeliveryDateTime(request.getDeliveryDateTime());
+        order.setRecipientName(request.getRecipientName());
+        order.setRecipientMobile(request.getRecipientMobile());
+        order.setGiftMessage(request.getGiftMessage());
+        order.setOrderType(request.getOrderType());
+        order.setAddressType(request.getAddressType());
+        order.setHouseNo(request.getHouseNo());
+        order.setStreetArea(request.getStreetArea());
+        order.setLandmark(request.getLandmark());
+
         order.setOrderStatus("placed");
         return order;
     }
@@ -236,7 +247,7 @@ public class OrderServiceImpl implements OrderService {
                 order.getOrderId(),
                 order.getTotalAmount(),
                 order.getOrderStatus(),
-                order.getOrderDate(),
+                order.getOrderDateTime(),
                 "Order placed successfully! In case of any delivery issues, please contact: 8983448510"
         );
 
@@ -246,13 +257,12 @@ public class OrderServiceImpl implements OrderService {
         response.setConvenienceFee(order.getConvenienceFee());
         response.setDiscountPercent(order.getDiscountPercent());
         response.setDiscountAmount(order.getDiscountAmount());
-        response.setDeliveryDate(order.getDeliveryDate());
+        response.setDeliveryDateTime(order.getDeliveryDateTime());
         response.setPaymentMethod(order.getPaymentMethod());
         response.setCustomerName(order.getCustomerName());
         response.setCustomerPhone(order.getCustomerPhone());
         response.setCustomerEmail(order.getCustomerEmail());
         response.setShippingAddress(order.getShippingAddress());
-        response.setShippingAddress2(order.getShippingAddress2());
         response.setShippingCity(order.getShippingCity());
         response.setShippingState(order.getShippingState());
         response.setShippingPincode(order.getShippingPincode());
@@ -260,6 +270,17 @@ public class OrderServiceImpl implements OrderService {
         response.setShippingCustomerName(order.getShippingCustomerName());
         response.setShippingEmail(order.getShippingEmail());
         response.setShippingPhone(order.getShippingPhone());
+
+        // NEW FIELDS IN RESPONSE
+        response.setRecipientName(order.getRecipientName());
+        response.setRecipientMobile(order.getRecipientMobile());
+        response.setGiftMessage(order.getGiftMessage());
+        response.setOrderType(order.getOrderType());
+        response.setAddressType(order.getAddressType());
+        response.setHouseNo(order.getHouseNo());
+        response.setStreetArea(order.getStreetArea());
+        response.setLandmark(order.getLandmark());
+
         response.setItems(createOrderItemResponses(order.getOrderItems()));
 
         return response;
@@ -277,6 +298,9 @@ public class OrderServiceImpl implements OrderService {
             itemResponse.setSelectedWeight(item.getSelectedWeight());
             itemResponse.setCakeMessage(item.getCakeMessage());
             itemResponse.setSpecialInstructions(item.getSpecialInstructions());
+            // ADD THIS LINE
+            itemResponse.setProductImage("http://localhost:8082/api/v1/products/" +
+                    item.getProduct().getProductId() + "/image");
             itemResponse.setPartyItems(createPartyItemResponses(item.getPartyItems()));
             return itemResponse;
         }).collect(Collectors.toList());
@@ -385,18 +409,18 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-    @Override
-    public List<OrderResponse> getOrdersByDateRange(LocalDate startDate, LocalDate endDate) {
-        try {
-            List<OrderEntity> orders = orderRepository.findByOrderDateBetween(startDate, endDate);
-            return orders.stream()
-                    .map(this::createSuccessResponse)
-                    .collect(Collectors.toList());
-        } catch (Exception e) {
-            logger.error("Error fetching orders by date range: {} to {}", startDate, endDate, e);
-            throw new RuntimeException("Failed to fetch orders by date range: " + e.getMessage());
-        }
-    }
+//    @Override
+//    public List<OrderResponse> getOrdersByDateRange(LocalDate startDate, LocalDate endDate) {
+//        try {
+//            List<OrderEntity> orders = orderRepository.findByOrderDateBetween(startDate, endDate);
+//            return orders.stream()
+//                    .map(this::createSuccessResponse)
+//                    .collect(Collectors.toList());
+//        } catch (Exception e) {
+//            logger.error("Error fetching orders by date range: {} to {}", startDate, endDate, e);
+//            throw new RuntimeException("Failed to fetch orders by date range: " + e.getMessage());
+//        }
+//    }
 
     @Override
     @Transactional
@@ -452,12 +476,12 @@ public class OrderServiceImpl implements OrderService {
         int lastMonthYear = today.minusMonths(1).getYear();
 
         Map<String, Object> stats = new HashMap<>();
-        stats.put("todayOrders", orderRepository.countOrdersByDate(today));
-        stats.put("yesterdayOrders", orderRepository.countOrdersByDate(yesterday));
-        stats.put("thisMonthOrders", orderRepository.countOrdersByMonth(currentYear, currentMonth));
-        stats.put("lastMonthOrders", orderRepository.countOrdersByMonth(lastMonthYear, lastMonth));
-        stats.put("allTimeSales", orderRepository.getTotalSales());
-        stats.put("totalOrders", orderRepository.countTotalOrders());
+//        stats.put("todayOrders", orderRepository.countOrdersByDate(today));
+//        stats.put("yesterdayOrders", orderRepository.countOrdersByDate(yesterday));
+//        stats.put("thisMonthOrders", orderRepository.countOrdersByMonth(currentYear, currentMonth));
+//        stats.put("lastMonthOrders", orderRepository.countOrdersByMonth(lastMonthYear, lastMonth));
+//        stats.put("allTimeSales", orderRepository.getTotalSales());
+//        stats.put("totalOrders", orderRepository.countTotalOrders());
 
         // Order status counts
         Map<String, Long> statusCounts = new HashMap<>();

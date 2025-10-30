@@ -1,7 +1,6 @@
 package com.thb.bakery.dto.response;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 public class OrderResponse {
@@ -18,15 +17,11 @@ public class OrderResponse {
     private BigDecimal discountPercent;
     private BigDecimal discountAmount;
     private String orderStatus;
-    private LocalDate orderDate;
-    private LocalDate deliveryDate;
-    private String deliveryTime;
     private String paymentMethod;
     private String customerName;
     private String customerPhone;
     private String customerEmail;
     private String shippingAddress;
-    private String shippingAddress2;
     private String shippingCity;
     private String shippingState;
     private String shippingPincode;
@@ -34,19 +29,30 @@ public class OrderResponse {
     private String shippingCustomerName;
     private String shippingEmail;
     private String shippingPhone;
-    private String specialInstructions;
-    private String cakeMessage;
+
+    private String orderDateTime;
+    private String deliveryDateTime;
+    private String recipientName;
+    private String recipientMobile;
+    private String giftMessage;
+    private String orderType;
+
+    private String addressType;
+    private String houseNo;
+    private String streetArea;
+    private String landmark;
+
     private List<OrderItemResponse> items;
 
     // Constructors
     public OrderResponse() {}
 
-    public OrderResponse(boolean success, Long orderId, BigDecimal totalAmount, String orderStatus, LocalDate orderDate, String message) {
+    public OrderResponse(boolean success, Long orderId, BigDecimal totalAmount, String orderStatus, String orderDateTime, String message) {
         this.success = success;
         this.orderId = orderId;
         this.totalAmount = totalAmount;
         this.orderStatus = orderStatus;
-        this.orderDate = orderDate;
+        this.orderDateTime = orderDateTime;
         this.message = message;
         this.status = success ? "success" : "error";
     }
@@ -155,29 +161,6 @@ public class OrderResponse {
         this.orderStatus = orderStatus;
     }
 
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public LocalDate getDeliveryDate() {
-        return deliveryDate;
-    }
-
-    public void setDeliveryDate(LocalDate deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
-
-    public String getDeliveryTime() {
-        return deliveryTime;
-    }
-
-    public void setDeliveryTime(String deliveryTime) {
-        this.deliveryTime = deliveryTime;
-    }
 
     public String getPaymentMethod() {
         return paymentMethod;
@@ -217,14 +200,6 @@ public class OrderResponse {
 
     public void setShippingAddress(String shippingAddress) {
         this.shippingAddress = shippingAddress;
-    }
-
-    public String getShippingAddress2() {
-        return shippingAddress2;
-    }
-
-    public void setShippingAddress2(String shippingAddress2) {
-        this.shippingAddress2 = shippingAddress2;
     }
 
     public String getShippingCity() {
@@ -283,21 +258,6 @@ public class OrderResponse {
         this.shippingPhone = shippingPhone;
     }
 
-    public String getSpecialInstructions() {
-        return specialInstructions;
-    }
-
-    public void setSpecialInstructions(String specialInstructions) {
-        this.specialInstructions = specialInstructions;
-    }
-
-    public String getCakeMessage() {
-        return cakeMessage;
-    }
-
-    public void setCakeMessage(String cakeMessage) {
-        this.cakeMessage = cakeMessage;
-    }
 
     public List<OrderItemResponse> getItems() {
         return items;
@@ -305,5 +265,85 @@ public class OrderResponse {
 
     public void setItems(List<OrderItemResponse> items) {
         this.items = items;
+    }
+
+    public String getDeliveryDateTime() {
+        return deliveryDateTime;
+    }
+
+    public void setDeliveryDateTime(String deliveryDateTime) {
+        this.deliveryDateTime = deliveryDateTime;
+    }
+
+    public String getRecipientName() {
+        return recipientName;
+    }
+
+    public void setRecipientName(String recipientName) {
+        this.recipientName = recipientName;
+    }
+
+    public String getRecipientMobile() {
+        return recipientMobile;
+    }
+
+    public void setRecipientMobile(String recipientMobile) {
+        this.recipientMobile = recipientMobile;
+    }
+
+    public String getGiftMessage() {
+        return giftMessage;
+    }
+
+    public void setGiftMessage(String giftMessage) {
+        this.giftMessage = giftMessage;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
+    }
+
+    public String getOrderDateTime() {
+        return orderDateTime;
+    }
+
+    public void setOrderDateTime(String orderDateTime) {
+        this.orderDateTime = orderDateTime;
+    }
+
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreetArea() {
+        return streetArea;
+    }
+
+    public void setStreetArea(String streetArea) {
+        this.streetArea = streetArea;
+    }
+
+    public String getLandmark() {
+        return landmark;
+    }
+
+    public void setLandmark(String landmark) {
+        this.landmark = landmark;
     }
 }
