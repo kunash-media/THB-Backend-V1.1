@@ -1,23 +1,23 @@
-2025-10-30T00:05:44.548+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 18540 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-10-30T00:05:44.562+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-10-30T00:05:44.679+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-10-30T00:05:44.680+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-10-30T00:05:44.680+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-10-30T00:05:46.316+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-30T00:05:46.698+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 364 ms. Found 25 JPA repository interfaces.
-2025-10-30T00:05:47.883+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-10-30T00:05:47.909+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-30T00:05:47.909+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-10-30T00:05:47.986+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-30T00:05:47.986+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3304 ms
-2025-10-30T00:05:48.375+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-30T00:05:48.467+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-10-30T00:05:48.525+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-30T00:05:49.068+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-30T00:05:49.116+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-30T00:05:49.417+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1bc58dac
-2025-10-30T00:05:49.420+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-10-30T00:05:49.571+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-04T00:40:27.441+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 15764 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-04T00:40:27.462+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-04T00:40:27.642+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-04T00:40:27.642+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-04T00:40:27.642+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-04T00:40:33.440+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-04T00:40:33.755+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 284 ms. Found 27 JPA repository interfaces.
+2025-11-04T00:40:35.242+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-04T00:40:35.274+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-04T00:40:35.274+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-04T00:40:35.368+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-04T00:40:35.369+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7726 ms
+2025-11-04T00:40:35.747+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-04T00:40:35.867+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-04T00:40:35.937+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-04T00:40:36.535+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-04T00:40:36.597+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-04T00:40:36.936+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6dee0b74
+2025-11-04T00:40:36.938+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-04T00:40:37.104+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -25,44 +25,154 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-10-30T00:05:52.327+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-30T00:05:52.621+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-30T00:05:53.247+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-10-30T00:05:56.678+05:30  WARN 18540 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-30T00:05:57.328+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-10-30T00:05:57.522+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-10-30T00:05:57.595+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-10-30T00:05:57.614+05:30  INFO 18540 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 14.03 seconds (process running for 15.031)
-2025-10-30T00:06:14.729+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-30T00:06:14.730+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-10-30T00:06:14.732+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-10-30T00:06:14.857+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Canceling order with ID: 6
-2025-10-30T00:06:15.170+05:30  INFO 18540 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 6
-2025-10-30T00:10:05.867+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-30T00:10:05.884+05:30  INFO 18540 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-10-30T00:10:05.908+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-30T00:10:05.927+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-10-30T00:10:05.962+05:30  INFO 18540 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-10-30T00:10:17.287+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 12988 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-10-30T00:10:17.293+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-10-30T00:10:17.416+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-10-30T00:10:17.416+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-10-30T00:10:17.417+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-10-30T00:10:19.279+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-30T00:10:19.691+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 386 ms. Found 25 JPA repository interfaces.
-2025-10-30T00:10:21.002+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-10-30T00:10:21.041+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-30T00:10:21.042+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-10-30T00:10:21.131+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-30T00:10:21.131+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3713 ms
-2025-10-30T00:10:21.497+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-30T00:10:21.585+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-10-30T00:10:21.647+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-30T00:10:22.191+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-30T00:10:22.245+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-30T00:10:22.552+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@93de3cd
-2025-10-30T00:10:22.555+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-10-30T00:10:22.671+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-04T00:40:39.842+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-04T00:40:41.622+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T00:40:42.402+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-04T00:40:43.294+05:30  WARN 15764 --- [The-Home-Bakery] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceController': Unsatisfied dependency expressed through field 'attendanceService': Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceRepository': Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+2025-11-04T00:40:43.295+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T00:40:43.303+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-04T00:40:43.324+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-04T00:40:43.329+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-11-04T00:40:43.349+05:30  INFO 15764 --- [The-Home-Bakery] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-04T00:40:43.386+05:30 ERROR 15764 --- [The-Home-Bakery] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceController': Unsatisfied dependency expressed through field 'attendanceService': Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceRepository': Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.thb.bakery.TheHomeBakeryApplication.main(TheHomeBakeryApplication.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.5.jar:3.5.5]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceRepository': Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1752) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1690) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 39 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:120) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:104) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:92) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.Optional.map(Optional.java:260) ~[na:na]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:92) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:434) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$4(RepositoryFactoryBeanSupport.java:350) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.util.Lazy.get(Lazy.java:113) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:356) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 48 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:107) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:128) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:260) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:99) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:116) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	... 60 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:455) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:465) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:384) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:366) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:344) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:259) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727) ~[na:na]
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:260) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:389) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727) ~[na:na]
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:390) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:103) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:101) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	... 64 common frames omitted
+
+2025-11-04T18:06:32.089+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 30260 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-04T18:06:32.093+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-04T18:06:32.228+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-04T18:06:32.229+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-04T18:06:32.230+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-04T18:06:40.112+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-04T18:06:40.498+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 366 ms. Found 27 JPA repository interfaces.
+2025-11-04T18:06:42.005+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-04T18:06:42.037+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-04T18:06:42.037+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-04T18:06:42.140+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-04T18:06:42.141+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9910 ms
+2025-11-04T18:06:42.572+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-04T18:06:42.722+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-04T18:06:42.812+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-04T18:06:43.583+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-04T18:06:43.652+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-04T18:06:44.037+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@235b7970
+2025-11-04T18:06:44.043+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-04T18:06:44.224+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -70,44 +180,154 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-10-30T00:10:25.244+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-30T00:10:25.555+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-30T00:10:26.227+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-10-30T00:10:29.442+05:30  WARN 12988 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-30T00:10:30.026+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-10-30T00:10:30.190+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-10-30T00:10:30.235+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-10-30T00:10:30.253+05:30  INFO 12988 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 13.978 seconds (process running for 15.092)
-2025-10-30T00:10:37.085+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-30T00:10:37.086+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-10-30T00:10:37.089+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-10-30T00:10:37.199+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Canceling order with ID: 5
-2025-10-30T00:10:37.424+05:30  INFO 12988 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 5
-2025-10-30T00:12:44.645+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-30T00:12:44.672+05:30  INFO 12988 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-10-30T00:12:44.697+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-30T00:12:44.718+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-10-30T00:12:44.761+05:30  INFO 12988 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-10-30T00:12:54.892+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 5356 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-10-30T00:12:54.897+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-10-30T00:12:55.010+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-10-30T00:12:55.011+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-10-30T00:12:55.011+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-10-30T00:12:58.120+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-10-30T00:12:58.737+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 558 ms. Found 25 JPA repository interfaces.
-2025-10-30T00:13:01.308+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-10-30T00:13:01.359+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-10-30T00:13:01.359+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-10-30T00:13:01.516+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-10-30T00:13:01.518+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6505 ms
-2025-10-30T00:13:02.154+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-10-30T00:13:02.320+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-10-30T00:13:02.425+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-10-30T00:13:03.417+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-10-30T00:13:03.519+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-10-30T00:13:04.063+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@93de3cd
-2025-10-30T00:13:04.070+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-10-30T00:13:04.328+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-04T18:06:47.665+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-04T18:06:48.546+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T18:06:49.849+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-04T18:06:50.833+05:30  WARN 30260 --- [The-Home-Bakery] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceController': Unsatisfied dependency expressed through field 'attendanceService': Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceRepository': Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+2025-11-04T18:06:50.834+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T18:06:50.871+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-04T18:06:50.890+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-04T18:06:50.898+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-11-04T18:06:50.948+05:30  INFO 30260 --- [The-Home-Bakery] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-04T18:06:51.009+05:30 ERROR 30260 --- [The-Home-Bakery] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceController': Unsatisfied dependency expressed through field 'attendanceService': Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceRepository': Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.5.jar:3.5.5]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.5.jar:3.5.5]
+	at com.thb.bakery.TheHomeBakeryApplication.main(TheHomeBakeryApplication.java:27) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.5.jar:3.5.5]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'attendanceServiceImpl': Unsatisfied dependency expressed through field 'attendanceRepository': Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1459) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1752) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'attendanceRepository' defined in com.thb.bakery.repository.AttendanceRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1690) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 39 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); Reason: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:120) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:104) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:92) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.Optional.map(Optional.java:260) ~[na:na]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:92) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:434) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$4(RepositoryFactoryBeanSupport.java:350) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:135) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.util.Lazy.get(Lazy.java:113) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:356) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 48 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract void com.thb.bakery.repository.AttendanceRepository.deleteByStaffId(java.lang.Long); No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:107) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:128) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:260) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:99) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:116) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	... 60 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'id' found for type 'StaffEntity'; Traversed path: AttendanceEntity.staff
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:94) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:455) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:465) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:488) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:431) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:384) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330) ~[na:na]
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:366) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:344) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:259) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727) ~[na:na]
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:260) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:389) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:215) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:727) ~[na:na]
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:390) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:103) ~[spring-data-commons-3.5.3.jar:3.5.3]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:101) ~[spring-data-jpa-3.5.3.jar:3.5.3]
+	... 64 common frames omitted
+
+2025-11-04T18:14:09.363+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 34204 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-04T18:14:09.366+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-04T18:14:09.473+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-04T18:14:09.473+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-04T18:14:09.473+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-04T18:14:11.331+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-04T18:14:11.670+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 322 ms. Found 27 JPA repository interfaces.
+2025-11-04T18:14:12.966+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-04T18:14:12.992+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-04T18:14:12.992+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-04T18:14:13.088+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-04T18:14:13.089+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3615 ms
+2025-11-04T18:14:13.511+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-04T18:14:13.596+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-04T18:14:13.654+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-04T18:14:14.232+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-04T18:14:14.299+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-04T18:14:14.624+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@62c4eeb4
+2025-11-04T18:14:14.631+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-04T18:14:14.822+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -115,20 +335,140 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-10-30T00:13:08.691+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-10-30T00:13:09.205+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-10-30T00:13:10.310+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-10-30T00:13:16.239+05:30  WARN 5356 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-10-30T00:13:17.187+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-10-30T00:13:17.483+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-10-30T00:13:17.568+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-10-30T00:13:17.600+05:30  INFO 5356 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 23.744 seconds (process running for 24.82)
-2025-10-30T00:14:21.055+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-10-30T00:14:21.056+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-10-30T00:14:21.058+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-10-30T00:14:21.158+05:30  INFO 5356 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.OrderController  : Fetching order with id: 1
-2025-10-30T00:53:11.185+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-10-30T00:53:11.197+05:30  INFO 5356 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-10-30T00:53:11.205+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-10-30T00:53:11.210+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-10-30T00:53:11.214+05:30  INFO 5356 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-04T18:14:17.755+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-04T18:14:18.193+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T18:14:18.909+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-04T18:14:22.619+05:30  WARN 34204 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-04T18:14:23.270+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-11-04T18:14:23.455+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-04T18:14:23.508+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-11-04T18:14:23.525+05:30  INFO 34204 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 15.137 seconds (process running for 16.137)
+2025-11-04T18:19:30.475+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-04T18:19:30.476+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-04T18:19:30.479+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-11-04T18:19:30.702+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:19:30.705+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:19:31.033+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 0 staff members
+2025-11-04T18:19:31.034+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 0 staff members
+2025-11-04T18:19:31.107+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:19:31.108+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:19:31.114+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 0 staff members
+2025-11-04T18:19:31.116+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 0 staff members
+2025-11-04T18:19:51.308+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.StaffController  : 🟢 POST /api/staff - Creating new staff: sumer khan
+2025-11-04T18:19:51.309+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Starting staff creation process. Name: sumer khan, Email: sumer@example.com, Role: manager
+2025-11-04T18:19:51.531+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Staff created successfully! ID: 1, Name: sumer khan, Email: sumer@example.com
+2025-11-04T18:19:51.531+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.StaffController  : ✅ Successfully created staff: sumer khan (ID: 1)
+2025-11-04T18:19:51.593+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:19:51.594+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:19:51.632+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:19:51.634+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:19:51.649+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:19:51.649+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:19:51.659+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:19:51.659+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:19:58.025+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff/1 - Retrieving staff by ID
+2025-11-04T18:19:58.025+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving staff by ID: 1
+2025-11-04T18:19:58.072+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved staff. ID: 1, Name: sumer khan
+2025-11-04T18:19:58.072+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved staff: sumer khan (ID: 1)
+2025-11-04T18:20:19.676+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:20:19.677+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:20:19.690+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:20:19.690+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:20:19.716+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.controller.AttendanceController    : 📥 Getting attendance for date: 2025-11-04
+2025-11-04T18:20:19.717+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.s.AttendanceServiceImpl          : 🟢 Getting attendance for date: 2025-11-04
+2025-11-04T18:20:19.759+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.s.AttendanceServiceImpl          : ✅ Found 0 attendance records for date: 2025-11-04
+2025-11-04T18:20:19.760+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.controller.AttendanceController    : ✅ Found 0 attendance records for date: 2025-11-04
+2025-11-04T18:21:31.183+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.StaffController  : 🟢 POST /api/staff/1/bonuses - Adding bonus for staff
+2025-11-04T18:21:31.184+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.BonusServiceImpl     : 🟢 Starting bonus addition process. StaffId: 1, Month: 2025-11, Amount: 3600.0, Date: 2025-11-04
+2025-11-04T18:21:31.217+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.BonusServiceImpl     : 🎉 Bonus added successfully! Staff: sumer khan, Bonus ID: 1, Amount: 3600.0, Month: 2025-11
+2025-11-04T18:21:31.218+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.StaffController  : ✅ Successfully added bonus for staff ID: 1
+2025-11-04T18:21:52.225+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff/1/salary-slip - Generating salary slip for month: 2025-11-01
+2025-11-04T18:21:52.225+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.s.SalarySlipServiceImpl          : 🟢 Starting salary slip generation. StaffId: 1, Month: 2025-11-01
+2025-11-04T18:21:52.260+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.s.SalarySlipServiceImpl          : ✅ Salary slip generated successfully for staff: sumer khan
+2025-11-04T18:21:52.261+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.StaffController  : ✅ Successfully generated salary slip for staff ID: 1, month: 2025-11-01
+2025-11-04T18:21:52.278+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff/1 - Retrieving staff by ID
+2025-11-04T18:21:52.279+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving staff by ID: 1
+2025-11-04T18:21:52.293+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved staff. ID: 1, Name: sumer khan
+2025-11-04T18:21:52.294+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved staff: sumer khan (ID: 1)
+2025-11-04T18:23:24.131+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : 🟢 POST /api/staff/1/incentives - Adding incentive for staff
+2025-11-04T18:23:24.132+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.s.IncentiveServiceImpl           : 🟢 Starting incentive addition process. StaffId: 1, Month: 2025-11, Amount: 3000.0, Date: 2025-11-04
+2025-11-04T18:23:24.257+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.s.IncentiveServiceImpl           : 🎉 Incentive added successfully! Staff: sumer khan, Incentive ID: 1, Amount: 3000.0, Month: 2025-11
+2025-11-04T18:23:24.258+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : ✅ Successfully added incentive for staff ID: 1
+2025-11-04T18:23:38.181+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:23:38.182+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:23:38.194+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:23:38.195+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:23:38.213+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.controller.AttendanceController    : 📥 Getting attendance for date: 2025-11-04
+2025-11-04T18:23:38.213+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.s.AttendanceServiceImpl          : 🟢 Getting attendance for date: 2025-11-04
+2025-11-04T18:23:38.219+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.s.AttendanceServiceImpl          : ✅ Found 0 attendance records for date: 2025-11-04
+2025-11-04T18:23:38.219+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.controller.AttendanceController    : ✅ Found 0 attendance records for date: 2025-11-04
+2025-11-04T18:23:50.556+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.controller.AttendanceController    : 📥 Received attendance mark request for staff: 1
+2025-11-04T18:23:50.556+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.s.AttendanceServiceImpl          : 🟢 Marking attendance for staff: 1, Date: 2025-11-04
+2025-11-04T18:23:50.591+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.s.AttendanceServiceImpl          : ✅ Attendance marked successfully. Staff: sumer khan, Date: 2025-11-04, Status: PRESENT
+2025-11-04T18:23:50.591+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.controller.AttendanceController    : ✅ Attendance marked successfully for staff: 1
+2025-11-04T18:25:59.727+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:25:59.727+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:25:59.738+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:25:59.738+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:25:59.745+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:25:59.746+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:25:59.758+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:25:59.758+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:26:21.928+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:26:21.928+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:26:21.939+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:26:21.939+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:26:21.944+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:26:21.945+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:26:21.956+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:26:21.957+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:26:32.188+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:26:32.189+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:26:32.203+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:26:32.203+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:26:32.239+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.controller.AttendanceController    : 📥 Getting attendance for date: 2025-11-04
+2025-11-04T18:26:32.239+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.s.AttendanceServiceImpl          : 🟢 Getting attendance for date: 2025-11-04
+2025-11-04T18:26:32.259+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.s.AttendanceServiceImpl          : ✅ Found 1 attendance records for date: 2025-11-04
+2025-11-04T18:26:32.265+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.controller.AttendanceController    : ✅ Found 1 attendance records for date: 2025-11-04
+2025-11-04T18:27:03.710+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:27:03.710+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:27:03.722+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:27:03.723+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:27:03.729+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:27:03.730+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:27:03.740+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:27:03.741+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:27:11.115+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:27:11.116+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:27:11.130+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:27:11.130+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:27:11.139+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:27:11.140+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:27:11.153+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:27:11.154+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:31:52.985+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:31:52.985+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:31:52.996+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:31:52.996+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:31:53.002+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T18:31:53.002+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T18:31:53.011+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T18:31:53.011+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T18:33:40.011+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff/1 - Retrieving staff by ID
+2025-11-04T18:33:40.012+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving staff by ID: 1
+2025-11-04T18:33:40.028+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved staff. ID: 1, Name: sumer khan
+2025-11-04T18:33:40.028+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved staff: sumer khan (ID: 1)
+2025-11-04T19:00:16.930+05:30  WARN 34204 --- [The-Home-Bakery] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m32s119ms906µs500ns).
+2025-11-04T19:15:41.011+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : 🟢 GET /api/staff - Retrieving all staff with filters: search=null, role=null, status=null
+2025-11-04T19:15:41.013+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🟢 Retrieving all staff with filters. Search: null, Role: null, Status: null
+2025-11-04T19:15:41.039+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.StaffServiceImpl     : 🎉 Successfully retrieved 1 staff members
+2025-11-04T19:15:41.040+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.StaffController  : ✅ Successfully retrieved 1 staff members
+2025-11-04T19:15:41.057+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.controller.AttendanceController    : 📥 Getting attendance for date: 2025-11-04
+2025-11-04T19:15:41.058+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.s.AttendanceServiceImpl          : 🟢 Getting attendance for date: 2025-11-04
+2025-11-04T19:15:41.066+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.s.AttendanceServiceImpl          : ✅ Found 1 attendance records for date: 2025-11-04
+2025-11-04T19:15:41.069+05:30  INFO 34204 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.controller.AttendanceController    : ✅ Found 1 attendance records for date: 2025-11-04
+2025-11-04T19:17:38.684+05:30  INFO 34204 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-04T19:17:38.703+05:30  INFO 34204 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-04T19:17:38.899+05:30  INFO 34204 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-04T19:17:39.135+05:30  INFO 34204 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-04T19:17:39.144+05:30  INFO 34204 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -33,11 +33,14 @@ public class RawMaterialResponseDto {
         private Double amount;
         private String method;
 
-        public PaymentDto(LocalDate date, Double amount, String method) {
-        }
-        public PaymentDto(){
+        public PaymentDto(){}
 
+        public PaymentDto(LocalDate date, Double amount, String method) {
+            this.date = date;
+            this.amount = amount;
+            this.method = method;
         }
+
         public LocalDate getDate() {
             return date;
         }

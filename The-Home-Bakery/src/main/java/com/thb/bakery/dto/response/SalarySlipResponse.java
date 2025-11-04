@@ -1,7 +1,6 @@
 package com.thb.bakery.dto.response;
 
 public class SalarySlipResponse {
-
     private String staffName;
     private String role;
     private String email;
@@ -11,88 +10,43 @@ public class SalarySlipResponse {
     private Double baseSalary;
     private Double bonus;
     private Double advance;
+    private Double incentive; // NEW FIELD
     private Double netSalary;
 
-    // No-arg constructor
+    // Constructors
     public SalarySlipResponse() {}
 
-    public String getStaffName() {
-        return staffName;
-    }
+    // Getters and Setters
+    public String getStaffName() { return staffName; }
+    public void setStaffName(String staffName) { this.staffName = staffName; }
 
-    public void setStaffName(String staffName) {
-        this.staffName = staffName;
-    }
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 
-    public String getRole() {
-        return role;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+    public String getMonth() { return month; }
+    public void setMonth(String month) { this.month = month; }
 
-    public String getEmail() {
-        return email;
-    }
+    public String getDateOfIssue() { return dateOfIssue; }
+    public void setDateOfIssue(String dateOfIssue) { this.dateOfIssue = dateOfIssue; }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public Long getEmployeeId() { return employeeId; }
+    public void setEmployeeId(Long employeeId) { this.employeeId = employeeId; }
 
-    public String getMonth() {
-        return month;
-    }
+    public Double getBaseSalary() { return baseSalary; }
+    public void setBaseSalary(Double baseSalary) { this.baseSalary = baseSalary; }
 
-    public void setMonth(String month) {
-        this.month = month;
-    }
+    public Double getBonus() { return bonus; }
+    public void setBonus(Double bonus) { this.bonus = bonus; }
 
-    public String getDateOfIssue() {
-        return dateOfIssue;
-    }
+    public Double getAdvance() { return advance; }
+    public void setAdvance(Double advance) { this.advance = advance; }
 
-    public void setDateOfIssue(String dateOfIssue) {
-        this.dateOfIssue = dateOfIssue;
-    }
+    public Double getIncentive() { return incentive; } // NEW
+    public void setIncentive(Double incentive) { this.incentive = incentive; } // NEW
 
-    public Long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public Double getBaseSalary() {
-        return baseSalary;
-    }
-
-    public void setBaseSalary(Double baseSalary) {
-        this.baseSalary = baseSalary;
-    }
-
-    public Double getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(Double bonus) {
-        this.bonus = bonus;
-    }
-
-    public Double getAdvance() {
-        return advance;
-    }
-
-    public void setAdvance(Double advance) {
-        this.advance = advance;
-    }
-
-    public Double getNetSalary() {
-        return netSalary;
-    }
-
-    public void setNetSalary(Double netSalary) {
-        this.netSalary = netSalary;
-    }
+    public Double getNetSalary() { return netSalary; }
+    public void setNetSalary(Double netSalary) { this.netSalary = netSalary; }
 }

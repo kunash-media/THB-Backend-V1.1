@@ -2,6 +2,7 @@ package com.thb.bakery.repository;
 
 import com.thb.bakery.entity.AttendanceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -31,4 +32,10 @@ public interface AttendanceRepository extends JpaRepository<AttendanceEntity, Lo
 
     // Check if attendance already exists for staff on date
     boolean existsByStaffStaffidAndAttendanceDate(Long staffId, LocalDate date);
+
+    // ADD THIS METHOD: Delete all attendance records for a specific staff member
+    @Modifying
+    @Query("DELETE FROM AttendanceEntity a WHERE a.staff.staffid = :staffId")
+    void deleteByStaffId(@Param("staffId") Long staffId);
+
 }

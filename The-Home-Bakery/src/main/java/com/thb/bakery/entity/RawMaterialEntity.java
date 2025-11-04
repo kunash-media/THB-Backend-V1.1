@@ -56,10 +56,12 @@ public class RawMaterialEntity {
         private Double amount;
         private String method;
 
-        public Payment(LocalDate date, Double amount, String method) {
-        }
-        public Payment(){
+        public Payment(){}
 
+        public Payment(LocalDate date, Double amount, String method) {
+            this.date = date;
+            this.amount = amount;
+            this.method = method;
         }
 
         public LocalDate getDate() {
