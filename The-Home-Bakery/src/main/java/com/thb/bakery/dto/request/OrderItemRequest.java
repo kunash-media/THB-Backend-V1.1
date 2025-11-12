@@ -4,7 +4,11 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class OrderItemRequest {
+
     private Long productId;
+
+    private Long snackId;
+
     private Integer quantity;
     private String selectedWeight;
     private String cakeMessage;
@@ -19,6 +23,14 @@ public class OrderItemRequest {
     // Getters and Setters
     public Long getProductId() { return productId; }
     public void setProductId(Long productId) { this.productId = productId; }
+
+    public Long getSnackId() {
+        return snackId;
+    }
+
+    public void setSnackId(Long snackId) {
+        this.snackId = snackId;
+    }
 
     public Integer getQuantity() { return quantity; }
     public void setQuantity(Integer quantity) { this.quantity = quantity; }

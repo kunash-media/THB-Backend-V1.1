@@ -22,6 +22,17 @@ public class CartItemEntity {
     @JoinColumn(name = "product_id", nullable = false)
     private ProductEntity product;
 
+
+    // --- SNACK (NEW) ---
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "snack_id", nullable = true)
+    private SnacksEntity snack;
+
+    // --- ITEM TYPE (for clarity & future use) ---
+    @Column(name = "item_type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ItemType itemType;  // PRODUCT or SNACK
+
     // --- Many-to-Many with Addon ---
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
@@ -42,6 +53,10 @@ public class CartItemEntity {
 
     public CartItemEntity() {}
 
+    public enum ItemType {
+        PRODUCT, SNACK
+    }
+
     public CartItemEntity(Long id, Long userId, ProductEntity product, Integer quantity, String size, LocalDateTime addedDate, Set<Addon> addons) {
         this.id = id;
         this.userId = userId;
@@ -51,6 +66,8 @@ public class CartItemEntity {
         this.addedDate = addedDate;
         this.addons = addons != null ? addons : new HashSet<>();
     }
+
+
 
     // Getters and Setters
     public Long getId() { return id; }
@@ -75,4 +92,19 @@ public class CartItemEntity {
     public void setAddedDate(LocalDateTime addedDate) { this.addedDate = addedDate; }
 
 
+    public SnacksEntity getSnack() {
+        return snack;
+    }
+
+    public void setSnack(SnacksEntity snack) {
+        this.snack = snack;
+    }
+
+    public ItemType getItemType() {
+        return itemType;
+    }
+
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
+    }
 }

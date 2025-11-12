@@ -42,4 +42,6 @@ public interface OrderRepository extends JpaRepository<OrderEntity, Long> {
 
     @Query("SELECT SUM(o.totalAmount) FROM OrderEntity o WHERE o.user.userId = :userId")
     BigDecimal sumSpendsByUserId(@Param("userId") Long userId);
+
+
 }

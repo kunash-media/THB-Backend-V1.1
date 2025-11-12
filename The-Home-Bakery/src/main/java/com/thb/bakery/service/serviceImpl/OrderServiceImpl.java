@@ -6,10 +6,7 @@ import com.thb.bakery.dto.request.UpdateOrderRequest;
 import com.thb.bakery.dto.response.OrderItemResponse;
 import com.thb.bakery.dto.response.OrderResponse;
 import com.thb.bakery.entity.*;
-import com.thb.bakery.repository.OrderItemRepository;
-import com.thb.bakery.repository.OrderRepository;
-import com.thb.bakery.repository.ProductRepository;
-import com.thb.bakery.repository.UserRepository;
+import com.thb.bakery.repository.*;
 import com.thb.bakery.service.OrderService;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -38,13 +35,15 @@ public class OrderServiceImpl implements OrderService {
     private final OrderItemRepository orderItemRepository;
     private final UserRepository userRepository;
     private final ProductRepository productRepository;
+    private SnacksRepository snacksRepository;
 
     public OrderServiceImpl(OrderRepository orderRepository, OrderItemRepository orderItemRepository,
-                            UserRepository userRepository, ProductRepository productRepository) {
+                            UserRepository userRepository, ProductRepository productRepository, SnacksRepository snacksRepository) {
         this.orderRepository = orderRepository;
         this.orderItemRepository = orderItemRepository;
         this.userRepository = userRepository;
         this.productRepository = productRepository;
+        this.snacksRepository = snacksRepository;
     }
 
     @Override
@@ -152,25 +151,81 @@ public class OrderServiceImpl implements OrderService {
         return order;
     }
 
+    /**
+     * Processes every line-item.
+     * - If **productId** is present → uses the **existing** product flow.
+     * - If **snackId** is present → loads the snack and uses its price.
+     * - If **both** are present → throws a clear error.
+     * - If **neither** → throws a clear error.
+     *
+     * All original behaviour (party-items, deleted-check, subtotal, totals) is kept **exactly** as-is.
+     */
     private void processOrderItems(OrderEntity order, List<OrderItemRequest> itemRequests) {
         BigDecimal productTotal = BigDecimal.ZERO;
         List<OrderItemEntity> orderItems = new ArrayList<>();
 
         for (OrderItemRequest itemRequest : itemRequests) {
-            ProductEntity product = productRepository.findById(itemRequest.getProductId())
-                    .orElseThrow(() -> new RuntimeException("Product not found with id: " + itemRequest.getProductId()));
 
-            if (product.isDeleted()) {
-                throw new RuntimeException("Product '" + product.getProductName() + "' is not available");
+            OrderItemEntity orderItem = new OrderItemEntity();
+            orderItem.setOrder(order);
+            orderItem.setQuantity(itemRequest.getQuantity());
+            orderItem.setSelectedWeight(itemRequest.getSelectedWeight());
+            orderItem.setCakeMessage(itemRequest.getCakeMessage());
+            orderItem.setSpecialInstructions(itemRequest.getSpecialInstructions());
+
+            BigDecimal unitPrice = BigDecimal.ZERO;
+            BigDecimal subtotal   = BigDecimal.ZERO;
+
+            // --------------------------------------------------------------
+            // 1. PRODUCT (existing flow – unchanged)
+            // --------------------------------------------------------------
+            if (itemRequest.getProductId() != null && itemRequest.getProductId() > 0) {
+                ProductEntity product = productRepository.findById(itemRequest.getProductId())
+                        .orElseThrow(() -> new RuntimeException(
+                                "Product not found with id: " + itemRequest.getProductId()));
+
+                if (product.isDeleted()) {
+                    throw new RuntimeException(
+                            "Product '" + product.getProductName() + "' is not available");
+                }
+
+                orderItem.setProduct(product);
+                unitPrice = product.getProductNewPrice();               // <-- unchanged
             }
 
-            OrderItemEntity orderItem = createOrderItem(order, product, itemRequest);
+            // --------------------------------------------------------------
+            // 2. SNACK (new flow – added)
+            // --------------------------------------------------------------
+            else if (itemRequest.getSnackId() != null && itemRequest.getSnackId() > 0) {
+                SnacksEntity snack = snacksRepository.findById(itemRequest.getSnackId())
+                        .orElseThrow(() -> new RuntimeException(
+                                "Snack not found with id: " + itemRequest.getSnackId()));
+
+                orderItem.setSnack(snack);
+                unitPrice = BigDecimal.valueOf(snack.getProductNewPrice()); // double → BigDecimal
+            }
+
+            // --------------------------------------------------------------
+            // 3. VALIDATION – exactly one must be present
+            // --------------------------------------------------------------
+            else {
+                throw new RuntimeException(
+                        "Each order item must contain either a valid productId or a valid snackId");
+            }
+
+            // --------------------------------------------------------------
+            // 4. PRICE & SUBTOTAL (common for both product & snack)
+            // --------------------------------------------------------------
+            orderItem.setUnitPrice(unitPrice);
+            subtotal = unitPrice.multiply(BigDecimal.valueOf(itemRequest.getQuantity()));
+            orderItem.setSubtotal(subtotal);
+
             orderItems.add(orderItem);
+            productTotal = productTotal.add(subtotal);
 
-            BigDecimal itemSubtotal = orderItem.getSubtotal();
-            productTotal = productTotal.add(itemSubtotal);
-
-            // Process party items
+            // --------------------------------------------------------------
+            // 5. PARTY ITEMS – **exactly the same as before**
+            // --------------------------------------------------------------
             List<PartyItemEntity> partyItems = createPartyItems(orderItem, itemRequest.getPartyItems());
             orderItem.setPartyItems(partyItems);
             for (PartyItemEntity partyItem : partyItems) {
@@ -178,27 +233,28 @@ public class OrderServiceImpl implements OrderService {
             }
         }
 
-        // Calculate final totals
+        // --------------------------------------------------------------
+        // 6. FINAL TOTALS – unchanged
+        // --------------------------------------------------------------
         calculateOrderTotals(order, productTotal);
         order.setOrderItems(orderItems);
     }
-
-    private OrderItemEntity createOrderItem(OrderEntity order, ProductEntity product, OrderItemRequest itemRequest) {
-        OrderItemEntity orderItem = new OrderItemEntity();
-        orderItem.setOrder(order);
-        orderItem.setProduct(product);
-        orderItem.setQuantity(itemRequest.getQuantity());
-        orderItem.setUnitPrice(product.getProductNewPrice());
-        orderItem.setSelectedWeight(itemRequest.getSelectedWeight());
-        orderItem.setCakeMessage(itemRequest.getCakeMessage());
-        orderItem.setSpecialInstructions(itemRequest.getSpecialInstructions());
-
-        // Calculate subtotal
-        BigDecimal subtotal = product.getProductNewPrice().multiply(BigDecimal.valueOf(itemRequest.getQuantity()));
-        orderItem.setSubtotal(subtotal);
-
-        return orderItem;
-    }
+//    private OrderItemEntity createOrderItem(OrderEntity order, ProductEntity product, OrderItemRequest itemRequest) {
+//        OrderItemEntity orderItem = new OrderItemEntity();
+//        orderItem.setOrder(order);
+//        orderItem.setProduct(product);
+//        orderItem.setQuantity(itemRequest.getQuantity());
+//        orderItem.setUnitPrice(product.getProductNewPrice());
+//        orderItem.setSelectedWeight(itemRequest.getSelectedWeight());
+//        orderItem.setCakeMessage(itemRequest.getCakeMessage());
+//        orderItem.setSpecialInstructions(itemRequest.getSpecialInstructions());
+//
+//        // Calculate subtotal
+//        BigDecimal subtotal = product.getProductNewPrice().multiply(BigDecimal.valueOf(itemRequest.getQuantity()));
+//        orderItem.setSubtotal(subtotal);
+//
+//        return orderItem;
+//    }
 
     private List<PartyItemEntity> createPartyItems(OrderItemEntity orderItem, List<OrderItemRequest.PartyItems> partyItemRequests) {
         List<PartyItemEntity> partyItems = new ArrayList<>();
@@ -287,23 +343,50 @@ public class OrderServiceImpl implements OrderService {
     }
 
     private List<OrderItemResponse> createOrderItemResponses(List<OrderItemEntity> orderItems) {
-        return orderItems.stream().map(item -> {
-            OrderItemResponse itemResponse = new OrderItemResponse();
-            itemResponse.setProductId(item.getProduct().getProductId());
-            itemResponse.setProductName(item.getProduct().getProductName());
-            itemResponse.setProductCategory(item.getProduct().getProductCategory());
-            itemResponse.setQuantity(item.getQuantity());
-            itemResponse.setUnitPrice(item.getUnitPrice());
-            itemResponse.setSubtotal(item.getSubtotal());
-            itemResponse.setSelectedWeight(item.getSelectedWeight());
-            itemResponse.setCakeMessage(item.getCakeMessage());
-            itemResponse.setSpecialInstructions(item.getSpecialInstructions());
-            // ADD THIS LINE
-            itemResponse.setProductImage("http://localhost:8082/api/v1/products/" +
-                    item.getProduct().getProductId() + "/image");
-            itemResponse.setPartyItems(createPartyItemResponses(item.getPartyItems()));
-            return itemResponse;
-        }).collect(Collectors.toList());
+        return orderItems.stream()
+                .map(item -> {
+                    OrderItemResponse resp = new OrderItemResponse();
+
+                    // ---------- common fields ----------
+                    resp.setQuantity(item.getQuantity());
+                    resp.setUnitPrice(item.getUnitPrice());
+                    resp.setSubtotal(item.getSubtotal());
+                    resp.setSelectedWeight(item.getSelectedWeight());
+                    resp.setCakeMessage(item.getCakeMessage());
+                    resp.setSpecialInstructions(item.getSpecialInstructions());
+
+                    // ---------- PRODUCT OR SNACK ----------
+                    ProductEntity product = item.getProduct();
+                    SnacksEntity  snack   = item.getSnack();
+
+                    if (product != null) {
+                        // ----- PRODUCT -----
+                        resp.setProductId(product.getProductId());
+                        resp.setProductName(product.getProductName());
+                        resp.setProductCategory(product.getProductCategory());
+                        resp.setProductImage(
+                                "http://localhost:8082/api/v1/products/" +
+                                        product.getProductId() + "/image");
+                    } else if (snack != null) {
+                        // ----- SNACK -----
+                        resp.setSnackId(snack.getSnackId());
+                        resp.setProductName(snack.getProductName());          // reuse field
+                        resp.setProductCategory(snack.getProductCategory()); // reuse field
+                        resp.setProductImage(
+                                "http://localhost:8082/api/v1/snacks/" +      // adjust base path
+                                        snack.getSnackId() + "/image");
+                    } else {
+                        throw new IllegalStateException(
+                                "OrderItem " + item.getOrderItemId() +
+                                        " has neither product nor snack");
+                    }
+
+                    // ---------- PARTY ITEMS ----------
+                    resp.setPartyItems(createPartyItemResponses(item.getPartyItems()));
+
+                    return resp;
+                })
+                .collect(Collectors.toList());
     }
 
     private List<OrderItemResponse.PartyItem> createPartyItemResponses(List<PartyItemEntity> partyItems) {

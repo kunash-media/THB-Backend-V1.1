@@ -2,6 +2,7 @@ package com.thb.bakery.repository;
 
 import com.thb.bakery.entity.CartItemEntity;
 import com.thb.bakery.entity.ProductEntity;
+import com.thb.bakery.entity.SnacksEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -28,7 +29,22 @@ public interface CartItemRepository extends JpaRepository<CartItemEntity, Long> 
     void deleteByUserId(Long userId);
 
     // Eager fetch with product and addons
-    @Query("SELECT c FROM CartItemEntity c JOIN FETCH c.product LEFT JOIN FETCH c.addons WHERE c.userId = :userId")
+//    @Query("SELECT c FROM CartItemEntity c JOIN FETCH c.product LEFT JOIN FETCH c.addons WHERE c.userId = :userId")
+//    List<CartItemEntity> findByUserIdWithProductAndAddons(@Param("userId") Long userId);
+
+
+//    @Query("SELECT c FROM CartItemEntity c " +
+//            "LEFT JOIN FETCH c.product " +
+//            "LEFT JOIN FETCH c.snack " +
+//            "LEFT JOIN FETCH c.addons " +
+//            "WHERE c.userId = :userId")
+//    List<CartItemEntity> findByUserIdWithProductAndAddons(@Param("userId") Long userId);
+
+    @Query("SELECT c FROM CartItemEntity c " +
+            "LEFT JOIN FETCH c.product " +
+            "LEFT JOIN FETCH c.snack " +
+            "LEFT JOIN FETCH c.addons " +
+            "WHERE c.userId = :userId")
     List<CartItemEntity> findByUserIdWithProductAndAddons(@Param("userId") Long userId);
 
     @Query("SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END FROM CartItemEntity c WHERE c.userId = :userId AND c.product.productId = :productId AND c.size = :size")
@@ -40,4 +56,7 @@ public interface CartItemRepository extends JpaRepository<CartItemEntity, Long> 
     @Query("DELETE FROM CartItemEntity c WHERE c.userId = :userId AND c.product.productId = :productId AND c.size = :size")
     void deleteByUserIdAndProductIdAndSize(@Param("userId") Long userId, @Param("productId") Long productId, @Param("size") String size);
 
+
+    //NEW METHOD QUERY ADDED
+    Optional<CartItemEntity> findByUserIdAndSnackAndSize(Long userId, SnacksEntity snack, String size);
 }

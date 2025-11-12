@@ -6,6 +6,17 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * OrderItemEntity – a line-item of an order.
+ *
+ * ORIGINAL (already in production):
+ *   - @ManyToOne → ProductEntity   (FK column: product_id  → products.product_id)
+ *
+ * NEW (added for snacks):
+ *   - @ManyToOne → SnacksEntity    (FK column: snack_id    → snacks_table.id)
+ *
+ * Both columns can be NULL – the application decides which one to fill.
+ */
 @Entity
 @Table(name = "order_items")
 public class OrderItemEntity {
@@ -20,9 +31,16 @@ public class OrderItemEntity {
     @JsonIgnore
     private OrderEntity order;
 
+    /* ---------- EXISTING PRODUCT (unchanged) ---------- */
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", referencedColumnName = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", referencedColumnName = "product_id", nullable = true)
     private ProductEntity product;
+
+    /* ---------- NEW SNACK REFERENCE (added) ---------- */
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "snack_id", referencedColumnName = "snackId", nullable = true)
+    @JsonIgnore
+    private SnacksEntity snack;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
@@ -45,10 +63,10 @@ public class OrderItemEntity {
     @OneToMany(mappedBy = "orderItem", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<PartyItemEntity> partyItems = new ArrayList<>();
 
-    // Constructors
+    /* ----------------- Constructors ----------------- */
     public OrderItemEntity() {}
 
-    // Getters and Setters
+    /* ----------------- Getters / Setters ----------------- */
     public Long getOrderItemId() {
         return orderItemId;
     }
@@ -65,12 +83,22 @@ public class OrderItemEntity {
         this.order = order;
     }
 
+    /* ----- Product ----- */
     public ProductEntity getProduct() {
         return product;
     }
 
     public void setProduct(ProductEntity product) {
         this.product = product;
+    }
+
+    /* ----- Snack ----- */
+    public SnacksEntity getSnack() {
+        return snack;
+    }
+
+    public void setSnack(SnacksEntity snack) {
+        this.snack = snack;
     }
 
     public Integer getQuantity() {

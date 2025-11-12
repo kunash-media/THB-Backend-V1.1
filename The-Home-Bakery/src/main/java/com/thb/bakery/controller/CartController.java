@@ -3,9 +3,11 @@ package com.thb.bakery.controller;
 import com.thb.bakery.entity.Addon;
 import com.thb.bakery.entity.CartItemEntity;
 import com.thb.bakery.entity.ProductEntity;
+import com.thb.bakery.entity.SnacksEntity;
 import com.thb.bakery.repository.AddonRepository;
 import com.thb.bakery.repository.CartItemRepository;
 import com.thb.bakery.repository.ProductRepository;
+import com.thb.bakery.repository.SnacksRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +26,15 @@ public class CartController {
     @Autowired private CartItemRepository cartItemRepository;
     @Autowired private ProductRepository productRepository;
     @Autowired private AddonRepository addonRepository;
+    @Autowired private SnacksRepository snacksRepository;
 
     @PostMapping("/add-cart-items")
     public ResponseEntity<Map<String, Object>> addToCart(@RequestBody Map<String, Object> request) {
         logger.info("Add to cart request received: {}", request);
         try {
             Long userId = Long.parseLong(request.get("userId").toString());
-            Long productId = Long.parseLong(request.get("productId").toString());
+            Long productId = request.containsKey("productId") ? Long.parseLong(request.get("productId").toString()) : null;
+            Long snackId = request.containsKey("snackId") ? Long.parseLong(request.get("snackId").toString()) : null;
             Integer quantity = Integer.parseInt(request.getOrDefault("quantity", "1").toString());
             String size = request.getOrDefault("size", "free size").toString();
             List<Long> addonIds = request.get("addonIds") != null ?
@@ -38,73 +42,76 @@ public class CartController {
                             .map(id -> Long.parseLong(id.toString()))
                             .collect(Collectors.toList()) : new ArrayList<>();
 
-            logger.debug("Parsed request - userId: {}, productId: {}, quantity: {}, size: {}, addonIds: {}",
-                    userId, productId, quantity, size, addonIds);
-
-            if (userId == null) {
-                logger.warn("Add to cart failed: User ID is null");
-                return ResponseEntity.badRequest().body(Map.of("error", "User ID required"));
+            if (userId == null) return ResponseEntity.badRequest().body(Map.of("error", "User ID required"));
+            if (quantity < 1) return ResponseEntity.badRequest().body(Map.of("error", "Quantity must be positive"));
+            if ((productId == null || productId <= 0) && (snackId == null || snackId <= 0)) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Either productId or snackId is required"));
             }
-            if (quantity < 1) {
-                logger.warn("Add to cart failed: Invalid quantity - {}", quantity);
-                return ResponseEntity.badRequest().body(Map.of("error", "Quantity must be positive"));
+            if (productId != null && snackId != null) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Cannot add both product and snack"));
             }
-
-            // Find the product entity
-            Optional<ProductEntity> productOpt = productRepository.findById(productId);
-            if (productOpt.isEmpty()) {
-                logger.warn("Add to cart failed: Product not found - productId: {}", productId);
-                return ResponseEntity.badRequest().body(Map.of("error", "Product not found"));
-            }
-
-            ProductEntity product = productOpt.get();
-            logger.debug("Product found: {}", product.getProductName());
 
             // Fetch add-ons
             Set<Addon> addons = new HashSet<>();
             if (!addonIds.isEmpty()) {
                 addons = new HashSet<>(addonRepository.findAllById(addonIds));
-                if (addons.size() != addonIds.size()) {
-                    logger.warn("Some add-ons not found - requested: {}, found: {}", addonIds, addons.size());
+            }
+
+            CartItemEntity item;
+            Optional<CartItemEntity> existing;
+
+            if (productId != null) {
+                Optional<ProductEntity> productOpt = productRepository.findById(productId);
+                if (productOpt.isEmpty()) return ResponseEntity.badRequest().body(Map.of("error", "Product not found"));
+                ProductEntity product = productOpt.get();
+
+                existing = cartItemRepository.findByUserIdAndProductAndSize(userId, product, size);
+                if (existing.isPresent()) {
+                    item = existing.get();
+                    item.setQuantity(quantity);
+                    item.setAddons(addons);
+                } else {
+                    item = new CartItemEntity();
+                    item.setUserId(userId);
+                    item.setProduct(product);
+                    item.setItemType(CartItemEntity.ItemType.PRODUCT);
+                    item.setQuantity(quantity);
+                    item.setSize(size);
+                    item.setAddons(addons);
+                }
+            } else {
+                Optional<SnacksEntity> snackOpt = snacksRepository.findById(snackId);
+                if (snackOpt.isEmpty()) return ResponseEntity.badRequest().body(Map.of("error", "Snack not found"));
+                SnacksEntity snack = snackOpt.get();
+
+                existing = cartItemRepository.findByUserIdAndSnackAndSize(userId, snack, size);
+                if (existing.isPresent()) {
+                    item = existing.get();
+                    item.setQuantity(quantity);
+                    item.setAddons(addons);
+                } else {
+                    item = new CartItemEntity();
+                    item.setUserId(userId);
+                    item.setSnack(snack);
+                    item.setItemType(CartItemEntity.ItemType.SNACK);
+                    item.setQuantity(quantity);
+                    item.setSize(size);
+                    item.setAddons(addons);
                 }
             }
 
-            // Check if item already exists in cart
-            Optional<CartItemEntity> existing = cartItemRepository.findByUserIdAndProductAndSize(userId, product, size);
-            CartItemEntity item;
-
-            if (existing.isPresent()) {
-                item = existing.get();
-                item.setQuantity(quantity);
-                item.setAddons(addons);
-                logger.info("Updating existing cart item - cartItemId: {}, new quantity: {}, addons: {}",
-                        item.getId(), quantity, addons.size());
-            } else {
-                item = new CartItemEntity();
-                item.setUserId(userId);
-                item.setProduct(product);
-                item.setQuantity(quantity);
-                item.setSize(size);
-                item.setAddons(addons);
-                logger.info("Creating new cart item for userId: {}, productId: {}, addons: {}",
-                        userId, productId, addons.size());
-            }
-
             cartItemRepository.save(item);
-            logger.info("Cart item saved successfully - cartItemId: {}", item.getId());
 
             return ResponseEntity.ok(Map.of(
                     "status", "success",
                     "message", "Added to cart",
-                    "productId", productId,
-                    "quantity", quantity,
                     "cartItemId", item.getId(),
-                    "addonIds", addonIds
+                    "quantity", quantity
             ));
 
         } catch (Exception e) {
-            logger.error("Error adding to cart: {}", e.getMessage(), e);
-            return ResponseEntity.badRequest().body(Map.of("error", "Invalid request data: " + e.getMessage()));
+            logger.error("Error adding to cart", e);
+            return ResponseEntity.badRequest().body(Map.of("error", "Invalid request: " + e.getMessage()));
         }
     }
 
@@ -113,52 +120,59 @@ public class CartController {
         logger.info("Get cart request received for userId: {}", userId);
 
         if (userId == null) {
-            logger.warn("Get cart failed: User ID is null");
             return ResponseEntity.badRequest().build();
         }
 
         try {
-            // Use the eager fetching method to avoid LazyInitializationException
             List<CartItemEntity> items = cartItemRepository.findByUserIdWithProductAndAddons(userId);
             logger.debug("Found {} cart items for userId: {}", items.size(), userId);
 
             List<Map<String, Object>> response = new ArrayList<>();
 
             for (CartItemEntity item : items) {
-                ProductEntity product = item.getProduct();
-                if (product != null) {
-                    Map<String, Object> map = new HashMap<>();
-                    map.put("cartItemId", item.getId());
-                    map.put("productId", product.getProductId());
-                    map.put("title", product.getProductName());
-                    map.put("price", product.getProductNewPrice());
-                    map.put("imageUrl", "/api/v1/products/" + product.getProductId() + "/image");
-                    map.put("subImageUrls", getSubImageUrls(product.getProductId(), product.getProductSubImages().size()));
-                    map.put("quantity", item.getQuantity());
-                    map.put("size", item.getSize());
-                    map.put("addedDate", item.getAddedDate());
-                    // Add add-ons to the response
-                    List<Map<String, Object>> addonList = item.getAddons().stream().map(addon -> {
-                        Map<String, Object> addonMap = new HashMap<>();
-                        addonMap.put("id", addon.getId());
-                        addonMap.put("itemKey", addon.getItemKey());
-                        addonMap.put("name", addon.getName());
-                        addonMap.put("price", addon.getPrice());
-                        addonMap.put("imageUrl", addon.getImageUrl());
-                        return addonMap;
-                    }).collect(Collectors.toList());
-                    map.put("addons", addonList);
-                    response.add(map);
-                    logger.debug("Added cart item to response - cartItemId: {}, productId: {}, addons: {}",
-                            item.getId(), product.getProductId(), addonList.size());
+                Map<String, Object> map = new HashMap<>();
+                map.put("cartItemId", item.getId());
+                map.put("quantity", item.getQuantity());
+                map.put("size", item.getSize());
+                map.put("addedDate", item.getAddedDate());
+
+                if (item.getItemType() == CartItemEntity.ItemType.PRODUCT && item.getProduct() != null) {
+                    ProductEntity p = item.getProduct();
+                    map.put("productId", p.getProductId());
+                    map.put("title", p.getProductName());
+                    map.put("price", p.getProductNewPrice());
+                    map.put("imageUrl", "/api/v1/products/" + p.getProductId() + "/image");
+                    map.put("subImageUrls", getSubImageUrls(p.getProductId(), p.getProductSubImages().size()));
+                    map.put("itemType", "PRODUCT");
                 }
+                else if (item.getItemType() == CartItemEntity.ItemType.SNACK && item.getSnack() != null) {
+                    SnacksEntity s = item.getSnack();
+                    map.put("snackId", s.getSnackId());
+                    map.put("title", s.getProductName());
+                    map.put("price", s.getProductNewPrice());
+                    map.put("imageUrl", "/api/v1/snacks/" + s.getSnackId() + "/image");
+                    map.put("itemType", "SNACK");
+                }
+
+                List<Map<String, Object>> addonList = item.getAddons().stream().map(addon -> {
+                    Map<String, Object> m = new HashMap<>();
+                    m.put("id", addon.getId());
+                    m.put("itemKey", addon.getItemKey());
+                    m.put("name", addon.getName());
+                    m.put("price", addon.getPrice());
+                    m.put("imageUrl", addon.getImageUrl());
+                    return m;
+                }).collect(Collectors.toList());
+                map.put("addons", addonList);
+
+                response.add(map);
             }
 
             logger.info("Successfully retrieved {} cart items for userId: {}", response.size(), userId);
             return ResponseEntity.ok(response);
 
         } catch (Exception e) {
-            logger.error("Error getting cart for userId {}: {}", userId, e.getMessage(), e);
+            logger.error("Error getting cart", e);
             return ResponseEntity.badRequest().build();
         }
     }

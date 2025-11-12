@@ -6,6 +6,7 @@ import java.util.List;
 public class OrderItemResponse {
 
     private Long productId;
+    private Long snackId;
     private String productName;
     private String productCategory;
     private Integer quantity;
@@ -27,6 +28,14 @@ public class OrderItemResponse {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public Long getSnackId() {
+        return snackId;
+    }
+
+    public void setSnackId(Long snackId) {
+        this.snackId = snackId;
     }
 
     public String getProductName() {
