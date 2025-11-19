@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/thb-admin/api/customize-cakes")
+@RequestMapping("/api/customize-cakes")
 @CrossOrigin("*")
 public class CustomizeCakeController {
     private static final Logger logger = LoggerFactory.getLogger(CustomizeCakeController.class);
@@ -633,8 +633,8 @@ public class CustomizeCakeController {
 
         // Add image URL instead of byte array
         if (responseDTO.getProductImage() != null && responseDTO.getProductImage().length > 0) {
-            enhancedData.put("imageUrl", "/thb-admin/api/customize-cakes/" + responseDTO.getId() + "/image");
-            enhancedData.put("thumbnailUrl", "/thb-admin/api/customize-cakes/" + responseDTO.getId() + "/image/thumbnail");
+            enhancedData.put("imageUrl", "/api/customize-cakes/" + responseDTO.getId() + "/image");
+            enhancedData.put("thumbnailUrl", "/api/customize-cakes/" + responseDTO.getId() + "/image/thumbnail");
             // You can still include the byte array if needed, but typically you'd exclude it
             // enhancedData.put("productImage", responseDTO.getProductImage());
         } else {

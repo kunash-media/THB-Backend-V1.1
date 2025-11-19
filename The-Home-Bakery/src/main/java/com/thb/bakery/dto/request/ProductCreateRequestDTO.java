@@ -7,8 +7,10 @@ public class ProductCreateRequestDTO {
 
     private String productName;
     private String productCategory;
-
     private String productSubCategory;
+
+    private Integer productQuantity;
+
     private String productFoodType;
     private String skuNumber;
     private String nameOnCake;
@@ -41,6 +43,7 @@ public class ProductCreateRequestDTO {
     private List<byte[]> productSubImages;
     private boolean productImagePresent;
     private boolean productSubImagesPresent;
+
 
 
     public ProductCreateRequestDTO(){}
@@ -326,5 +329,13 @@ public class ProductCreateRequestDTO {
 
     public void setProductSubImagesPresent(boolean productSubImagesPresent) {
         this.productSubImagesPresent = productSubImagesPresent;
+    }
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
     }
 }

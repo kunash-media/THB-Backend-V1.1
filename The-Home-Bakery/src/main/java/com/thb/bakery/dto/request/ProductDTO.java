@@ -1,6 +1,8 @@
 package com.thb.bakery.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,9 @@ public class ProductDTO {
 
     @JsonProperty("productSubCategory")
     private String productSubCategory;
+
+    @JsonProperty("productQuantity")
+    private Integer productQuantity;
 
     @JsonProperty("productFoodType")
     private String productFoodType;
@@ -112,6 +117,8 @@ public class ProductDTO {
     @JsonProperty("deleted")
     private boolean deleted;
 
+
+
     // Default constructor
     public ProductDTO() {}
 
@@ -121,7 +128,13 @@ public class ProductDTO {
                       String productSubCategory, String productFoodType, String skuNumber,
                       String nameOnCake, Integer orderCount, String description,
                       String productIngredients, String allergenInfo, String careInstructions,
-                      String storageInstructions, String shelfLife, String bestServed, String preparationTime, String flavor, String shape, String defaultWeight, String layers, String serves, String note, BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights, List<BigDecimal> weightPrices, List<String> features, Double ratings, Integer reviews, String productDiscount, String deliveryTime, BigDecimal freeDeliveryThreshold, String productImageUrl, List<String> productSubImageUrls, boolean deleted) {
+                      String storageInstructions, String shelfLife, String bestServed,
+                      String preparationTime, String flavor, String shape, String defaultWeight,
+                      String layers, String serves, String note, BigDecimal productOldPrice,
+                      BigDecimal productNewPrice, List<String> weights, List<BigDecimal> weightPrices,
+                      List<String> features, Double ratings, Integer reviews, String productDiscount,
+                      String deliveryTime, BigDecimal freeDeliveryThreshold, String productImageUrl,
+                      List<String> productSubImageUrls, boolean deleted, Integer productQuantity) {
         this.productId = productId;
         this.productName = productName;
         this.productCategory = productCategory;
@@ -157,7 +170,9 @@ public class ProductDTO {
         this.productImageUrl = productImageUrl;
         this.productSubImageUrls = productSubImageUrls;
         this.deleted = deleted;
+        this.productQuantity = productQuantity;
     }
+
 
     // Getters and Setters
 
@@ -440,6 +455,15 @@ public class ProductDTO {
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
     @Override

@@ -52,6 +52,7 @@ public class OtpController {
         logger.debug("OTP verification details - OTP: {}, Mobile: {}",
                 otpVerification.getOtp(), otpVerification.getMobile());
 
+
         try {
             if (otpVerification.getOtp() == null || otpVerification.getOtp().trim().isEmpty()) {
                 logger.warn("Invalid OTP provided");

@@ -28,13 +28,13 @@ public class CartController {
     @Autowired private AddonRepository addonRepository;
     @Autowired private SnacksRepository snacksRepository;
 
+
+
     @PostMapping("/add-cart-items")
     public ResponseEntity<Map<String, Object>> addToCart(@RequestBody Map<String, Object> request) {
         logger.info("Add to cart request received: {}", request);
         try {
             Long userId = Long.parseLong(request.get("userId").toString());
-            Long productId = request.containsKey("productId") ? Long.parseLong(request.get("productId").toString()) : null;
-            Long snackId = request.containsKey("snackId") ? Long.parseLong(request.get("snackId").toString()) : null;
             Integer quantity = Integer.parseInt(request.getOrDefault("quantity", "1").toString());
             String size = request.getOrDefault("size", "free size").toString();
             List<Long> addonIds = request.get("addonIds") != null ?
@@ -42,16 +42,22 @@ public class CartController {
                             .map(id -> Long.parseLong(id.toString()))
                             .collect(Collectors.toList()) : new ArrayList<>();
 
-            if (userId == null) return ResponseEntity.badRequest().body(Map.of("error", "User ID required"));
-            if (quantity < 1) return ResponseEntity.badRequest().body(Map.of("error", "Quantity must be positive"));
-            if ((productId == null || productId <= 0) && (snackId == null || snackId <= 0)) {
-                return ResponseEntity.badRequest().body(Map.of("error", "Either productId or snackId is required"));
-            }
-            if (productId != null && snackId != null) {
-                return ResponseEntity.badRequest().body(Map.of("error", "Cannot add both product and snack"));
+            // READ itemType FROM REQUEST
+            String itemTypeStr = (String) request.get("itemType");
+            if (itemTypeStr == null || itemTypeStr.isEmpty()) {
+                return ResponseEntity.badRequest().body(Map.of("error", "itemType is required"));
             }
 
-            // Fetch add-ons
+            CartItemEntity.ItemType itemType;
+            try {
+                itemType = CartItemEntity.ItemType.valueOf(itemTypeStr.toUpperCase());
+            } catch (IllegalArgumentException e) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Invalid itemType: " + itemTypeStr));
+            }
+
+            if (userId == null) return ResponseEntity.badRequest().body(Map.of("error", "User ID required"));
+            if (quantity < 1) return ResponseEntity.badRequest().body(Map.of("error", "Quantity must be positive"));
+
             Set<Addon> addons = new HashSet<>();
             if (!addonIds.isEmpty()) {
                 addons = new HashSet<>(addonRepository.findAllById(addonIds));
@@ -60,12 +66,18 @@ public class CartController {
             CartItemEntity item;
             Optional<CartItemEntity> existing;
 
-            if (productId != null) {
+            if (itemType == CartItemEntity.ItemType.PRODUCT) {
+                Long productId = request.containsKey("productId") ? Long.parseLong(request.get("productId").toString()) : null;
+                if (productId == null || productId <= 0) {
+                    return ResponseEntity.badRequest().body(Map.of("error", "productId required for PRODUCT"));
+                }
+
                 Optional<ProductEntity> productOpt = productRepository.findById(productId);
                 if (productOpt.isEmpty()) return ResponseEntity.badRequest().body(Map.of("error", "Product not found"));
-                ProductEntity product = productOpt.get();
 
+                ProductEntity product = productOpt.get();
                 existing = cartItemRepository.findByUserIdAndProductAndSize(userId, product, size);
+
                 if (existing.isPresent()) {
                     item = existing.get();
                     item.setQuantity(quantity);
@@ -79,12 +91,19 @@ public class CartController {
                     item.setSize(size);
                     item.setAddons(addons);
                 }
-            } else {
+
+            } else if (itemType == CartItemEntity.ItemType.SNACK) {
+                Long snackId = request.containsKey("snackId") ? Long.parseLong(request.get("snackId").toString()) : null;
+                if (snackId == null || snackId <= 0) {
+                    return ResponseEntity.badRequest().body(Map.of("error", "snackId required for SNACK"));
+                }
+
                 Optional<SnacksEntity> snackOpt = snacksRepository.findById(snackId);
                 if (snackOpt.isEmpty()) return ResponseEntity.badRequest().body(Map.of("error", "Snack not found"));
-                SnacksEntity snack = snackOpt.get();
 
+                SnacksEntity snack = snackOpt.get();
                 existing = cartItemRepository.findByUserIdAndSnackAndSize(userId, snack, size);
+
                 if (existing.isPresent()) {
                     item = existing.get();
                     item.setQuantity(quantity);
@@ -98,6 +117,9 @@ public class CartController {
                     item.setSize(size);
                     item.setAddons(addons);
                 }
+
+            } else {
+                return ResponseEntity.badRequest().body(Map.of("error", "Unsupported itemType"));
             }
 
             cartItemRepository.save(item);
@@ -114,6 +136,10 @@ public class CartController {
             return ResponseEntity.badRequest().body(Map.of("error", "Invalid request: " + e.getMessage()));
         }
     }
+
+
+
+
 
     @GetMapping("/get-cart-items")
     public ResponseEntity<List<Map<String, Object>>> getCart(@RequestParam Long userId) {
@@ -183,23 +209,20 @@ public class CartController {
 
         try {
             Long userId = Long.parseLong(request.get("userId").toString());
-            Long productId = Long.parseLong(request.get("productId").toString());
-            String size = request.getOrDefault("size", "free size").toString();
+            Long cartItemId = Long.parseLong(request.get("cartItemId").toString());
 
-            logger.debug("Parsed request - userId: {}, productId: {}, size: {}", userId, productId, size);
-
-            Optional<CartItemEntity> existing = cartItemRepository.findByUserIdAndProductIdAndSize(userId, productId, size);
-            if (existing.isPresent()) {
-                CartItemEntity item = existing.get();
-                cartItemRepository.delete(item);
-                logger.info("Successfully removed cart item - cartItemId: {}, userId: {}, productId: {}",
-                        item.getId(), userId, productId);
-                return ResponseEntity.ok("Removed from cart");
+            Optional<CartItemEntity> existing = cartItemRepository.findById(cartItemId);
+            if (existing.isEmpty()) {
+                return ResponseEntity.badRequest().body("Item not found in cart");
             }
 
-            logger.warn("Remove from cart failed: Item not found - userId: {}, productId: {}, size: {}",
-                    userId, productId, size);
-            return ResponseEntity.badRequest().body("Item not found in cart");
+            CartItemEntity item = existing.get();
+            if (!item.getUserId().equals(userId)) {
+                return ResponseEntity.badRequest().body("Unauthorized");
+            }
+
+            cartItemRepository.delete(item);
+            return ResponseEntity.ok("Removed from cart");
 
         } catch (Exception e) {
             logger.error("Error removing from cart: {}", e.getMessage(), e);
@@ -213,52 +236,36 @@ public class CartController {
 
         try {
             Long userId = Long.parseLong(request.get("userId").toString());
-            Long productId = Long.parseLong(request.get("productId").toString());
+            Long cartItemId = Long.parseLong(request.get("cartItemId").toString());
             Integer quantity = Integer.parseInt(request.get("quantity").toString());
-            String size = request.getOrDefault("size", "free size").toString();
-            List<Long> addonIds = request.get("addonIds") != null ?
-                    ((List<?>) request.get("addonIds")).stream()
-                            .map(id -> Long.parseLong(id.toString()))
-                            .collect(Collectors.toList()) : new ArrayList<>();
-
-            logger.debug("Parsed request - userId: {}, productId: {}, quantity: {}, size: {}, addonIds: {}",
-                    userId, productId, quantity, size, addonIds);
 
             if (quantity <= 0) {
-                logger.warn("Update cart failed: Invalid quantity - {}", quantity);
                 return ResponseEntity.badRequest().body(Map.of("error", "Quantity must be positive"));
             }
 
-            Optional<CartItemEntity> existing = cartItemRepository.findByUserIdAndProductIdAndSize(userId, productId, size);
-            if (existing.isPresent()) {
-                CartItemEntity item = existing.get();
-                int oldQuantity = item.getQuantity();
-                item.setQuantity(quantity);
-                // Update add-ons
-                Set<Addon> addons = new HashSet<>(addonRepository.findAllById(addonIds));
-                item.setAddons(addons);
-                cartItemRepository.save(item);
-
-                logger.info("Successfully updated cart item - cartItemId: {}, userId: {}, productId: {}, oldQuantity: {}, newQuantity: {}, addons: {}",
-                        item.getId(), userId, productId, oldQuantity, quantity, addons.size());
-
-                return ResponseEntity.ok(Map.of(
-                        "status", "success",
-                        "message", "Cart updated",
-                        "productId", productId,
-                        "quantity", quantity,
-                        "cartItemId", item.getId(),
-                        "addonIds", addonIds
-                ));
+            Optional<CartItemEntity> existing = cartItemRepository.findById(cartItemId);
+            if (existing.isEmpty()) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Item not found in cart"));
             }
 
-            logger.warn("Update cart failed: Item not found - userId: {}, productId: {}, size: {}",
-                    userId, productId, size);
-            return ResponseEntity.badRequest().body(Map.of("error", "Item not found in cart"));
+            CartItemEntity item = existing.get();
+            if (!item.getUserId().equals(userId)) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Unauthorized"));
+            }
+
+            item.setQuantity(quantity);
+            cartItemRepository.save(item);
+
+            return ResponseEntity.ok(Map.of(
+                    "status", "success",
+                    "message", "Cart updated",
+                    "cartItemId", cartItemId,
+                    "quantity", quantity
+            ));
 
         } catch (Exception e) {
             logger.error("Error updating cart item: {}", e.getMessage(), e);
-            return ResponseEntity.badRequest().body(Map.of("error", "Invalid request data"));
+            return ResponseEntity.badRequest().body(Map.of("error", "Invalid request data: " + e.getMessage()));
         }
     }
 

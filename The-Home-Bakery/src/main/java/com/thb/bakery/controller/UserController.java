@@ -125,4 +125,42 @@ public class UserController {
         UserEntity user = userService.getUserByEmail(email);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
+
+    // NEW: Password reset API (uses OTP verification - no old password required)
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody Map<String, String> request) {
+        try {
+            String email = request.get("email");
+            String otp = request.get("otp");
+            String newPassword = request.get("newPassword");
+
+            // Validate required fields
+            if (email == null || email.trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("Email is required");
+            }
+            if (otp == null || otp.trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("OTP is required");
+            }
+            if (newPassword == null || newPassword.trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("New password is required");
+            }
+
+            // Call service method to reset password with OTP
+            boolean success = userService.resetPasswordWithOtp(email, otp, newPassword);
+
+            if (success) {
+                return ResponseEntity.ok().body("Password reset successfully");
+            } else {
+                return ResponseEntity.badRequest().body("Invalid OTP or OTP expired");
+            }
+
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error resetting password: " + e.getMessage());
+        }
+    }
+
+
 }

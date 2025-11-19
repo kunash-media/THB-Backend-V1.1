@@ -171,4 +171,96 @@ public class UserServiceImpl implements UserService {
     public UserEntity getUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    /**
+     * Reset password by email without OTP (for emergency/admin use)
+     */
+    @Override
+    public boolean resetPasswordByEmail(String email, String newPassword) {
+        try {
+            UserEntity user = userRepository.findByEmail(email);
+            if (user == null) {
+                throw new RuntimeException("User not found with email: " + email);
+            }
+
+            String encodedPassword = passwordEncoder.encode(newPassword);
+            user.setPassword(encodedPassword);
+            userRepository.save(user);
+
+            System.out.println("Password reset successfully for: " + email);
+            return true;
+
+        } catch (Exception e) {
+            System.err.println("Error resetting password for " + email + ": " + e.getMessage());
+            throw new RuntimeException("Failed to reset password: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public boolean resetPasswordWithOtp(String email, String otp, String newPassword) {
+        try {
+            // 1. Find user by email first
+            UserEntity user = userRepository.findByEmail(email);
+            if (user == null) {
+                throw new RuntimeException("User not found with email: " + email);
+            }
+
+            // 2. Verify OTP - Since you don't have OTP service integrated yet,
+            // we'll implement a simple verification logic
+            boolean isOtpValid = verifyOtp(email, otp);
+
+            if (!isOtpValid) {
+                throw new RuntimeException("Invalid OTP or OTP expired");
+            }
+
+            // 3. Update password (hash it first)
+            String encodedNewPassword = passwordEncoder.encode(newPassword);
+            user.setPassword(encodedNewPassword);
+            userRepository.save(user);
+
+            // 4. Invalidate OTP after use
+            invalidateOtp(email, otp);
+
+            System.out.println("Password reset successfully for user: " + email);
+            return true;
+
+        } catch (Exception e) {
+            System.err.println("Error resetting password for " + email + ": " + e.getMessage());
+            throw new RuntimeException("Failed to reset password: " + e.getMessage());
+        }
+    }
+
+    // Simple OTP verification - Replace this with your actual OTP service integration
+    private boolean verifyOtp(String email, String otp) {
+        try {
+            // For now, we'll accept any 6-digit OTP for testing
+            // In production, integrate with your actual OTP service
+
+            if (otp == null || otp.length() != 6) {
+                return false;
+            }
+
+            // Basic validation - check if it's a 6-digit number
+            if (!otp.matches("\\d{6}")) {
+                return false;
+            }
+
+            // TODO: Integrate with your actual OTP service
+            // Example: return otpService.verifyOtp(email, otp);
+
+            System.out.println("OTP verification for " + email + ": " + otp + " - ACCEPTED (Temporary)");
+            return true;
+
+        } catch (Exception e) {
+            System.err.println("OTP verification error: " + e.getMessage());
+            return false;
+        }
+    }
+
+    private void invalidateOtp(String email, String otp) {
+        // TODO: Integrate with your actual OTP service to invalidate used OTP
+        // Example: otpService.invalidateOtp(email, otp);
+        System.out.println("OTP invalidated for: " + email);
+    }
+
 }

@@ -99,15 +99,16 @@ public class ProductServiceImpl implements ProductService {
 
     private void logProductEntity(ProductEntity entity) {
         logger.info("=== ENTITY FIELDS AFTER MAPPING ===");
-        logger.info("productName: {}", entity.getProductName());
-        logger.info("productCategory: {}", entity.getProductCategory());
-        logger.info("productSubCategory: {}", entity.getProductSubCategory()); // CRITICAL FIELD
-        logger.info("productFoodType: {}", entity.getProductFoodType());
-        logger.info("skuNumber: {}", entity.getSkuNumber());
-        logger.info("productNewPrice: {}", entity.getProductNewPrice());
-        logger.info("defaultWeight: {}", entity.getDefaultWeight());
-        logger.info("productImage array: {}", entity.getProductImage() != null ? "Present, length: " + entity.getProductImage().length : "NULL");
-        logger.info("isDeleted: {}", entity.isDeleted());
+        logger.info("productName ===> : {}", entity.getProductName());
+        logger.info("productCategory ===> : {}", entity.getProductCategory());
+        logger.info("productSubCategory ===> : {}", entity.getProductSubCategory()); // CRITICAL FIELD
+        logger.info("productQuantity ===> :{}", entity.getProductQuantity());
+        logger.info("productFoodType ===> : {}", entity.getProductFoodType());
+        logger.info("skuNumber ===> : {}", entity.getSkuNumber());
+        logger.info("productNewPrice ===> : {}", entity.getProductNewPrice());
+        logger.info("defaultWeight ===> : {}", entity.getDefaultWeight());
+        logger.info("productImage array ===> : {}", entity.getProductImage() != null ? "Present, length: " + entity.getProductImage().length : "NULL");
+        logger.info("isDeleted ===> : {}", entity.isDeleted());
         logger.info("=== END ENTITY FIELDS ===");
     }
 
@@ -482,7 +483,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
 
-
     private void validateProductId(Long productId) {
         if (productId == null || productId <= 0) {
             logger.warn("Invalid product ID provided: {}", productId);
@@ -577,6 +577,17 @@ public class ProductServiceImpl implements ProductService {
             entity.setProductCategory(patchRequest.getProductCategory());
             updateCount++;
         }
+
+        if (patchRequest.getProductSubCategory() != null) {
+            entity.setProductSubCategory(patchRequest.getProductSubCategory());
+            updateCount++;
+        }
+
+        if (patchRequest.getProductQuantity() != null) {
+            entity.setProductQuantity(patchRequest.getProductQuantity());
+            updateCount++;
+        }
+
         if (patchRequest.getProductFoodType() != null) {
             entity.setProductFoodType(patchRequest.getProductFoodType());
             updateCount++;

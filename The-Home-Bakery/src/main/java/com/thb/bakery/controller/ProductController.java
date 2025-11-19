@@ -47,10 +47,11 @@ public class ProductController {
             @RequestPart(value = "productImage", required = false) MultipartFile productImage,
             @RequestPart(value = "productSubImages", required = false) MultipartFile[] productSubImages) {
 
-        logger.debug("Received ProductDataDTO - productName: {}, productCategory: {}, productSubCategory: {}, productFoodType: {}, skuNumber: {}",
+        logger.debug("Received ProductDataDTO - productName: {}, productCategory: {}, productSubCategory: {}, productQuantity: {}, productFoodType: {}, skuNumber: {}",
                 productDataDTO.getProductName(),
                 productDataDTO.getProductCategory(),
                 productDataDTO.getProductSubCategory(),
+                productDataDTO.getProductQuantity(),
                 productDataDTO.getProductFoodType(),
                 productDataDTO.getSkuNumber());
 
@@ -83,6 +84,8 @@ public class ProductController {
         requestDTO.setProductName(productDataDTO.getProductName());
         requestDTO.setProductCategory(productDataDTO.getProductCategory());
         requestDTO.setProductSubCategory(productDataDTO.getProductSubCategory());
+        requestDTO.setProductQuantity(productDataDTO.getProductQuantity());
+
         requestDTO.setProductFoodType(productDataDTO.getProductFoodType());
         requestDTO.setSkuNumber(productDataDTO.getSkuNumber());
         requestDTO.setNameOnCake(productDataDTO.getNameOnCake());
@@ -111,6 +114,7 @@ public class ProductController {
         requestDTO.setProductDiscount(productDataDTO.getProductDiscount());
         requestDTO.setDeliveryTime(productDataDTO.getDeliveryTime());
         requestDTO.setFreeDeliveryThreshold(productDataDTO.getFreeDeliveryThreshold());
+
 
         // Handle product image
         if (productImage != null && !productImage.isEmpty()) {
@@ -465,6 +469,10 @@ public class ProductController {
             if (productDataDTO.getProductName() != null) patchRequest.setProductName(productDataDTO.getProductName());
             if (productDataDTO.getProductCategory() != null) patchRequest.setProductCategory(productDataDTO.getProductCategory());
             if (productDataDTO.getProductSubCategory() != null) patchRequest.setProductSubCategory(productDataDTO.getProductSubCategory());
+
+            if (productDataDTO.getProductQuantity() != null) patchRequest.setProductQuantity(productDataDTO.getProductQuantity());
+
+
             if (productDataDTO.getProductFoodType() != null) patchRequest.setProductFoodType(productDataDTO.getProductFoodType());
             if (productDataDTO.getSkuNumber() != null) patchRequest.setSkuNumber(productDataDTO.getSkuNumber());
             if (productDataDTO.getNameOnCake() != null) patchRequest.setNameOnCake(productDataDTO.getNameOnCake());

@@ -32,4 +32,8 @@ public interface UserService {
 
     Long getUserCountByStatus(String status);
     Long getTotalUserCount();
+
+     boolean resetPasswordByEmail(String email, String newPassword);
+
+    public boolean resetPasswordWithOtp(String email, String otp, String newPassword);
 }

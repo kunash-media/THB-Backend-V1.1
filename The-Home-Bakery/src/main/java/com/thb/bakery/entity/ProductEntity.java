@@ -28,6 +28,10 @@ public class ProductEntity {
    @Column(name = "product_sub_category", nullable = false)
    private String productSubCategory;
 
+
+   @Column(name = "product_quantity")
+   private Integer productQuantity;
+
    @Column(name = "product_food_type", nullable = false)
    private String productFoodType;
 
@@ -134,12 +138,12 @@ public class ProductEntity {
    public ProductEntity() {}
 
 
-   public ProductEntity(Long productId, String productName, String productCategory,
-                        String productSubCategory, String productFoodType, String skuNumber, String nameOnCake, Integer orderCount, String description, String productIngredients, String allergenInfo, String careInstructions, String storageInstructions, String shelfLife, String bestServed, String preparationTime, String flavor, String shape, String defaultWeight, String layers, String serves, String note, BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights, List<BigDecimal> weightPrices, List<String> features, Double ratings, Integer reviews, String productDiscount, String deliveryTime, BigDecimal freeDeliveryThreshold, byte[] productImage, List<byte[]> productSubImages, boolean deleted) {
+   public ProductEntity(Long productId, String productName, String productCategory, String productSubCategory, Integer productQuantity, String productFoodType, String skuNumber, String nameOnCake, Integer orderCount, String description, String productIngredients, String allergenInfo, String careInstructions, String storageInstructions, String shelfLife, String bestServed, String preparationTime, String flavor, String shape, String defaultWeight, String layers, String serves, String note, BigDecimal productOldPrice, BigDecimal productNewPrice, List<String> weights, List<BigDecimal> weightPrices, List<String> features, Double ratings, Integer reviews, String productDiscount, String deliveryTime, BigDecimal freeDeliveryThreshold, byte[] productImage, List<byte[]> productSubImages, boolean deleted) {
       this.productId = productId;
       this.productName = productName;
       this.productCategory = productCategory;
       this.productSubCategory = productSubCategory;
+      this.productQuantity = productQuantity;
       this.productFoodType = productFoodType;
       this.skuNumber = skuNumber;
       this.nameOnCake = nameOnCake;
@@ -172,6 +176,7 @@ public class ProductEntity {
       this.productSubImages = productSubImages;
       this.deleted = deleted;
    }
+
 
    // Getters and Setters
    public Long getProductId() {
@@ -452,5 +457,13 @@ public class ProductEntity {
 
    public void setProductSubCategory(String productSubCategory) {
       this.productSubCategory = productSubCategory;
+   }
+
+   public Integer getProductQuantity() {
+      return productQuantity;
+   }
+
+   public void setProductQuantity(Integer productQuantity) {
+      this.productQuantity = productQuantity;
    }
 }

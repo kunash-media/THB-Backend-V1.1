@@ -15,6 +15,9 @@ public class ProductDataDTO {
     @JsonProperty("productSubCategory")
     private String productSubCategory;
 
+    @JsonProperty("productQuantity")
+    private Integer productQuantity;
+
     @JsonProperty("productFoodType")
     private String productFoodType;
 
@@ -196,5 +199,13 @@ public class ProductDataDTO {
 
     public void setProductSubCategory(String productSubCategory) {
         this.productSubCategory = productSubCategory;
+    }
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
     }
 }
