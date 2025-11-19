@@ -1,6 +1,7 @@
 package com.thb.bakery.service.serviceImpl;
 
 import com.thb.bakery.dto.request.SnacksDTO;
+import com.thb.bakery.dto.response.SnackResponseDTO;
 import com.thb.bakery.entity.SnacksEntity;
 import com.thb.bakery.repository.SnacksRepository;
 import com.thb.bakery.service.SnacksService;
@@ -37,7 +38,7 @@ public class SnacksServiceImpl implements SnacksService {
     // ===================================================================
     @Override
     @Transactional
-    public SnacksDTO create(String productData, MultipartFile productMainImage) {
+    public SnackResponseDTO create(String productData, MultipartFile productMainImage) {
         logger.info("Creating new snack");
 
         SnacksDTO dto = parse(productData);
@@ -56,37 +57,37 @@ public class SnacksServiceImpl implements SnacksService {
         entity.setProductMainImage(image);
 
         SnacksEntity saved = repo.save(entity);
-        return toDTO(saved);
+        return toResponseDTO(saved);
     }
 
     // ===================================================================
     // READ
     // ===================================================================
     @Override
-    public Page<SnacksDTO> getAll(Pageable p) {
-        return repo.findAll(p).map(this::toDTO);
+    public Page<SnackResponseDTO> getAll(Pageable p) {
+        return repo.findAll(p).map(this::toResponseDTO);
     }
 
     @Override
-    public SnacksDTO getById(Long id) {
-        return repo.findById(id).map(this::toDTO).orElseThrow(this::notFound);
+    public SnackResponseDTO getById(Long id) {
+        return repo.findById(id).map(this::toResponseDTO).orElseThrow(this::notFound);
     }
 
     @Override
-    public Page<SnacksDTO> getByCategory(String category, Pageable p) {
-        return repo.findByProductCategory(category, p).map(this::toDTO);
+    public Page<SnackResponseDTO> getByCategory(String category, Pageable p) {
+        return repo.findByProductCategory(category, p).map(this::toResponseDTO);
     }
 
     @Override
-    public Page<SnacksDTO> getBySubcategory(String subcategory, Pageable p) {
-        return repo.findByProductSubcategory(subcategory, p).map(this::toDTO);
+    public Page<SnackResponseDTO> getBySubcategory(String subcategory, Pageable p) {
+        return repo.findByProductSubcategory(subcategory, p).map(this::toResponseDTO);
     }
 
     @Override
-    public List<SnacksDTO> searchByName(String name) {
+    public List<SnackResponseDTO> searchByName(String name) {
         return repo.findByProductNameContainingIgnoreCase(name, Pageable.unpaged())
                 .stream()
-                .map(this::toDTO)
+                .map(this::toResponseDTO)
                 .collect(Collectors.toList());
     }
 
@@ -95,7 +96,7 @@ public class SnacksServiceImpl implements SnacksService {
     // ===================================================================
     @Override
     @Transactional
-    public SnacksDTO update(Long id, String productData, MultipartFile productMainImage) {
+    public SnackResponseDTO update(Long id, String productData, MultipartFile productMainImage) {
         SnacksEntity entity = getEntity(id);
         SnacksDTO dto = parse(productData);
 
@@ -112,7 +113,7 @@ public class SnacksServiceImpl implements SnacksService {
             entity.setProductMainImage(getImage(productMainImage));
         }
 
-        return toDTO(repo.save(entity));
+        return toResponseDTO(repo.save(entity));
     }
 
     // ===================================================================
@@ -120,7 +121,7 @@ public class SnacksServiceImpl implements SnacksService {
     // ===================================================================
     @Override
     @Transactional
-    public SnacksDTO patch(Long id, String productData, MultipartFile productMainImage) {
+    public SnackResponseDTO patch(Long id, String productData, MultipartFile productMainImage) {
         SnacksEntity entity = getEntity(id);
 
         if (productData != null && !productData.trim().isEmpty()) {
@@ -140,7 +141,7 @@ public class SnacksServiceImpl implements SnacksService {
             entity.setProductMainImage(getImage(productMainImage));
         }
 
-        return toDTO(repo.save(entity));
+        return toResponseDTO(repo.save(entity));
     }
 
     // ===================================================================
@@ -190,18 +191,18 @@ public class SnacksServiceImpl implements SnacksService {
     // ===================================================================
     // DTO MAPPING
     // ===================================================================
-    private SnacksDTO toDTO(SnacksEntity e) {
-        return new SnacksDTO(
-//                e.getId(),
+    private SnackResponseDTO toResponseDTO(SnacksEntity e) {
+        return new SnackResponseDTO(
+                e.getSnackId(),
                 e.getProductName(),
                 e.getProductCategory(),
                 e.getProductSubcategory(),
                 e.getSkuNumber(),
-                e.getProductOldPrice(),
-                e.getProductNewPrice(),
-                e.getRatings(),
+                e.getProductOldPrice() != 0.0 ? e.getProductOldPrice() : null,
+                e.getProductNewPrice() != 0.0 ? e.getProductNewPrice() : null,
+                e.getRatings() != 0.0 ? e.getRatings() : null,
                 e.getProductDiscount(),
-                "/api/v1/snacks/" + e.getSnackId() + "/image"  // Image URL
+                "/api/v1/snacks/" + e.getSnackId() + "/image"
         );
     }
 }

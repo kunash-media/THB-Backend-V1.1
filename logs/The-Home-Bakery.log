@@ -1,23 +1,23 @@
-2025-11-19T11:45:56.796+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 19728 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-11-19T11:45:56.807+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-11-19T11:45:56.910+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-11-19T11:45:56.910+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-19T11:45:56.910+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-19T11:46:01.077+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-19T11:46:01.381+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 288 ms. Found 29 JPA repository interfaces.
-2025-11-19T11:46:02.701+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-11-19T11:46:02.727+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-19T11:46:02.728+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-19T11:46:02.815+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-19T11:46:02.816+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5904 ms
-2025-11-19T11:46:03.219+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-19T11:46:03.335+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-19T11:46:03.412+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-19T11:46:03.984+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-19T11:46:04.043+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-19T11:46:04.371+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e265eae
-2025-11-19T11:46:04.373+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-19T11:46:04.509+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-20T00:44:35.954+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 27736 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-20T00:44:35.966+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-20T00:44:36.095+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-20T00:44:36.096+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-20T00:44:36.096+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-20T00:44:38.613+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-20T00:44:39.060+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 421 ms. Found 29 JPA repository interfaces.
+2025-11-20T00:44:41.467+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-20T00:44:41.508+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-20T00:44:41.508+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-20T00:44:41.638+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-20T00:44:41.639+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5542 ms
+2025-11-20T00:44:42.318+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-20T00:44:42.525+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-20T00:44:42.631+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-20T00:44:43.829+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-20T00:44:43.924+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-20T00:44:44.385+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a0a4102
+2025-11-20T00:44:44.389+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-20T00:44:44.635+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -25,213 +25,43 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-19T11:46:06.973+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-19T11:46:07.516+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-19T11:46:08.187+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-19T11:46:12.222+05:30  WARN 19728 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-19T11:46:12.849+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-11-19T11:46:13.043+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-19T11:46:13.094+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-11-19T11:46:13.110+05:30  INFO 19728 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 17.228 seconds (process running for 19.697)
-2025-11-19T12:07:26.358+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-19T12:07:26.358+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-19T12:07:26.359+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-11-19T12:07:26.625+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === PRODUCT CREATION STARTED ===
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Creating new product with SKU: CAKE-001
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === INCOMING DTO FIELDS ===
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productName: Bento Premium Cake
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productCategory: All Cakes
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productSubCategory: Bento Cake
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productFoodType: Vegetarian
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : skuNumber: CAKE-001
-2025-11-19T12:07:26.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productNewPrice: 550.00
-2025-11-19T12:07:26.627+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : defaultWeight: 1 kg
-2025-11-19T12:07:26.627+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productImage Present: false
-2025-11-19T12:07:26.627+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productSubImages Present: false
-2025-11-19T12:07:26.628+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productImage array: Present, length: 27862
-2025-11-19T12:07:26.628+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === END DTO FIELDS ===
-2025-11-19T12:07:26.787+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === BEFORE MAPPING TO ENTITY ===
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === ENTITY FIELDS AFTER MAPPING ===
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productName ===> : Bento Premium Cake
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productCategory ===> : All Cakes
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productSubCategory ===> : Bento Cake
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productQuantity ===> :20
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productFoodType ===> : Vegetarian
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : skuNumber ===> : CAKE-001
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productNewPrice ===> : 550.00
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : defaultWeight ===> : 1 kg
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : productImage array ===> : Present, length: 27862
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : isDeleted ===> : false
-2025-11-19T12:07:26.788+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === END ENTITY FIELDS ===
-2025-11-19T12:07:26.789+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Mapped DTO to entity for product: Bento Premium Cake
-2025-11-19T12:07:26.789+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : === ATTEMPTING DATABASE SAVE ===
-2025-11-19T12:07:26.896+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Product saved successfully with ID: 3 and name: Bento Premium Cake
-2025-11-19T12:07:26.963+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Product created successfully with ID: 3
-2025-11-19T12:18:58.595+05:30 ERROR 19728 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.C.GlobalExceptionHandler           : Unexpected error occurred: Content-Type 'application/octet-stream' is not supported
-
-org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported
-	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:236) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver.resolveArgument(RequestPartMethodArgumentResolver.java:141) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.44.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
-
-2025-11-19T12:18:58.617+05:30  WARN 19728 --- [The-Home-Bakery] [http-nio-8082-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported]
-2025-11-19T12:19:18.561+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:19:18.563+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:19:18.625+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:19:18.682+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:29:22.017+05:30 ERROR 19728 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.C.GlobalExceptionHandler           : Unexpected error occurred: JSON parse error: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)
-
-org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)
-	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:408) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:356) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestPartMethodArgumentResolver.resolveArgument(RequestPartMethodArgumentResolver.java:141) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:888) ~[spring-webmvc-6.2.10.jar:6.2.10]
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.44.jar:6.0]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.10.jar:6.2.10]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
-	at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
-Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)
- at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 2, column: 5]
-	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2672) ~[jackson-core-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:742) ~[jackson-core-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._skipComment(UTF8StreamJsonParser.java:3237) ~[jackson-core-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._skipWSOrEnd2(UTF8StreamJsonParser.java:3117) ~[jackson-core-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._skipWSOrEnd(UTF8StreamJsonParser.java:3093) ~[jackson-core-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:716) ~[jackson-core-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:169) ~[jackson-databind-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2130) ~[jackson-databind-2.19.2.jar:2.19.2]
-	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1500) ~[jackson-databind-2.19.2.jar:2.19.2]
-	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:397) ~[spring-web-6.2.10.jar:6.2.10]
-	... 48 common frames omitted
-
-2025-11-19T12:29:22.025+05:30  WARN 19728 --- [The-Home-Bakery] [http-nio-8082-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('/' (code 47)): maybe a (non-standard) comment? (not recognized as one since Feature 'ALLOW_COMMENTS' not enabled for parser)]
-2025-11-19T12:29:53.970+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:29:53.972+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:29:53.978+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:29:53.989+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:31:06.626+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:31:06.631+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:31:06.643+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:31:06.667+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:32:06.675+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:32:06.678+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:32:06.688+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:32:06.746+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:32:25.271+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:32:25.272+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:32:25.278+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:32:25.302+05:30  INFO 19728 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:35:04.286+05:30  INFO 19728 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-19T12:35:04.305+05:30  INFO 19728 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-11-19T12:35:04.329+05:30  INFO 19728 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-19T12:35:04.345+05:30  INFO 19728 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-19T12:35:04.354+05:30  INFO 19728 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-11-19T12:35:16.147+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 17552 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-11-19T12:35:16.150+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-11-19T12:35:16.265+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-11-19T12:35:16.266+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-19T12:35:16.266+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-19T12:35:18.002+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-19T12:35:18.344+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 326 ms. Found 29 JPA repository interfaces.
-2025-11-19T12:35:19.651+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-11-19T12:35:19.680+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-19T12:35:19.681+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-19T12:35:19.773+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-19T12:35:19.773+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3506 ms
-2025-11-19T12:35:20.136+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-19T12:35:20.234+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-19T12:35:20.296+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-19T12:35:20.860+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-19T12:35:20.915+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-19T12:35:21.221+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e265eae
-2025-11-19T12:35:21.224+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-19T12:35:21.374+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-20T00:44:52.510+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-20T00:44:53.185+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-20T00:44:54.635+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-20T00:45:03.035+05:30  WARN 27736 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-20T00:45:04.081+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-11-20T00:45:04.369+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-20T00:45:04.447+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-11-20T00:45:04.476+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 29.731 seconds (process running for 31.269)
+2025-11-20T01:00:04.627+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-20T01:00:04.628+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-20T01:00:04.632+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-20T01:00:04.755+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-20T01:19:23.463+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-20T01:19:23.481+05:30  INFO 27736 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-20T01:19:23.515+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-20T01:19:23.540+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-20T01:19:23.555+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-20T01:19:35.958+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 7976 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-20T01:19:35.962+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-20T01:19:36.078+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-20T01:19:36.078+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-20T01:19:36.079+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-20T01:19:38.316+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-20T01:19:38.706+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 373 ms. Found 29 JPA repository interfaces.
+2025-11-20T01:19:40.303+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-20T01:19:40.331+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-20T01:19:40.331+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-20T01:19:40.439+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-20T01:19:40.440+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4360 ms
+2025-11-20T01:19:40.895+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-20T01:19:40.998+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-20T01:19:41.077+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-20T01:19:41.806+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-20T01:19:41.869+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-20T01:19:42.221+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@756425d3
+2025-11-20T01:19:42.225+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-20T01:19:42.407+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -239,82 +69,20 @@ Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character (
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-19T12:35:25.050+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-19T12:35:25.424+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-19T12:35:26.088+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-19T12:35:29.863+05:30  WARN 17552 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-19T12:35:30.527+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-11-19T12:35:30.720+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-19T12:35:30.772+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-11-19T12:35:30.791+05:30  INFO 17552 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 15.661 seconds (process running for 16.637)
-2025-11-19T12:35:38.400+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-19T12:35:38.401+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-19T12:35:38.405+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-11-19T12:35:38.793+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:35:38.815+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:35:39.087+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:35:39.291+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:36:48.104+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Partially updating product with ID: 3
-2025-11-19T12:36:48.107+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 3
-2025-11-19T12:36:48.115+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: Bento Premium Cake (ID: 3)
-2025-11-19T12:36:48.145+05:30  INFO 17552 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Product updated successfully: Bento Premium Cake
-2025-11-19T12:43:28.073+05:30  INFO 17552 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-19T12:43:28.089+05:30  INFO 17552 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-11-19T12:43:28.123+05:30  INFO 17552 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-19T12:43:28.144+05:30  INFO 17552 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-19T12:43:28.169+05:30  INFO 17552 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-11-19T12:43:41.580+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 26780 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-11-19T12:43:41.583+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-11-19T12:43:41.693+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-11-19T12:43:41.694+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-19T12:43:41.694+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-19T12:43:44.538+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-19T12:43:45.385+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 809 ms. Found 29 JPA repository interfaces.
-2025-11-19T12:43:47.905+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-11-19T12:43:47.958+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-19T12:43:47.959+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-19T12:43:48.119+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-19T12:43:48.120+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6425 ms
-2025-11-19T12:43:48.867+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-19T12:43:49.043+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-19T12:43:49.159+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-19T12:43:50.307+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-19T12:43:50.411+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-19T12:43:50.962+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@264e19fb
-2025-11-19T12:43:50.968+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-19T12:43:51.226+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0.41
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-11-19T12:43:56.099+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-19T12:43:56.695+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-19T12:43:57.892+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-19T12:44:04.878+05:30  WARN 26780 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-19T12:44:06.128+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-11-19T12:44:06.527+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-19T12:44:06.632+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-11-19T12:44:06.660+05:30  INFO 26780 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 26.543 seconds (process running for 27.614)
-2025-11-19T12:44:29.503+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-19T12:44:29.504+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-19T12:44:29.505+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-11-19T12:44:29.697+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Partially updating product with ID: 3
-2025-11-19T12:44:29.708+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 3
-2025-11-19T12:44:29.863+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: Bento Premium Cake (ID: 3)
-2025-11-19T12:44:29.998+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Product updated successfully: Bento Premium Cake
-2025-11-19T12:44:46.023+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.ProductController  : Partially updating product with ID: 1
-2025-11-19T12:44:46.027+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 1
-2025-11-19T12:44:46.037+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: chocolate cake (ID: 1)
-2025-11-19T12:44:46.093+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.ProductController  : Product updated successfully: chocolate cake
-2025-11-19T12:44:54.160+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Partially updating product with ID: 2
-2025-11-19T12:44:54.162+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.ProductServiceImpl   : Partially updating product with ID: 2
-2025-11-19T12:44:54.168+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.ProductServiceImpl   : Product partially updated successfully: Chocolate pastry (ID: 2)
-2025-11-19T12:44:54.197+05:30  INFO 26780 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Product updated successfully: Chocolate pastry
-2025-11-19T13:21:46.377+05:30  INFO 26780 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-19T13:21:46.399+05:30  INFO 26780 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-11-19T13:21:46.446+05:30  INFO 26780 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-19T13:21:46.466+05:30  INFO 26780 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-19T13:21:46.482+05:30  INFO 26780 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-20T01:19:46.439+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-20T01:19:46.952+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-20T01:19:47.726+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-20T01:19:52.781+05:30  WARN 7976 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-20T01:19:53.501+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-11-20T01:19:53.707+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-20T01:19:53.759+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-11-20T01:19:53.780+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 18.902 seconds (process running for 20.045)
+2025-11-20T01:20:06.721+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-20T01:20:06.722+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-20T01:20:06.727+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-11-20T01:20:06.851+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.SnacksController   : Fetching all snacks - page: 0, size: 10
+2025-11-20T01:35:37.880+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-20T01:35:37.902+05:30  INFO 7976 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-20T01:35:37.931+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-20T01:35:37.949+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-20T01:35:37.989+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

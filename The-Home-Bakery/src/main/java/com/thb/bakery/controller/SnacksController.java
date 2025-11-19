@@ -1,6 +1,6 @@
 package com.thb.bakery.controller;
 
-import com.thb.bakery.dto.request.SnacksDTO;
+import com.thb.bakery.dto.response.SnackResponseDTO;
 import com.thb.bakery.entity.SnacksEntity;
 import com.thb.bakery.repository.SnacksRepository;
 import com.thb.bakery.service.SnacksService;
@@ -31,12 +31,12 @@ public class SnacksController {
     @Autowired private ObjectMapper objectMapper;
 
     @PostMapping(value = "/create-snack", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<SnacksDTO> createSnack(
+    public ResponseEntity<SnackResponseDTO> createSnack(
             @RequestPart("productData") String productData,
             @RequestPart(value = "productMainImage", required = false) MultipartFile productMainImage) {
         logger.info("Creating new snack");
         try {
-            SnacksDTO created = snacksService.create(productData, productMainImage);
+            SnackResponseDTO created = snacksService.create(productData, productMainImage);
 //            logger.info("Snack created with ID: {}", created.getId());
             return ResponseEntity.status(HttpStatus.CREATED).body(created);
         } catch (Exception e) {
@@ -46,13 +46,13 @@ public class SnacksController {
     }
 
     @GetMapping("/get-all-snacks")
-    public ResponseEntity<Page<SnacksDTO>> getAllSnacks(
+    public ResponseEntity<Page<SnackResponseDTO>> getAllSnacks(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
         logger.info("Fetching all snacks - page: {}, size: {}", page, size);
         try {
             Pageable pageable = PageRequest.of(page, size);
-            Page<SnacksDTO> result = snacksService.getAll(pageable);
+            Page<SnackResponseDTO> result = snacksService.getAll(pageable);
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             logger.error("Error retrieving snacks", e);
@@ -61,10 +61,10 @@ public class SnacksController {
     }
 
     @GetMapping("/{snackId}")
-    public ResponseEntity<SnacksDTO> getSnackById(@PathVariable Long snackId) {
+    public ResponseEntity<SnackResponseDTO> getSnackById(@PathVariable Long snackId) {
         logger.info("Fetching snack ID: {}", snackId);
         try {
-            SnacksDTO snack = snacksService.getById(snackId);
+            SnackResponseDTO snack = snacksService.getById(snackId);
             return ResponseEntity.ok(snack);
         } catch (Exception e) {
             logger.error("Snack not found: {}", snackId);
@@ -73,7 +73,7 @@ public class SnacksController {
     }
 
     @GetMapping("/category/{category}")
-    public ResponseEntity<Page<SnacksDTO>> getByCategory(
+    public ResponseEntity<Page<SnackResponseDTO>> getByCategory(
             @PathVariable String category,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -86,7 +86,7 @@ public class SnacksController {
     }
 
     @GetMapping("/subcategory/{subcategory}")
-    public ResponseEntity<Page<SnacksDTO>> getBySubcategory(
+    public ResponseEntity<Page<SnackResponseDTO>> getBySubcategory(
             @PathVariable String subcategory,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -99,7 +99,7 @@ public class SnacksController {
     }
 
     @GetMapping("/search/{name}")
-    public ResponseEntity<List<SnacksDTO>> searchByName(@PathVariable String name) {
+    public ResponseEntity<List<SnackResponseDTO>> searchByName(@PathVariable String name) {
         logger.info("Searching snacks: {}", name);
         try {
             return ResponseEntity.ok(snacksService.searchByName(name));
@@ -109,7 +109,7 @@ public class SnacksController {
     }
 
     @PutMapping(value = "/update-snack/{snackId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<SnacksDTO> updateSnack(
+    public ResponseEntity<SnackResponseDTO> updateSnack(
             @PathVariable Long snackId,
             @RequestPart("productData") String productData,
             @RequestPart(value = "productMainImage", required = false) MultipartFile productMainImage) {
@@ -122,7 +122,7 @@ public class SnacksController {
     }
 
     @PatchMapping(value = "/update-snack/{snackId}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public ResponseEntity<SnacksDTO> patchSnack(
+    public ResponseEntity<SnackResponseDTO> patchSnack(
             @PathVariable Long snackId,
             @RequestPart(value = "productData", required = false) String productData,
             @RequestPart(value = "productMainImage", required = false) MultipartFile productMainImage) {
