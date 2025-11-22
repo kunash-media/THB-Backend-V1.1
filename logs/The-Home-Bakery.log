@@ -1,23 +1,23 @@
-2025-11-20T00:44:35.954+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 27736 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-11-20T00:44:35.966+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-11-20T00:44:36.095+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-11-20T00:44:36.096+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-20T00:44:36.096+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-20T00:44:38.613+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-20T00:44:39.060+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 421 ms. Found 29 JPA repository interfaces.
-2025-11-20T00:44:41.467+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-11-20T00:44:41.508+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-20T00:44:41.508+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-20T00:44:41.638+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-20T00:44:41.639+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5542 ms
-2025-11-20T00:44:42.318+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-20T00:44:42.525+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-20T00:44:42.631+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-20T00:44:43.829+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-20T00:44:43.924+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-20T00:44:44.385+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a0a4102
-2025-11-20T00:44:44.389+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-20T00:44:44.635+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-23T01:32:18.321+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 2332 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-23T01:32:18.334+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-23T01:32:18.611+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-23T01:32:18.613+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-23T01:32:18.614+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-23T01:32:26.522+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-23T01:32:26.910+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 365 ms. Found 29 JPA repository interfaces.
+2025-11-23T01:32:28.410+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-23T01:32:28.447+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-23T01:32:28.447+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-23T01:32:28.532+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-23T01:32:28.532+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9915 ms
+2025-11-23T01:32:29.076+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-23T01:32:29.190+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-23T01:32:29.265+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-23T01:32:29.905+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-23T01:32:29.970+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-23T01:32:30.587+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@485f354f
+2025-11-23T01:32:30.590+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-23T01:32:30.767+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -25,43 +25,43 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-20T00:44:52.510+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-20T00:44:53.185+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-20T00:44:54.635+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-20T00:45:03.035+05:30  WARN 27736 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-20T00:45:04.081+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-11-20T00:45:04.369+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-20T00:45:04.447+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-11-20T00:45:04.476+05:30  INFO 27736 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 29.731 seconds (process running for 31.269)
-2025-11-20T01:00:04.627+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-20T01:00:04.628+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-20T01:00:04.632+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-11-20T01:00:04.755+05:30  INFO 27736 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
-2025-11-20T01:19:23.463+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-20T01:19:23.481+05:30  INFO 27736 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-11-20T01:19:23.515+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-20T01:19:23.540+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-20T01:19:23.555+05:30  INFO 27736 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-11-20T01:19:35.958+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 7976 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
-2025-11-20T01:19:35.962+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-11-20T01:19:36.078+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
-2025-11-20T01:19:36.078+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-11-20T01:19:36.079+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-11-20T01:19:38.316+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-11-20T01:19:38.706+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 373 ms. Found 29 JPA repository interfaces.
-2025-11-20T01:19:40.303+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-11-20T01:19:40.331+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-11-20T01:19:40.331+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
-2025-11-20T01:19:40.439+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-11-20T01:19:40.440+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4360 ms
-2025-11-20T01:19:40.895+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-11-20T01:19:40.998+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
-2025-11-20T01:19:41.077+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-11-20T01:19:41.806+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-11-20T01:19:41.869+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-11-20T01:19:42.221+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@756425d3
-2025-11-20T01:19:42.225+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-11-20T01:19:42.407+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-11-23T01:32:33.793+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-23T01:32:34.376+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T01:32:35.224+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-23T01:32:39.182+05:30  WARN 2332 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-23T01:32:39.782+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-11-23T01:32:39.936+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-23T01:32:39.985+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-11-23T01:32:40.003+05:30  INFO 2332 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 23.501 seconds (process running for 26.712)
+2025-11-23T01:34:16.233+05:30  INFO 2332 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-23T01:34:16.234+05:30  INFO 2332 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-23T01:34:16.237+05:30  INFO 2332 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-11-23T01:34:16.411+05:30  INFO 2332 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.SnacksController   : Patching snack ID: 1
+2025-11-23T01:36:07.535+05:30  INFO 2332 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-23T01:36:07.552+05:30  INFO 2332 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-23T01:36:07.573+05:30  INFO 2332 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T01:36:07.589+05:30  INFO 2332 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-23T01:36:07.617+05:30  INFO 2332 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-23T01:36:19.278+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 9312 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-23T01:36:19.282+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-23T01:36:19.399+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-23T01:36:19.400+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-23T01:36:19.400+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-23T01:36:21.003+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-23T01:36:21.343+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 325 ms. Found 29 JPA repository interfaces.
+2025-11-23T01:36:22.700+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-23T01:36:22.731+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-23T01:36:22.732+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-23T01:36:22.830+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-23T01:36:22.831+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3430 ms
+2025-11-23T01:36:23.227+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-23T01:36:23.320+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-23T01:36:23.391+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-23T01:36:23.995+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-23T01:36:24.060+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-23T01:36:24.354+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29e5ce45
+2025-11-23T01:36:24.357+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-23T01:36:24.487+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0.41
@@ -69,20 +69,279 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-11-20T01:19:46.439+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-11-20T01:19:46.952+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-11-20T01:19:47.726+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-11-20T01:19:52.781+05:30  WARN 7976 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-11-20T01:19:53.501+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
-2025-11-20T01:19:53.707+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-11-20T01:19:53.759+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-11-20T01:19:53.780+05:30  INFO 7976 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 18.902 seconds (process running for 20.045)
-2025-11-20T01:20:06.721+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-11-20T01:20:06.722+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-11-20T01:20:06.727+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-11-20T01:20:06.851+05:30  INFO 7976 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.SnacksController   : Fetching all snacks - page: 0, size: 10
-2025-11-20T01:35:37.880+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-11-20T01:35:37.902+05:30  INFO 7976 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-11-20T01:35:37.931+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-11-20T01:35:37.949+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-11-20T01:35:37.989+05:30  INFO 7976 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-23T01:36:27.227+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-23T01:36:27.612+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T01:36:28.266+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-23T01:36:32.310+05:30  WARN 9312 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-23T01:36:33.053+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-11-23T01:36:33.214+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-23T01:36:33.261+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-11-23T01:36:33.277+05:30  INFO 9312 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 15.032 seconds (process running for 16.013)
+2025-11-23T01:36:38.562+05:30  INFO 9312 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-23T01:36:38.563+05:30  INFO 9312 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-23T01:36:38.565+05:30  INFO 9312 --- [The-Home-Bakery] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-23T01:36:38.733+05:30  INFO 9312 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.SnacksController   : Patching snack ID: 1
+2025-11-23T01:36:52.199+05:30  INFO 9312 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.SnacksController   : Patching snack ID: 2
+2025-11-23T01:48:38.130+05:30  INFO 9312 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-23T01:48:38.154+05:30  INFO 9312 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-23T01:48:38.179+05:30  INFO 9312 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T01:48:38.194+05:30  INFO 9312 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-23T01:48:38.224+05:30  INFO 9312 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-23T01:48:52.032+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Starting TheHomeBakeryApplication using Java 24.0.2 with PID 13912 (C:\THB-Bakery\THB-Backend-V1.1\The-Home-Bakery\target\classes started by admim in C:\THB-Bakery\THB-Backend-V1.1)
+2025-11-23T01:48:52.036+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-11-23T01:48:52.150+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\admim\.m2\repository\io\github\cdimascio\java-dotenv\5.2.2\java-dotenv-5.2.2.jar referenced one or more files that do not exist: file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/kotlin-stdlib-common-1.4.0.jar,file:/C:/Users/admim/.m2/repository/io/github/cdimascio/java-dotenv/5.2.2/annotations-13.0.jar
+2025-11-23T01:48:52.151+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-11-23T01:48:52.152+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-11-23T01:48:53.958+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-23T01:48:54.337+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 356 ms. Found 29 JPA repository interfaces.
+2025-11-23T01:48:55.870+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-11-23T01:48:55.923+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-23T01:48:55.925+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-11-23T01:48:56.104+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-23T01:48:56.105+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3952 ms
+2025-11-23T01:48:56.637+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-23T01:48:56.761+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-11-23T01:48:56.843+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-23T01:48:57.601+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-23T01:48:57.665+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-23T01:48:58.294+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18410d1f
+2025-11-23T01:48:58.303+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-23T01:48:58.782+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.41
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-23T01:49:06.608+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-23T01:49:07.249+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T01:49:08.813+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-11-23T01:49:17.962+05:30  WARN 13912 --- [The-Home-Bakery] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-23T01:49:19.182+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/homebakery_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true'
+2025-11-23T01:49:19.613+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-11-23T01:49:19.793+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-11-23T01:49:19.849+05:30  INFO 13912 --- [The-Home-Bakery] [restartedMain] c.thb.bakery.TheHomeBakeryApplication    : Started TheHomeBakeryApplication in 28.877 seconds (process running for 30.032)
+2025-11-23T01:49:26.867+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-23T01:49:26.868+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-23T01:49:26.870+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-11-23T01:49:32.391+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.ProductController  : Fetching all products - page: 0, size: 1000
+2025-11-23T01:49:32.406+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.ProductServiceImpl   : Fetching products with pagination - page: 0, size: 1000
+2025-11-23T01:49:32.450+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.b.s.serviceImpl.ProductServiceImpl   : Retrieved page 1 of 1 with 3 products out of 3 total
+2025-11-23T01:49:32.454+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:49:32.544+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:49:32.566+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.ProductController  : Retrieved 3 products out of 3 total
+2025-11-23T01:49:34.423+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T01:49:34.627+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T01:49:43.568+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:49:43.584+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:49:43.592+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:49:43.605+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:49:43.631+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T01:49:47.738+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:49:47.739+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T01:49:47.740+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T01:49:47.751+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:49:47.821+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T01:49:47.844+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T01:49:47.845+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T01:50:00.295+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.c.ShippingAddressController        : Received request to update shipping address ID: 3 for user ID: 2
+2025-11-23T01:50:00.297+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.s.ShippingAddressServiceImpl     : Updating shipping address ID: 3 for user ID: 2
+2025-11-23T01:50:00.354+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.s.ShippingAddressServiceImpl     : Shipping address ID: 3 updated successfully for user ID: 2
+2025-11-23T01:50:00.355+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.c.ShippingAddressController        : Shipping address ID: 3 updated successfully for user ID: 2
+2025-11-23T01:50:00.365+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T01:50:00.366+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T01:50:00.379+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T01:50:00.380+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T01:50:13.816+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.c.ShippingAddressController        : Received request to update shipping address ID: 3 for user ID: 2
+2025-11-23T01:50:13.817+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.s.ShippingAddressServiceImpl     : Updating shipping address ID: 3 for user ID: 2
+2025-11-23T01:50:13.846+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.s.ShippingAddressServiceImpl     : Shipping address ID: 3 updated successfully for user ID: 2
+2025-11-23T01:50:13.846+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.c.ShippingAddressController        : Shipping address ID: 3 updated successfully for user ID: 2
+2025-11-23T01:50:13.863+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T01:50:13.864+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T01:50:13.895+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T01:50:13.897+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T01:50:30.736+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Creating order for user: 2
+2025-11-23T01:50:30.738+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Starting order creation for user ID: 2
+2025-11-23T01:50:30.803+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Order saved successfully with ID: 13
+2025-11-23T01:50:30.804+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Stock decreased → Product ID 3: 10 → 9
+2025-11-23T01:50:30.879+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Clear cart request received: {userId=2}
+2025-11-23T01:50:30.901+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Successfully cleared cart for userId: 2 - 1 items deleted
+2025-11-23T01:51:00.867+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:51:00.868+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T01:51:00.869+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T01:51:00.873+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T01:51:00.880+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T01:51:00.881+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T01:52:10.154+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T01:52:10.196+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T01:52:10.197+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T01:52:27.039+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T01:52:27.094+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T01:52:27.104+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T01:57:06.182+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Fetching products by category: Cakes, page: 0, size: 8
+2025-11-23T01:57:06.184+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.ProductServiceImpl   : Fetching products by category: 'Cakes' with pagination - page: 0, size: 8
+2025-11-23T01:57:06.201+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.ProductServiceImpl   : Found 3 products in category 'Cakes' for page 1 of 1 with 3 total elements
+2025-11-23T01:57:06.225+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Found 3 products in category 'Cakes', page: 0, total elements: 3
+2025-11-23T01:57:06.237+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:06.241+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T01:57:06.419+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T01:57:06.421+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T01:57:06.422+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T01:57:10.141+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:10.145+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T01:57:10.154+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T01:57:10.154+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:10.159+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T01:57:10.160+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Fetching product with ID: 1
+2025-11-23T01:57:10.162+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.ProductServiceImpl   : Fetching product by ID: 1
+2025-11-23T01:57:10.167+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.ProductServiceImpl   : Product found: chocolate cake (ID: 1)
+2025-11-23T01:57:10.176+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Product retrieved successfully: chocolate cake
+2025-11-23T01:57:10.272+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.bakery.controller.ProductController  : Fetching products by category: Cakes, page: 0, size: 4
+2025-11-23T01:57:10.274+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.ProductServiceImpl   : Fetching products by category: 'Cakes' with pagination - page: 0, size: 4
+2025-11-23T01:57:10.281+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.ProductServiceImpl   : Found 3 products in category 'Cakes' for page 1 of 1 with 3 total elements
+2025-11-23T01:57:10.310+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.bakery.controller.ProductController  : Found 3 products in category 'Cakes', page: 0, total elements: 3
+2025-11-23T01:57:10.394+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T01:57:10.394+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T01:57:13.473+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Add to cart request received: {userId=2, productId=1, snackId=null, quantity=1, size=500g, itemType=PRODUCT, addonIds=[]}
+2025-11-23T01:57:13.603+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:13.615+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:57:13.645+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:13.657+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:57:15.613+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:15.623+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:57:15.629+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:15.639+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:57:15.653+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T01:57:17.929+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T01:57:17.930+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T01:57:17.930+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T01:57:17.941+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T01:57:17.947+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T01:57:17.947+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T01:57:18.002+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T01:59:27.190+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.OrderController  : Creating order for user: 2
+2025-11-23T01:59:27.193+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.OrderServiceImpl     : Starting order creation for user ID: 2
+2025-11-23T01:59:27.225+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.OrderServiceImpl     : Order saved successfully with ID: 14
+2025-11-23T01:59:27.227+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.b.s.serviceImpl.OrderServiceImpl     : Stock decreased → Product ID 1: 10 → 9
+2025-11-23T01:59:27.336+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Clear cart request received: {userId=2}
+2025-11-23T01:59:27.359+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Successfully cleared cart for userId: 2 - 1 items deleted
+2025-11-23T02:01:35.968+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T02:01:35.969+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T02:01:35.969+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:01:35.975+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:01:35.986+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T02:01:35.987+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T02:01:45.448+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Fetching all products - page: 0, size: 1000
+2025-11-23T02:01:45.450+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.ProductServiceImpl   : Fetching products with pagination - page: 0, size: 1000
+2025-11-23T02:01:45.457+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.ProductServiceImpl   : Retrieved page 1 of 1 with 3 products out of 3 total
+2025-11-23T02:01:45.482+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Retrieved 3 products out of 3 total
+2025-11-23T02:01:45.757+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:01:45.763+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:01:46.870+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:01:46.930+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T02:01:46.933+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T02:01:46.933+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T02:01:50.955+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:02:25.072+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:02:25.128+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T02:02:25.129+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T02:02:25.131+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T02:02:28.993+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:03:13.681+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:03:13.746+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T02:03:13.748+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T02:03:13.751+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T02:03:17.654+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:03:17.698+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T02:03:17.701+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T02:03:17.701+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T02:03:19.541+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:03:19.594+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T02:03:19.599+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T02:03:19.602+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T02:03:22.719+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.thb.bakery.controller.OrderController  : Canceling order with ID: 14
+2025-11-23T02:03:22.733+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Stock restored → Product ID 1: 9 → 10
+2025-11-23T02:03:22.734+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 14
+2025-11-23T02:03:22.768+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:03:32.468+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.OrderController  : Canceling order with ID: 13
+2025-11-23T02:03:32.493+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.OrderServiceImpl     : Stock restored → Product ID 3: 9 → 10
+2025-11-23T02:03:32.494+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 13
+2025-11-23T02:03:32.545+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:04:04.011+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:04.014+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:04:37.682+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:37.686+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:04:39.640+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x070x120x010x000x070x0e0x030x030x990x990x8e0xdcUs0x180x120x030xee|0xees/0x900xfe0x9bu0x8f<T0x930xd20xc8[_0xc70xdb0x910x8b0x0f* ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.44.jar:10.1.44]
+	at java.base/java.lang.Thread.run(Thread.java:1447) ~[na:na]
+
+2025-11-23T02:04:39.787+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:39.793+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:04:41.826+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.SnacksController   : Fetching all snacks - page: 0, size: 10
+2025-11-23T02:04:41.881+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:41.884+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:04:41.926+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.SnacksController   : Fetching image for ID: 1
+2025-11-23T02:04:41.933+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-23T02:04:47.599+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.thb.bakery.controller.CartController   : Add to cart request received: {userId=2, snackId=2, quantity=1, size=Pack of 6, addonIds=[], itemType=SNACK}
+2025-11-23T02:04:47.659+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:47.669+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T02:04:49.254+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:49.260+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T02:04:49.267+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:49.273+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T02:04:49.303+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-2] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-23T02:04:52.922+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:04:52.922+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T02:04:52.922+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T02:04:52.929+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.thb.bakery.controller.CartController   : Successfully retrieved 1 cart items for userId: 2
+2025-11-23T02:04:52.940+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T02:04:52.941+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T02:04:53.000+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-23T02:04:56.829+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.bakery.controller.PaymentController  : Creating payment order for userId: 2 with amount: 13500
+2025-11-23T02:04:56.836+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.s.serviceImpl.PaymentServiceImpl   : Attempting to create Razorpay order for userId: 2
+2025-11-23T02:04:59.431+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.b.s.serviceImpl.PaymentServiceImpl   : Payment order created successfully for userId: 2 with orderId: order_Riv4dateWLi4N3
+2025-11-23T02:05:12.186+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.OrderController  : Creating order for user: 2
+2025-11-23T02:05:12.188+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.OrderServiceImpl     : Starting order creation for user ID: 2
+2025-11-23T02:05:12.201+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.OrderServiceImpl     : Order saved successfully with ID: 15
+2025-11-23T02:05:12.202+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.t.b.s.serviceImpl.OrderServiceImpl     : Stock decreased → Snack ID 2: 10 → 9
+2025-11-23T02:05:12.224+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Clear cart request received: {userId=2}
+2025-11-23T02:05:12.234+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.thb.bakery.controller.CartController   : Successfully cleared cart for userId: 2 - 1 items deleted
+2025-11-23T02:05:15.115+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:05:15.116+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.c.ShippingAddressController        : Received request to fetch shipping addresses for user ID: 2
+2025-11-23T02:05:15.116+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.s.ShippingAddressServiceImpl     : Fetching shipping addresses for user ID: 2
+2025-11-23T02:05:15.118+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:05:15.128+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.s.s.ShippingAddressServiceImpl     : Successfully retrieved 2 addresses for user ID: 2
+2025-11-23T02:05:15.128+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.b.c.ShippingAddressController        : Successfully retrieved 2 shipping addresses for user ID: 2
+2025-11-23T02:05:19.776+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-3] c.t.bakery.controller.SnacksController   : Fetching all snacks - page: 0, size: 10
+2025-11-23T02:05:19.829+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.CartController   : Get cart request received for userId: 2
+2025-11-23T02:05:19.833+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.CartController   : Successfully retrieved 0 cart items for userId: 2
+2025-11-23T02:05:19.939+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.SnacksController   : Fetching image for ID: 1
+2025-11-23T02:05:19.939+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-23T02:05:20.786+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-6] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:05:20.829+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-23T02:05:20.835+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-1] c.t.bakery.controller.ProductController  : Fetching image for product ID: 1
+2025-11-23T02:05:20.839+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-7] c.t.bakery.controller.ProductController  : Fetching image for product ID: 2
+2025-11-23T02:05:20.839+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-9] c.t.bakery.controller.ProductController  : Fetching image for product ID: 3
+2025-11-23T02:05:32.188+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.thb.bakery.controller.OrderController  : Canceling order with ID: 15
+2025-11-23T02:05:32.199+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.OrderServiceImpl     : Stock restored → Snack ID 2: 9 → 10
+2025-11-23T02:05:32.200+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-10] c.t.b.s.serviceImpl.OrderServiceImpl     : Order cancelled successfully with id: 15
+2025-11-23T02:05:32.221+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-5] c.thb.bakery.controller.OrderController  : Fetching orders for user id: 2
+2025-11-23T02:05:40.240+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-4] c.t.bakery.controller.SnacksController   : Fetching image for ID: 2
+2025-11-23T02:05:40.248+05:30  INFO 13912 --- [The-Home-Bakery] [http-nio-8082-exec-8] c.t.bakery.controller.SnacksController   : Fetching image for ID: 1
+2025-11-23T02:27:05.577+05:30  INFO 13912 --- [The-Home-Bakery] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-23T02:27:05.588+05:30  INFO 13912 --- [The-Home-Bakery] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-23T02:27:05.599+05:30  INFO 13912 --- [The-Home-Bakery] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-23T02:27:05.607+05:30  INFO 13912 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-23T02:27:05.611+05:30  INFO 13912 --- [The-Home-Bakery] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

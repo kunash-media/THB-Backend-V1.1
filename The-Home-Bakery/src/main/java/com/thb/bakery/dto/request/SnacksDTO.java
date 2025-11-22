@@ -14,6 +14,9 @@ public class SnacksDTO {
     private Double productNewPrice;
     private Double ratings;
     private String productDiscount;
+
+    private Integer productQuantity;
+
     private String productImageUrl;
 
     // Constructors
@@ -21,7 +24,7 @@ public class SnacksDTO {
 
     public SnacksDTO(String productName, String productCategory, String productSubcategory,
                      String skuNumber, Double productOldPrice, Double productNewPrice,
-                     Double ratings, String productDiscount, String productImageUrl) {
+                     Double ratings, String productDiscount, Integer productQuantity, String productImageUrl) {
         this.productName = productName;
         this.productCategory = productCategory;
         this.productSubcategory = productSubcategory;
@@ -30,6 +33,7 @@ public class SnacksDTO {
         this.productNewPrice = productNewPrice;
         this.ratings = ratings;
         this.productDiscount = productDiscount;
+        this.productQuantity = productQuantity;
         this.productImageUrl = productImageUrl;
     }
 
@@ -62,4 +66,13 @@ public class SnacksDTO {
 
     public String getProductImageUrl() { return productImageUrl; }
     public void setProductImageUrl(String productImageUrl) { this.productImageUrl = productImageUrl; }
+
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
+    }
 }

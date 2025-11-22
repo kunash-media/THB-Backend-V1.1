@@ -54,6 +54,7 @@ public class SnacksServiceImpl implements SnacksService {
         entity.setProductNewPrice(dto.getProductNewPrice() != null ? dto.getProductNewPrice() : 0.0);
         entity.setRatings(dto.getRatings() != null ? dto.getRatings() : 0.0);
         entity.setProductDiscount(dto.getProductDiscount());
+        entity.setProductQuantity(dto.getProductQuantity());
         entity.setProductMainImage(image);
 
         SnacksEntity saved = repo.save(entity);
@@ -108,6 +109,7 @@ public class SnacksServiceImpl implements SnacksService {
         entity.setProductNewPrice(dto.getProductNewPrice() != null ? dto.getProductNewPrice() : entity.getProductNewPrice());
         entity.setRatings(dto.getRatings() != null ? dto.getRatings() : entity.getRatings());
         entity.setProductDiscount(dto.getProductDiscount());
+        entity.setProductQuantity(dto.getProductQuantity());
 
         if (productMainImage != null && !productMainImage.isEmpty()) {
             entity.setProductMainImage(getImage(productMainImage));
@@ -135,6 +137,7 @@ public class SnacksServiceImpl implements SnacksService {
             Optional.ofNullable(dto.getProductNewPrice()).ifPresent(entity::setProductNewPrice);
             Optional.ofNullable(dto.getRatings()).ifPresent(entity::setRatings);
             Optional.ofNullable(dto.getProductDiscount()).ifPresent(entity::setProductDiscount);
+            Optional.ofNullable(dto.getProductQuantity()).ifPresent(entity::setProductQuantity);
         }
 
         if (productMainImage != null && !productMainImage.isEmpty()) {
@@ -202,6 +205,7 @@ public class SnacksServiceImpl implements SnacksService {
                 e.getProductNewPrice() != 0.0 ? e.getProductNewPrice() : null,
                 e.getRatings() != 0.0 ? e.getRatings() : null,
                 e.getProductDiscount(),
+                e.getProductQuantity(),
                 "/api/v1/snacks/" + e.getSnackId() + "/image"
         );
     }

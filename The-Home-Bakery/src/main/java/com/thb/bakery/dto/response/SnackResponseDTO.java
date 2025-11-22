@@ -13,12 +13,17 @@ public class SnackResponseDTO {
     private Double productNewPrice;
     private Double ratings;
     private String productDiscount;
+
+    private Integer productQuantity;
+
     private String productImageUrl;
 
     // Constructors
     public SnackResponseDTO() {}
 
-    public SnackResponseDTO(Long snackId, String productName, String productCategory, String productSubcategory, String skuNumber, Double productOldPrice, Double productNewPrice, Double ratings, String productDiscount, String productImageUrl) {
+    public SnackResponseDTO(Long snackId, String productName, String productCategory, String productSubcategory,
+                            String skuNumber, Double productOldPrice, Double productNewPrice,
+                            Double ratings, String productDiscount, Integer productQuantity, String productImageUrl) {
         this.snackId = snackId;
         this.productName = productName;
         this.productCategory = productCategory;
@@ -28,6 +33,7 @@ public class SnackResponseDTO {
         this.productNewPrice = productNewPrice;
         this.ratings = ratings;
         this.productDiscount = productDiscount;
+        this.productQuantity = productQuantity;
         this.productImageUrl = productImageUrl;
     }
 
@@ -69,4 +75,12 @@ public class SnackResponseDTO {
 
     public String getProductImageUrl() { return productImageUrl; }
     public void setProductImageUrl(String productImageUrl) { this.productImageUrl = productImageUrl; }
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
+    }
 }

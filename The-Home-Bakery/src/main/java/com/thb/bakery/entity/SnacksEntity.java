@@ -48,6 +48,9 @@ public class SnacksEntity {
     @Column(name = "product_discount")
     private String productDiscount;
 
+    @Column(name = "product_quantity")
+    private Integer productQuantity;
+
     @Lob
     @Column(name = "product_main_img", columnDefinition = "LONGBLOB")
     private byte[] productMainImage;
@@ -79,7 +82,7 @@ public class SnacksEntity {
     public SnacksEntity(Long snackId, String productName, String productCategory,
                         String productSubcategory, String skuNumber,
                         double productOldPrice, double productNewPrice,
-                        double ratings, String productDiscount,
+                        double ratings, String productDiscount, Integer productQuantity,
                         byte[] productMainImage) {
         this.snackId = snackId;
         this.productName = productName;
@@ -90,6 +93,7 @@ public class SnacksEntity {
         this.productNewPrice = productNewPrice;
         this.ratings = ratings;
         this.productDiscount = productDiscount;
+        this.productQuantity = productQuantity;
         this.productMainImage = productMainImage;
     }
 
@@ -132,4 +136,13 @@ public class SnacksEntity {
 
     public List<OrderItemEntity> getOrderItems() { return orderItems; }
     public void setOrderItems(List<OrderItemEntity> orderItems) { this.orderItems = orderItems; }
+
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
+    }
 }

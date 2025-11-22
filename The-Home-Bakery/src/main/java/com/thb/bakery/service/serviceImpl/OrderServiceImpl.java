@@ -72,6 +72,9 @@ public class OrderServiceImpl implements OrderService {
             OrderEntity savedOrder = orderRepository.save(order);
             logger.info("Order saved successfully with ID: {}", savedOrder.getOrderId());
 
+            // FIXED: Stock deduction for BOTH Products & Snacks
+            decreaseStockForOrderItems(savedOrder.getOrderItems());
+
             // Prepare response
             return createSuccessResponse(savedOrder);
 
@@ -240,24 +243,6 @@ public class OrderServiceImpl implements OrderService {
         order.setOrderItems(orderItems);
     }
 
-
-//    private OrderItemEntity createOrderItem(OrderEntity order, ProductEntity product, OrderItemRequest itemRequest) {
-//        OrderItemEntity orderItem = new OrderItemEntity();
-//        orderItem.setOrder(order);
-//        orderItem.setProduct(product);
-//        orderItem.setQuantity(itemRequest.getQuantity());
-//        orderItem.setUnitPrice(product.getProductNewPrice());
-//        orderItem.setSelectedWeight(itemRequest.getSelectedWeight());
-//        orderItem.setCakeMessage(itemRequest.getCakeMessage());
-//        orderItem.setSpecialInstructions(itemRequest.getSpecialInstructions());
-//
-//        // Calculate subtotal
-//        BigDecimal subtotal = product.getProductNewPrice().multiply(BigDecimal.valueOf(itemRequest.getQuantity()));
-//        orderItem.setSubtotal(subtotal);
-//
-//        return orderItem;
-//    }
-
     private List<PartyItemEntity> createPartyItems(OrderItemEntity orderItem, List<OrderItemRequest.PartyItems> partyItemRequests) {
         List<PartyItemEntity> partyItems = new ArrayList<>();
         if (partyItemRequests != null) {
@@ -350,7 +335,6 @@ public class OrderServiceImpl implements OrderService {
                 OrderItemResponse resp = new OrderItemResponse();
 
                 // ---------- common fields ----------
-                resp.setQuantity(item.getQuantity());
                 resp.setUnitPrice(item.getUnitPrice());
                 resp.setSubtotal(item.getSubtotal());
                 resp.setSelectedWeight(item.getSelectedWeight());
@@ -494,18 +478,6 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-//    @Override
-//    public List<OrderResponse> getOrdersByDateRange(LocalDate startDate, LocalDate endDate) {
-//        try {
-//            List<OrderEntity> orders = orderRepository.findByOrderDateBetween(startDate, endDate);
-//            return orders.stream()
-//                    .map(this::createSuccessResponse)
-//                    .collect(Collectors.toList());
-//        } catch (Exception e) {
-//            logger.error("Error fetching orders by date range: {} to {}", startDate, endDate, e);
-//            throw new RuntimeException("Failed to fetch orders by date range: " + e.getMessage());
-//        }
-//    }
 
     @Override
     @Transactional
@@ -520,6 +492,10 @@ public class OrderServiceImpl implements OrderService {
             }
 
             order.setOrderStatus("cancelled");
+
+            // FIXED: Stock restoration  unite for BOTH Products & Snacks
+            restoreStockForOrderItems(order.getOrderItems());
+
             orderRepository.save(order);
 
             logger.info("Order cancelled successfully with id: {}", orderId);
@@ -586,5 +562,68 @@ public class OrderServiceImpl implements OrderService {
         stats.put("paymentMethods", paymentMethods);
 
         return stats;
+    }
+
+
+    //============= PRODUCT STOCK QTY UPDATE ==========//
+
+    /**
+     * DECREASE STOCK for both Products AND Snacks when order is placed
+     */
+    private void decreaseStockForOrderItems(List<OrderItemEntity> orderItems) {
+        for (OrderItemEntity item : orderItems) {
+            Integer qty = item.getQuantity();
+
+            // === CASE 1: Regular Product (Cake) ===
+            if (item.getProduct() != null) {
+                ProductEntity product = item.getProduct();
+                Integer current = product.getProductQuantity();
+                if (current == null || current < qty) {
+                    throw new RuntimeException("Insufficient stock for product: " + product.getProductName());
+                }
+                product.setProductQuantity(current - qty);
+                productRepository.save(product);
+                logger.info("Stock decreased → Product ID {}: {} → {}", product.getProductId(), current, product.getProductQuantity());
+            }
+
+            // === CASE 2: Snack ===
+            else if (item.getSnack() != null) {
+                SnacksEntity snack = item.getSnack();
+                Integer current = snack.getProductQuantity();
+                if (current == null || current < qty) {
+                    throw new RuntimeException("Insufficient stock for snack: " + snack.getProductName());
+                }
+                snack.setProductQuantity(current - qty);
+                snacksRepository.save(snack);
+                logger.info("Stock decreased → Snack ID {}: {} → {}", snack.getSnackId(), current, snack.getProductQuantity());
+            }
+        }
+    }
+
+    /**
+     * RESTORE STOCK for both Products AND Snacks when order is cancelled
+     */
+    private void restoreStockForOrderItems(List<OrderItemEntity> orderItems) {
+        for (OrderItemEntity item : orderItems) {
+            Integer qty = item.getQuantity();
+
+            // === CASE 1: Product (Cake) ===
+            if (item.getProduct() != null) {
+                ProductEntity product = item.getProduct();
+                Integer current = product.getProductQuantity();
+                product.setProductQuantity(current + qty);
+                productRepository.save(product);
+                logger.info("Stock restored → Product ID {}: {} → {}", product.getProductId(), current, product.getProductQuantity());
+            }
+
+            // === CASE 2: Snack ===
+            else if (item.getSnack() != null) {
+                SnacksEntity snack = item.getSnack();
+                Integer current = snack.getProductQuantity();
+                snack.setProductQuantity(current + qty);
+                snacksRepository.save(snack);
+                logger.info("Stock restored → Snack ID {}: {} → {}", snack.getSnackId(), current, snack.getProductQuantity());
+            }
+        }
     }
 }
