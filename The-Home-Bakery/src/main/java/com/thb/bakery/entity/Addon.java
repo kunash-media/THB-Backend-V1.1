@@ -20,8 +20,8 @@ public class Addon {
 
 
     // --- Many-to-Many with CartItemEntity (optional, for completeness) ---
-    @ManyToMany(mappedBy = "addons")
-    private Set<CartItemEntity> cartItems = new HashSet<>();
+//    @ManyToMany(mappedBy = "addons")
+//    private Set<CartItemEntity> cartItems = new HashSet<>();
 
     public Addon(){}
 
@@ -74,11 +74,11 @@ public class Addon {
         this.imageUrl = imageUrl;
     }
 
-    public Set<CartItemEntity> getCartItems() {
-        return cartItems;
-    }
-
-    public void setCartItems(Set<CartItemEntity> cartItems) {
-        this.cartItems = cartItems;
-    }
+//    public Set<CartItemEntity> getCartItems() {
+//        return cartItems;
+//    }
+//
+//    public void setCartItems(Set<CartItemEntity> cartItems) {
+//        this.cartItems = cartItems;
+//    }
 }

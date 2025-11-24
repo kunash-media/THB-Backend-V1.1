@@ -33,6 +33,7 @@ public interface CartItemRepository extends JpaRepository<CartItemEntity, Long> 
 //    List<CartItemEntity> findByUserIdWithProductAndAddons(@Param("userId") Long userId);
 
 
+    //---- old depricated ----//
 //    @Query("SELECT c FROM CartItemEntity c " +
 //            "LEFT JOIN FETCH c.product " +
 //            "LEFT JOIN FETCH c.snack " +
@@ -40,10 +41,11 @@ public interface CartItemRepository extends JpaRepository<CartItemEntity, Long> 
 //            "WHERE c.userId = :userId")
 //    List<CartItemEntity> findByUserIdWithProductAndAddons(@Param("userId") Long userId);
 
-    @Query("SELECT c FROM CartItemEntity c " +
+
+    //======NEW for ADDONS ADDED ======//
+    @Query("SELECT DISTINCT c FROM CartItemEntity c " +
             "LEFT JOIN FETCH c.product " +
             "LEFT JOIN FETCH c.snack " +
-            "LEFT JOIN FETCH c.addons " +
             "WHERE c.userId = :userId")
     List<CartItemEntity> findByUserIdWithProductAndAddons(@Param("userId") Long userId);
 
