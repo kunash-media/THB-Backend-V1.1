@@ -1,5 +1,6 @@
 package com.thb.bakery.service.serviceImpl;
 
+import com.thb.bakery.dto.request.PosProductDTO;
 import com.thb.bakery.dto.request.ProductCreateRequestDTO;
 import com.thb.bakery.dto.request.ProductDTO;
 import com.thb.bakery.dto.request.ProductPatchRequestDTO;
@@ -19,6 +20,7 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -736,5 +738,126 @@ public class ProductServiceImpl implements ProductService {
         }
         entity.setProductSubImages(updatedSubImages);
         logger.debug("Updated sub-images using {} valid indices", updatedSubImages.size());
+    }
+
+
+    //=================  POS PATCH API methods ===============================//
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<PosProductDTO> getAllProductsForPos() {
+        logger.info("Fetching all products for POS");
+
+        try {
+            List<ProductEntity> entities = productRepository.findAll();
+            logger.info("Retrieved {} products for POS", entities.size());
+
+            return entities.stream()
+                    .map(this::convertToPosDTO)
+                    .collect(Collectors.toList());
+
+        } catch (Exception e) {
+            logger.error("Error retrieving products for POS: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to retrieve products for POS: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<PosProductDTO> getProductsByCategoryForPos(String category) {
+        logger.info("Fetching products by category for POS: '{}'", category);
+
+        try {
+            if (!StringUtils.hasText(category)) {
+                throw new IllegalArgumentException("Category cannot be null or empty");
+            }
+
+            String searchCategory = category.trim();
+            List<ProductEntity> entities = productRepository.findByProductCategoryAndNotDeleted(searchCategory);
+
+            logger.info("Found {} products in category '{}' for POS", entities.size(), searchCategory);
+
+            return entities.stream()
+                    .map(this::convertToPosDTO)
+                    .collect(Collectors.toList());
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid category parameter for POS: {}", e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Error fetching products by category for POS '{}': {}", category, e.getMessage(), e);
+            throw new RuntimeException("Failed to fetch products by category for POS: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<PosProductDTO> getProductsBySubCategoryForPos(String subCategory) {
+        logger.info("Fetching products by sub-category for POS: '{}'", subCategory);
+
+        try {
+            if (!StringUtils.hasText(subCategory)) {
+                throw new IllegalArgumentException("Sub-category cannot be null or empty");
+            }
+
+            String searchSubCategory = subCategory.trim();
+            List<ProductEntity> entities = productRepository.findByProductSubCategoryAndNotDeleted(searchSubCategory);
+
+            logger.info("Found {} products in sub-category '{}' for POS", entities.size(), searchSubCategory);
+
+            return entities.stream()
+                    .map(this::convertToPosDTO)
+                    .collect(Collectors.toList());
+
+        } catch (IllegalArgumentException e) {
+            logger.error("Invalid sub-category parameter for POS: {}", e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            logger.error("Error fetching products by sub-category for POS '{}': {}", subCategory, e.getMessage(), e);
+            throw new RuntimeException("Failed to fetch products by sub-category for POS: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<PosProductDTO> searchProductsForPos(String searchTerm) {
+        logger.info("Searching products for POS with term: '{}'", searchTerm);
+
+        try {
+            if (!StringUtils.hasText(searchTerm)) {
+                return getAllProductsForPos();
+            }
+
+            String searchName = searchTerm.trim();
+            List<ProductEntity> entities = productRepository.findByProductNameContainingIgnoreCase(searchName);
+
+            logger.info("Found {} products matching '{}' for POS", entities.size(), searchName);
+
+            return entities.stream()
+                    .map(this::convertToPosDTO)
+                    .collect(Collectors.toList());
+
+        } catch (Exception e) {
+            logger.error("Error searching products for POS '{}': {}", searchTerm, e.getMessage(), e);
+            throw new RuntimeException("Failed to search products for POS: " + e.getMessage(), e);
+        }
+    }
+
+    // Helper method to convert Entity to POS DTO
+    private PosProductDTO convertToPosDTO(ProductEntity entity) {
+        PosProductDTO dto = new PosProductDTO();
+        dto.setProductId(entity.getProductId());
+        dto.setProductName(entity.getProductName());
+        dto.setProductCategory(entity.getProductCategory());
+        dto.setProductSubCategory(entity.getProductSubCategory());
+        dto.setSkuNumber(entity.getSkuNumber());
+        dto.setProductOldPrice(entity.getProductOldPrice());
+        dto.setProductNewPrice(entity.getProductNewPrice());
+        dto.setProductQuantity(entity.getProductQuantity()); // assuming you have this field
+
+        // THIS IS THE KEY CHANGE
+        dto.setProductImage("/api/v1/products/" + entity.getProductId() + "/image");
+
+        return dto;
     }
 }

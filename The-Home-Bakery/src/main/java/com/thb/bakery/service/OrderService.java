@@ -5,11 +5,24 @@ import com.thb.bakery.dto.request.UpdateOrderRequest;
 import com.thb.bakery.dto.response.OrderResponse;
 
 
-import java.time.LocalDate;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
 public interface OrderService {
+
+    //NEW for dashboard--
+    Map<String, Object> getSalesTrendData();
+
+    //NEW for dashboard--
+    Map<String, Object> getProductCategoryDistribution();
+
+
+    // below 3 fields are newly added fields;;
+    BigDecimal getTotalSales();
+    Long getTotalOrdersCount();
+    Map<String, Object> getSalesStatistics();
+    //----------
 
     // Core CRUD operations
     OrderResponse createOrder(CreateOrderRequest request);

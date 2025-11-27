@@ -1,9 +1,6 @@
 package com.thb.bakery.controller;
 
-import com.thb.bakery.dto.request.ProductCreateRequestDTO;
-import com.thb.bakery.dto.request.ProductDTO;
-import com.thb.bakery.dto.request.ProductDataDTO;
-import com.thb.bakery.dto.request.ProductPatchRequestDTO;
+import com.thb.bakery.dto.request.*;
 import com.thb.bakery.dto.response.ApiResponse;
 import com.thb.bakery.entity.ProductEntity;
 import com.thb.bakery.repository.ProductRepository;
@@ -558,4 +555,94 @@ public class ProductController {
             requestDTO.setProductSubImages(subImages);
         }
     }
+
+    //================= POS PATCH ADDED =================//
+
+    @GetMapping("/pos/all")
+    public ResponseEntity<ApiResponse<List<PosProductDTO>>> getAllProductsForPos() {
+        logger.info("Fetching all products for POS system");
+
+        try {
+            List<PosProductDTO> products = productService.getAllProductsForPos();
+            logger.info("Successfully retrieved {} products for POS", products.size());
+
+            return ResponseEntity.ok(ApiResponse.success(
+                    String.format("Retrieved %d products successfully", products.size()),
+                    products));
+
+        } catch (Exception e) {
+            logger.error("Error retrieving products for POS: {}", e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ApiResponse.error("Failed to retrieve products for POS: " + e.getMessage()));
+        }
+    }
+
+    @GetMapping("/pos/category/{category}")
+    public ResponseEntity<ApiResponse<List<PosProductDTO>>> getProductsByCategoryForPos(
+            @PathVariable String category) {
+        logger.info("Fetching products by category for POS: {}", category);
+
+        try {
+            List<PosProductDTO> products = productService.getProductsByCategoryForPos(category);
+            logger.info("Found {} products in category '{}' for POS", products.size(), category);
+
+            return ResponseEntity.ok(ApiResponse.success(
+                    String.format("Found %d products in category '%s'", products.size(), category),
+                    products));
+
+        } catch (IllegalArgumentException e) {
+            logger.warn("Invalid category parameter for POS: {}", e.getMessage());
+            return ResponseEntity.badRequest()
+                    .body(ApiResponse.error("Invalid input: " + e.getMessage()));
+        } catch (Exception e) {
+            logger.error("Error fetching products by category for POS '{}': {}", category, e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ApiResponse.error("Failed to fetch products by category for POS: " + e.getMessage()));
+        }
+    }
+
+    @GetMapping("/pos/subcategory/{subCategory}")
+    public ResponseEntity<ApiResponse<List<PosProductDTO>>> getProductsBySubCategoryForPos(
+            @PathVariable String subCategory) {
+        logger.info("Fetching products by sub-category for POS: {}", subCategory);
+
+        try {
+            List<PosProductDTO> products = productService.getProductsBySubCategoryForPos(subCategory);
+            logger.info("Found {} products in sub-category '{}' for POS", products.size(), subCategory);
+
+            return ResponseEntity.ok(ApiResponse.success(
+                    String.format("Found %d products in sub-category '%s'", products.size(), subCategory),
+                    products));
+
+        } catch (IllegalArgumentException e) {
+            logger.warn("Invalid sub-category parameter for POS: {}", e.getMessage());
+            return ResponseEntity.badRequest()
+                    .body(ApiResponse.error("Invalid input: " + e.getMessage()));
+        } catch (Exception e) {
+            logger.error("Error fetching products by sub-category for POS '{}': {}", subCategory, e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ApiResponse.error("Failed to fetch products by sub-category for POS: " + e.getMessage()));
+        }
+    }
+
+    @GetMapping("/pos/search/{searchTerm}")
+    public ResponseEntity<ApiResponse<List<PosProductDTO>>> searchProductsForPos(
+            @PathVariable String searchTerm) {
+        logger.info("Searching products for POS with term: {}", searchTerm);
+
+        try {
+            List<PosProductDTO> products = productService.searchProductsForPos(searchTerm);
+            logger.info("Found {} products matching '{}' for POS", products.size(), searchTerm);
+
+            return ResponseEntity.ok(ApiResponse.success(
+                    String.format("Found %d products matching '%s'", products.size(), searchTerm),
+                    products));
+
+        } catch (Exception e) {
+            logger.error("Error searching products for POS '{}': {}", searchTerm, e.getMessage(), e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(ApiResponse.error("Failed to search products for POS: " + e.getMessage()));
+        }
+    }
+
 }

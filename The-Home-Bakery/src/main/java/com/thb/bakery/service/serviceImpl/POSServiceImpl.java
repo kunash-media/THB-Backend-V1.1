@@ -225,6 +225,7 @@ public class POSServiceImpl implements POSService {
         entity.setTotalAmount(requestDTO.getTotalAmount());
         entity.setReceiptId(requestDTO.getReceiptId());
         entity.setTableNumber(requestDTO.getTableNumber());
+        entity.setOrderType(requestDTO.getOrderType());
     }
 
     private POSOrderResponseDTO mapEntityToResponse(POSEntity entity) {
@@ -251,6 +252,10 @@ public class POSServiceImpl implements POSService {
         response.setReceiptId(entity.getReceiptId());
         response.setTableNumber(entity.getTableNumber());
         response.setProductId(entity.getProduct().getProductId());
+        response.setOrderType(entity.getOrderType());
+
         return response;
     }
+
+
 }

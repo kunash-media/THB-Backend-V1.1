@@ -17,6 +17,8 @@ public class POSOrderResponseDTO {
     private LocalDateTime createdAt;
     private String receiptId;
     private String tableNumber;
+
+    private String orderType;
     private Long productId;
 
 
@@ -130,6 +132,14 @@ public class POSOrderResponseDTO {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
     }
 
     public static class OrderItem {

@@ -1,5 +1,6 @@
 package com.thb.bakery.service;
 
+import com.thb.bakery.dto.request.PosProductDTO;
 import com.thb.bakery.dto.request.ProductCreateRequestDTO;
 import com.thb.bakery.dto.request.ProductDTO;
 import com.thb.bakery.dto.request.ProductPatchRequestDTO;
@@ -37,5 +38,13 @@ public interface ProductService {
     List<ProductDTO> getProductsByFoodType(String foodType);
 
     Page<ProductDTO> getProductsBySubCategory(String productSubCategory, Pageable pageable);
+
+
+    //============== POS PATCH API ==========//
+
+    List<PosProductDTO> getAllProductsForPos();
+    List<PosProductDTO> getProductsByCategoryForPos(String category);
+    List<PosProductDTO> getProductsBySubCategoryForPos(String subCategory);
+    List<PosProductDTO> searchProductsForPos(String searchTerm);
 }
 

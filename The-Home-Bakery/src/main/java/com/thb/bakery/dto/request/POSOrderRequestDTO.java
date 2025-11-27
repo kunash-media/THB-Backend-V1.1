@@ -9,9 +9,7 @@ import java.util.List;
 public class POSOrderRequestDTO {
 
     private String orderId;
-
     private String customerName;
-
     private String customerMobile;
 
     @NotNull(message = "orderItems cannot be null")
@@ -19,19 +17,17 @@ public class POSOrderRequestDTO {
 
     @NotNull(message = "totalQuantity cannot be null")
     private Integer totalQuantity;
-
     private String totalDiscount;
-
     private String paymentMode;
-
     private String paymentStatus;
 
     @NotNull(message = "totalAmount cannot be null")
     private Double totalAmount;
 
     private String receiptId;
-
     private String tableNumber;
+
+    private String orderType;
 
     @NotNull(message = "productId cannot be null")
     private Long productId;
@@ -131,6 +127,14 @@ public class POSOrderRequestDTO {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
     }
 
     public static class OrderItem {

@@ -51,9 +51,16 @@ public class POSEntity {
     @Column(name = "table_number")
     private String tableNumber;
 
+    @Column(name = "order_type")
+    private String orderType;
+
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = true)
     private ProductEntity product;
+
+    @ManyToOne
+    @JoinColumn(name = "snack_id", nullable = true)
+    private SnacksEntity snack;
 
     @PrePersist
     protected void onCreate() {
@@ -162,6 +169,22 @@ public class POSEntity {
 
     public void setTableNumber(String tableNumber) {
         this.tableNumber = tableNumber;
+    }
+
+    public String getOrderType() {
+        return orderType;
+    }
+
+    public void setOrderType(String orderType) {
+        this.orderType = orderType;
+    }
+
+    public SnacksEntity getSnack() {
+        return snack;
+    }
+
+    public void setSnack(SnacksEntity snack) {
+        this.snack = snack;
     }
 
     public ProductEntity getProduct() {
