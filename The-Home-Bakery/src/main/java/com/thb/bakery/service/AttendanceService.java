@@ -5,6 +5,7 @@ import com.thb.bakery.dto.response.AttendanceResponse;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 public interface AttendanceService {
 
@@ -25,4 +26,13 @@ public interface AttendanceService {
 
     // Check if staff has attendance for today
     boolean hasAttendanceForToday(Long staffId);
+
+    // NEW: Get monthly attendance for staff
+    List<AttendanceResponse> getMonthlyAttendance(Long staffId, LocalDate month);
+
+    // NEW: Get attendance summary for staff and month
+    Map<String, Object> getAttendanceSummary(Long staffId, LocalDate month);
+
+    // NEW: Bulk mark attendance for multiple staff
+    List<AttendanceResponse> bulkMarkAttendance(List<AttendanceRequest> requests);
 }

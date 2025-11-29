@@ -1,6 +1,5 @@
 package com.thb.bakery.service.serviceImpl;
 
-
 import com.thb.bakery.dto.request.AttendanceRequest;
 import com.thb.bakery.dto.response.AttendanceResponse;
 import com.thb.bakery.entity.AttendanceEntity;
@@ -14,8 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,228 +33,347 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public AttendanceResponse markAttendance(AttendanceRequest request) {
-        logger.info("🟢 Marking attendance for staff: {}, Date: {}",
-                request.getStaffId(), request.getAttendanceDate());
+        logger.info("Marking attendance for staff: {} on date: {}", request.getStaffId(), request.getAttendanceDate());
 
         try {
             // Validate staff exists
             StaffEntity staff = staffRepository.findById(request.getStaffId())
-                    .orElseThrow(() -> {
-                        logger.error("🔴 Staff not found with ID: {}", request.getStaffId());
-                        return new RuntimeException("Staff not found with ID: " + request.getStaffId());
-                    });
+                    .orElseThrow(() -> new RuntimeException("Staff not found with ID: " + request.getStaffId()));
 
-            LocalDate today = request.getAttendanceDate() != null ?
-                    request.getAttendanceDate() : LocalDate.now();
+            // Check if attendance already exists for this date
+            Optional<AttendanceEntity> existingAttendance = attendanceRepository
+                    .findByStaffStaffidAndAttendanceDate(request.getStaffId(), request.getAttendanceDate());
 
-            // FIXED: Use orElseGet instead of orElse with constructor
-            AttendanceEntity attendance = attendanceRepository
-                    .findByStaffStaffidAndAttendanceDate(request.getStaffId(), today)
-                    .orElseGet(() -> {
-                        // Create new attendance with proper initialization
-                        AttendanceEntity newAttendance = new AttendanceEntity();
-                        newAttendance.setStaff(staff);
-                        newAttendance.setAttendanceDate(today);
-                        newAttendance.setStatus("ABSENT");
-                        newAttendance.setTotalHours(0.0);
-                        logger.debug("🆕 Created new attendance record for staff: {}", staff.getName());
-                        return newAttendance;
-                    });
+            AttendanceEntity attendance;
 
-            // Update attendance based on request
-            updateAttendanceEntity(attendance, request);
+            if (existingAttendance.isPresent()) {
+                // Update existing attendance
+                attendance = existingAttendance.get();
+                logger.info("Updating existing attendance for staff: {} on date: {}",
+                        request.getStaffId(), request.getAttendanceDate());
+            } else {
+                // Create new attendance
+                attendance = new AttendanceEntity();
+                attendance.setStaff(staff);
+                attendance.setAttendanceDate(request.getAttendanceDate());
+                logger.info("Creating new attendance for staff: {} on date: {}",
+                        request.getStaffId(), request.getAttendanceDate());
+            }
+
+            // Update fields
+            if (request.getCheckInTime() != null) {
+                attendance.setCheckInTime(request.getCheckInTime());
+            }
+            if (request.getCheckOutTime() != null) {
+                attendance.setCheckOutTime(request.getCheckOutTime());
+            }
+            if (request.getStatus() != null) {
+                attendance.setStatus(request.getStatus());
+            }
+            if (request.getNotes() != null) {
+                attendance.setNotes(request.getNotes());
+            }
+
+            // Calculate total hours if both check-in and check-out are provided
+            if (attendance.getCheckInTime() != null && attendance.getCheckOutTime() != null) {
+                calculateTotalHours(attendance);
+            }
 
             // Save attendance
             AttendanceEntity savedAttendance = attendanceRepository.save(attendance);
-            logger.info("✅ Attendance marked successfully. Staff: {}, Date: {}, Status: {}",
-                    staff.getName(), today, savedAttendance.getStatus());
+            logger.info("Attendance saved successfully for staff: {} on date: {}",
+                    request.getStaffId(), request.getAttendanceDate());
 
-            return mapToResponse(savedAttendance);
+            return convertToResponse(savedAttendance);
 
-        } catch (RuntimeException e) {
-            logger.error("❌ Failed to mark attendance. Staff ID: {}, Error: {}",
-                    request.getStaffId(), e.getMessage(), e);
-            throw e;
         } catch (Exception e) {
-            logger.error("💥 Unexpected error while marking attendance. Staff ID: {}",
-                    request.getStaffId(), e);
-            throw new RuntimeException("Failed to mark attendance", e);
+            logger.error("Error marking attendance for staff: {}", request.getStaffId(), e);
+            throw new RuntimeException("Failed to mark attendance: " + e.getMessage());
         }
     }
 
     @Override
     public AttendanceResponse updateAttendance(Long attendanceId, AttendanceRequest request) {
-        logger.info("🟢 Updating attendance. Attendance ID: {}", attendanceId);
+        logger.info("Updating attendance with ID: {}", attendanceId);
 
         try {
             AttendanceEntity attendance = attendanceRepository.findById(attendanceId)
-                    .orElseThrow(() -> {
-                        logger.error("🔴 Attendance not found with ID: {}", attendanceId);
-                        return new RuntimeException("Attendance not found");
-                    });
+                    .orElseThrow(() -> new RuntimeException("Attendance not found with ID: " + attendanceId));
 
-            updateAttendanceEntity(attendance, request);
+            // Update fields
+            if (request.getCheckInTime() != null) {
+                attendance.setCheckInTime(request.getCheckInTime());
+            }
+            if (request.getCheckOutTime() != null) {
+                attendance.setCheckOutTime(request.getCheckOutTime());
+            }
+            if (request.getStatus() != null) {
+                attendance.setStatus(request.getStatus());
+            }
+            if (request.getNotes() != null) {
+                attendance.setNotes(request.getNotes());
+            }
+
+            // Calculate total hours if both check-in and check-out are provided
+            if (attendance.getCheckInTime() != null && attendance.getCheckOutTime() != null) {
+                calculateTotalHours(attendance);
+            }
 
             AttendanceEntity updatedAttendance = attendanceRepository.save(attendance);
-            logger.info("✅ Attendance updated successfully. ID: {}", attendanceId);
+            logger.info("Attendance updated successfully with ID: {}", attendanceId);
 
-            return mapToResponse(updatedAttendance);
+            return convertToResponse(updatedAttendance);
 
         } catch (Exception e) {
-            logger.error("❌ Failed to update attendance. ID: {}, Error: {}",
-                    attendanceId, e.getMessage(), e);
-            throw new RuntimeException("Failed to update attendance", e);
+            logger.error("Error updating attendance with ID: {}", attendanceId, e);
+            throw new RuntimeException("Failed to update attendance: " + e.getMessage());
         }
     }
 
     @Override
     public List<AttendanceResponse> getAttendanceByStaffAndDateRange(Long staffId, LocalDate startDate, LocalDate endDate) {
-        logger.info("🟢 Getting attendance for staff: {}, From: {} To: {}",
-                staffId, startDate, endDate);
+        logger.info("Getting attendance for staff: {} from {} to {}", staffId, startDate, endDate);
 
         try {
-            // Validate staff exists
-            if (!staffRepository.existsById(staffId)) {
-                throw new RuntimeException("Staff not found with ID: " + staffId);
-            }
-
             List<AttendanceEntity> attendanceList = attendanceRepository
                     .findByStaffStaffidAndAttendanceDateBetween(staffId, startDate, endDate);
 
-            logger.info("✅ Found {} attendance records for staff: {}",
-                    attendanceList.size(), staffId);
-
             return attendanceList.stream()
-                    .map(this::mapToResponse)
+                    .map(this::convertToResponse)
                     .collect(Collectors.toList());
 
         } catch (Exception e) {
-            logger.error("❌ Failed to get attendance for staff: {}, Error: {}",
-                    staffId, e.getMessage(), e);
-            throw new RuntimeException("Failed to get attendance records", e);
+            logger.error("Error getting attendance for staff: {}", staffId, e);
+            throw new RuntimeException("Failed to get attendance: " + e.getMessage());
         }
     }
 
     @Override
     public List<AttendanceResponse> getAttendanceByDate(LocalDate date) {
-        logger.info("🟢 Getting attendance for date: {}", date);
+        logger.info("Getting attendance for date: {}", date);
 
         try {
             List<AttendanceEntity> attendanceList = attendanceRepository.findByAttendanceDate(date);
 
-            logger.info("✅ Found {} attendance records for date: {}",
-                    attendanceList.size(), date);
-
             return attendanceList.stream()
-                    .map(this::mapToResponse)
+                    .map(this::convertToResponse)
                     .collect(Collectors.toList());
 
         } catch (Exception e) {
-            logger.error("❌ Failed to get attendance for date: {}, Error: {}",
-                    date, e.getMessage(), e);
-            throw new RuntimeException("Failed to get attendance records", e);
+            logger.error("Error getting attendance for date: {}", date, e);
+            throw new RuntimeException("Failed to get attendance: " + e.getMessage());
         }
     }
 
     @Override
     public AttendanceResponse getTodayAttendance(Long staffId) {
-        logger.info("🟢 Getting today's attendance for staff: {}", staffId);
+        logger.info("Getting today's attendance for staff: {}", staffId);
 
         try {
             LocalDate today = LocalDate.now();
+            Optional<AttendanceEntity> attendance = attendanceRepository
+                    .findByStaffStaffidAndAttendanceDate(staffId, today);
 
-            AttendanceEntity attendance = attendanceRepository
-                    .findByStaffStaffidAndAttendanceDate(staffId, today)
-                    .orElseThrow(() -> {
-                        logger.info("ℹ️ No attendance found for staff: {} today", staffId);
-                        return new RuntimeException("No attendance record found for today");
-                    });
-
-            return mapToResponse(attendance);
+            if (attendance.isPresent()) {
+                return convertToResponse(attendance.get());
+            } else {
+                throw new RuntimeException("No attendance found for today");
+            }
 
         } catch (Exception e) {
-            logger.error("❌ Failed to get today's attendance for staff: {}, Error: {}",
-                    staffId, e.getMessage(), e);
-            throw new RuntimeException("Failed to get today's attendance", e);
+            logger.error("Error getting today's attendance for staff: {}", staffId, e);
+            throw new RuntimeException("Failed to get today's attendance: " + e.getMessage());
         }
     }
 
     @Override
     public boolean hasAttendanceForToday(Long staffId) {
+        logger.info("Checking if staff: {} has attendance for today", staffId);
+
         try {
             LocalDate today = LocalDate.now();
-            boolean hasAttendance = attendanceRepository.existsByStaffStaffidAndAttendanceDate(staffId, today);
-            logger.debug("📅 Staff {} has attendance for today: {}", staffId, hasAttendance);
-            return hasAttendance;
+            return attendanceRepository.existsByStaffStaffidAndAttendanceDate(staffId, today);
+
         } catch (Exception e) {
-            logger.error("❌ Error checking today's attendance for staff: {}", staffId, e);
+            logger.error("Error checking today's attendance for staff: {}", staffId, e);
             return false;
         }
     }
 
-    // Helper method to update attendance entity
-    private void updateAttendanceEntity(AttendanceEntity attendance, AttendanceRequest request) {
-        if (request.getCheckInTime() != null) {
-            attendance.setCheckInTime(request.getCheckInTime());
-            logger.debug("📝 Updated check-in time: {}", request.getCheckInTime());
-        }
+    @Override
+    public List<AttendanceResponse> getMonthlyAttendance(Long staffId, LocalDate month) {
+        logger.info("🟢 Getting monthly attendance for staff: {}, month: {}", staffId, month);
 
-        if (request.getCheckOutTime() != null) {
-            attendance.setCheckOutTime(request.getCheckOutTime());
-            logger.debug("📝 Updated check-out time: {}", request.getCheckOutTime());
-        }
+        try {
+            // The month parameter is a LocalDate representing the first day of the month (e.g., "2025-11-01")
+            // Calculate start and end dates for the month
+            LocalDate startDate = month.withDayOfMonth(1);
+            LocalDate endDate = month.withDayOfMonth(month.lengthOfMonth());
 
-        if (request.getStatus() != null) {
-            attendance.setStatus(request.getStatus());
-            logger.debug("📝 Updated status: {}", request.getStatus());
-        }
+            logger.info("📅 Querying database for date range: {} to {}", startDate, endDate);
 
-        if (request.getNotes() != null) {
-            attendance.setNotes(request.getNotes());
-            logger.debug("📝 Updated notes");
-        }
+            // Use the existing method that we know works
+            List<AttendanceResponse> attendanceList = getAttendanceByStaffAndDateRange(staffId, startDate, endDate);
 
-        // Auto-calculate status if both times are provided
-        if (attendance.getCheckInTime() != null && attendance.getCheckOutTime() != null) {
-            autoCalculateStatus(attendance);
+            logger.info("✅ Found {} attendance records for staff: {} in month: {}",
+                    attendanceList.size(), staffId, month);
+
+            // Log sample records for debugging
+            if (!attendanceList.isEmpty()) {
+                attendanceList.stream()
+                        .limit(3)
+                        .forEach(record ->
+                                logger.info("📊 Sample record - Date: {}, Status: {}",
+                                        record.getAttendanceDate(), record.getStatus())
+                        );
+            }
+
+            return attendanceList;
+
+        } catch (Exception e) {
+            logger.error("❌ Error getting monthly attendance for staff: {}, month: {}", staffId, month, e);
+            throw new RuntimeException("Failed to get monthly attendance for month: " + month + ". Error: " + e.getMessage());
         }
     }
 
-    // BETTER: Manual status updates always override auto-calculation
-    private void autoCalculateStatus(AttendanceEntity attendance) {
+    @Override
+    public Map<String, Object> getAttendanceSummary(Long staffId, LocalDate month) {
+        logger.info("Getting attendance summary for staff: {}, month: {}", staffId, month);
+
+        try {
+            List<AttendanceResponse> monthlyAttendance = getMonthlyAttendance(staffId, month);
+
+            // Calculate total days in the month
+            int totalDaysInMonth = month.lengthOfMonth();
+
+            // Count different status types
+            long presentCount = monthlyAttendance.stream()
+                    .filter(a -> "PRESENT".equalsIgnoreCase(a.getStatus()))
+                    .count();
+
+            long absentCount = monthlyAttendance.stream()
+                    .filter(a -> "ABSENT".equalsIgnoreCase(a.getStatus()))
+                    .count();
+
+            long lateCount = monthlyAttendance.stream()
+                    .filter(a -> "LATE".equalsIgnoreCase(a.getStatus()))
+                    .count();
+
+            long leaveCount = monthlyAttendance.stream()
+                    .filter(a -> "LEAVE".equalsIgnoreCase(a.getStatus()))
+                    .count();
+
+            // Calculate not marked days
+            long notMarkedCount = totalDaysInMonth - monthlyAttendance.size();
+
+            Map<String, Object> summary = new HashMap<>();
+            summary.put("presentDays", presentCount);
+            summary.put("absentDays", absentCount);
+            summary.put("lateDays", lateCount);
+            summary.put("leaveDays", leaveCount);
+            summary.put("notMarkedDays", notMarkedCount);
+            summary.put("totalWorkingDays", totalDaysInMonth);
+            summary.put("month", month.toString().substring(0, 7)); // Return only YYYY-MM
+            summary.put("staffId", staffId);
+
+            logger.info("Attendance summary generated for staff: {} - Present: {}, Absent: {}, Late: {}, Leave: {}, Not Marked: {}",
+                    staffId, presentCount, absentCount, lateCount, leaveCount, notMarkedCount);
+
+            return summary;
+
+        } catch (Exception e) {
+            logger.error("Error generating attendance summary for staff: {}", staffId, e);
+            throw new RuntimeException("Failed to generate attendance summary: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public List<AttendanceResponse> bulkMarkAttendance(List<AttendanceRequest> requests) {
+        logger.info("Processing bulk attendance marking for {} requests", requests.size());
+
+        try {
+            List<AttendanceResponse> responses = new ArrayList<>();
+
+            for (AttendanceRequest request : requests) {
+                try {
+                    AttendanceResponse response = markAttendance(request);
+                    responses.add(response);
+                } catch (Exception e) {
+                    logger.error("Error marking attendance for staff: {}", request.getStaffId(), e);
+                    // Continue with other requests even if one fails
+                }
+            }
+
+            logger.info("Bulk attendance marking completed. Successfully processed: {} out of {}",
+                    responses.size(), requests.size());
+
+            return responses;
+
+        } catch (Exception e) {
+            logger.error("Error in bulk attendance marking", e);
+            throw new RuntimeException("Failed to process bulk attendance: " + e.getMessage());
+        }
+    }
+
+    // Temporary debug method - can be removed after testing
+    public Map<String, Object> debugMonthlyAttendance(Long staffId, LocalDate month) {
+        Map<String, Object> debugInfo = new HashMap<>();
+
+        debugInfo.put("staffId", staffId);
+        debugInfo.put("inputMonth", month.toString());
+        debugInfo.put("monthClass", month.getClass().getSimpleName());
+        debugInfo.put("year", month.getYear());
+        debugInfo.put("monthValue", month.getMonthValue());
+
+        try {
+            LocalDate startDate = month.withDayOfMonth(1);
+            LocalDate endDate = month.withDayOfMonth(month.lengthOfMonth());
+
+            debugInfo.put("startDate", startDate.toString());
+            debugInfo.put("endDate", endDate.toString());
+
+            List<AttendanceEntity> records = attendanceRepository
+                    .findByStaffStaffidAndAttendanceDateBetween(staffId, startDate, endDate);
+
+            debugInfo.put("recordsFound", records.size());
+            debugInfo.put("sampleRecords", records.stream()
+                    .limit(3)
+                    .map(r -> Map.of(
+                            "date", r.getAttendanceDate().toString(),
+                            "status", r.getStatus()
+                    ))
+                    .collect(Collectors.toList()));
+
+        } catch (Exception e) {
+            debugInfo.put("error", e.getMessage());
+            debugInfo.put("errorType", e.getClass().getSimpleName());
+        }
+
+        return debugInfo;
+    }
+
+    private void calculateTotalHours(AttendanceEntity attendance) {
         if (attendance.getCheckInTime() != null && attendance.getCheckOutTime() != null) {
-            // Calculate hours first
             int checkInMinutes = attendance.getCheckInTime().getHour() * 60 + attendance.getCheckInTime().getMinute();
             int checkOutMinutes = attendance.getCheckOutTime().getHour() * 60 + attendance.getCheckOutTime().getMinute();
 
             double totalMinutes = checkOutMinutes - checkInMinutes;
-            double hours = totalMinutes / 60.0;
+            attendance.setTotalHours(totalMinutes / 60.0);
 
-            attendance.setTotalHours(hours); // Set the calculated hours
-
-            // Check if status was manually set (not the default ABSENT)
-            boolean isManuallySet = !"ABSENT".equals(attendance.getStatus());
-
-            if (!isManuallySet) {
-                // Only auto-calculate if status wasn't manually set
-                if (hours >= 6.0) {
+            // Auto-update status based on hours if not already set
+            if (attendance.getStatus() == null) {
+                if (attendance.getTotalHours() >= 6) {
                     attendance.setStatus("PRESENT");
-                    logger.debug("✅ Auto-calculated: PRESENT - {} hours worked", hours);
-                } else if (hours >= 3.0) {
+                } else if (attendance.getTotalHours() >= 3) {
                     attendance.setStatus("HALF_DAY");
-                    logger.debug("🟡 Auto-calculated: HALF_DAY - {} hours worked", hours);
                 } else {
                     attendance.setStatus("ABSENT");
-                    logger.debug("🔴 Auto-calculated: ABSENT - {} hours worked", hours);
                 }
-            } else {
-                logger.debug("📝 Manual status preserved: {} ({} hours worked)",
-                        attendance.getStatus(), hours);
             }
         }
     }
-    // Helper method to map entity to response
-    private AttendanceResponse mapToResponse(AttendanceEntity attendance) {
+
+    private AttendanceResponse convertToResponse(AttendanceEntity attendance) {
         AttendanceResponse response = new AttendanceResponse();
         response.setAttendanceId(attendance.getAttendanceId());
         response.setStaffId(attendance.getStaff().getStaffid());
@@ -263,9 +384,6 @@ public class AttendanceServiceImpl implements AttendanceService {
         response.setTotalHours(attendance.getTotalHours());
         response.setStatus(attendance.getStatus());
         response.setNotes(attendance.getNotes());
-
-        logger.debug("📄 Mapped attendance entity to response for: {}", attendance.getStaff().getName());
-
         return response;
     }
 }
