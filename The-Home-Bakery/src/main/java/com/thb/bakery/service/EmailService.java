@@ -12,7 +12,8 @@ public interface EmailService {
                                           List<String> productNames,
                                           String mobile);
 
-
-
+    void sendOrderCancellationEmail(String toEmail, String customerName,
+                                    String orderId, BigDecimal totalAmount,
+                                    String mobile);
 
 }

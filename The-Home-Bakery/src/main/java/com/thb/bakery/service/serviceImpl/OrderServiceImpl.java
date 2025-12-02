@@ -7,6 +7,7 @@ import com.thb.bakery.dto.response.OrderItemResponse;
 import com.thb.bakery.dto.response.OrderResponse;
 import com.thb.bakery.entity.*;
 import com.thb.bakery.repository.*;
+import com.thb.bakery.service.EmailService;
 import com.thb.bakery.service.OrderService;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
@@ -38,14 +39,88 @@ public class OrderServiceImpl implements OrderService {
     private final ProductRepository productRepository;
     private SnacksRepository snacksRepository;
 
+    private final EmailService emailService;
+
+
     public OrderServiceImpl(OrderRepository orderRepository, OrderItemRepository orderItemRepository,
-                            UserRepository userRepository, ProductRepository productRepository, SnacksRepository snacksRepository) {
+                            UserRepository userRepository, ProductRepository productRepository, SnacksRepository snacksRepository, EmailService emailService) {
         this.orderRepository = orderRepository;
         this.orderItemRepository = orderItemRepository;
         this.userRepository = userRepository;
         this.productRepository = productRepository;
         this.snacksRepository = snacksRepository;
+        this.emailService = emailService;
     }
+
+
+    // ========== EMAIL METHODS ==========
+
+    private void sendOrderConfirmationEmail(OrderEntity order, List<String> productNames) {
+        try {
+            String customerName = order.getCustomerName();
+            String customerEmail = order.getCustomerEmail();
+            String orderId = order.getOrderId().toString();
+            BigDecimal totalAmount = order.getTotalAmount();
+            String mobile = "+91 9537999898"; // UPDATED MOBILE NUMBER
+
+            logger.info("=== SENDING ORDER CONFIRMATION EMAIL ===");
+            logger.info("To: {}", customerEmail);
+            logger.info("Order ID: {}", orderId);
+            logger.info("Customer: {}", customerName);
+            logger.info("Total Amount: ₹{}", totalAmount);
+            logger.info("Products: {}", productNames.size());
+
+            // Send the email
+            emailService.sendOrderConfirmationEmail(
+                    customerEmail,
+                    customerName,
+                    orderId,
+                    totalAmount,
+                    productNames,
+                    mobile
+            );
+
+            logger.info("✅ Order confirmation email sent successfully for order ID: {}", orderId);
+
+        } catch (Exception e) {
+            logger.error("❌ Failed to send order confirmation email for order ID: {}",
+                    order.getOrderId(), e);
+            logger.error("Email error details: {}", e.getMessage());
+            // Don't throw exception - order should still be created even if email fails
+        }
+    }
+
+    private void sendOrderCancellationEmail(OrderEntity order) {
+        try {
+            String customerName = order.getCustomerName();
+            String customerEmail = order.getCustomerEmail();
+            String orderId = order.getOrderId().toString();
+            BigDecimal totalAmount = order.getTotalAmount();
+            String mobile = "+91 9537999898"; // UPDATED MOBILE NUMBER
+
+            logger.info("=== SENDING ORDER CANCELLATION EMAIL ===");
+            logger.info("To: {}", customerEmail);
+            logger.info("Order ID: {}", orderId);
+
+            // Send the email using the dedicated method
+            emailService.sendOrderCancellationEmail(
+                    customerEmail,
+                    customerName,
+                    orderId,
+                    totalAmount,
+                    mobile
+            );
+
+            logger.info("✅ Order cancellation email sent successfully for order ID: {}", orderId);
+
+        } catch (Exception e) {
+            logger.error("❌ Failed to send cancellation email for order ID: {}",
+                    order.getOrderId(), e);
+        }
+    }
+
+    //============== Email  End =================//
+
 
 
     //NEW
@@ -380,6 +455,9 @@ public class OrderServiceImpl implements OrderService {
         order.setDiscountPercent(request.getDiscountPercent());
         order.setDiscountAmount(request.getDiscountAmount());
 
+        //NEW ADDED
+        order.setConvenienceFee(request.getConvenienceFee());
+
         // NEW FIELDS MAPPED
         order.setOrderDateTime(request.getOrderDateTime());
         order.setDeliveryDateTime(request.getDeliveryDateTime());
@@ -505,26 +583,57 @@ public class OrderServiceImpl implements OrderService {
         return partyItems;
     }
 
+
     private void calculateOrderTotals(OrderEntity order, BigDecimal productTotal) {
-        // Apply discount
-        BigDecimal discountAmount = order.getDiscountAmount() != null ? order.getDiscountAmount() : BigDecimal.ZERO;
-        BigDecimal discountedTotal = productTotal.subtract(discountAmount);
+        // 1. Apply discount (if any)
+        BigDecimal discountAmount = order.getDiscountAmount() != null
+                ? order.getDiscountAmount()
+                : BigDecimal.ZERO;
 
-        // Calculate tax (5% GST for food items)
+        BigDecimal afterDiscount = productTotal.subtract(discountAmount);
+
+        // 2. Calculate 5% tax on (subtotal - discount)
         BigDecimal taxRate = new BigDecimal("0.05");
-        BigDecimal taxAmount = discountedTotal.multiply(taxRate).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal taxAmount = afterDiscount
+                .multiply(taxRate)
+                .setScale(2, RoundingMode.HALF_UP);
 
-        // Calculate convenience fee (free above ₹500, else ₹50)
-        BigDecimal convenienceFee = discountedTotal.compareTo(new BigDecimal("500")) >= 0
-                ? BigDecimal.ZERO : new BigDecimal("50");
+        // 3. Get convenience fee (sent from frontend)
+        BigDecimal convenienceFee = order.getConvenienceFee() != null
+                ? order.getConvenienceFee()
+                : BigDecimal.ZERO;
 
-        // Calculate grand total
-        BigDecimal grandTotal = discountedTotal.add(taxAmount).add(convenienceFee);
+        // 4. FINAL TOTAL — EVERYTHING INCLUDED CORRECTLY
+        BigDecimal grandTotal = afterDiscount
+                .add(taxAmount)
+                .add(convenienceFee);
 
+        // 5. Save to order
         order.setTotalAmount(grandTotal);
         order.setTax(taxAmount);
-        order.setConvenienceFee(convenienceFee);
+        order.setConvenienceFee(convenienceFee);  // Already set, just ensuring
     }
+
+//    private void calculateOrderTotals(OrderEntity order, BigDecimal productTotal) {
+//        // Apply discount
+//        BigDecimal discountAmount = order.getDiscountAmount() != null ? order.getDiscountAmount() : BigDecimal.ZERO;
+//        BigDecimal discountedTotal = productTotal.subtract(discountAmount);
+//
+//        // Calculate tax (5% GST for food items)
+//        BigDecimal taxRate = new BigDecimal("0.05");
+//        BigDecimal taxAmount = discountedTotal.multiply(taxRate).setScale(2, RoundingMode.HALF_UP);
+//
+//        // Calculate convenience fee (free above ₹500, else ₹50)
+////        BigDecimal convenienceFee = discountedTotal.compareTo(new BigDecimal("500")) >= 0
+////                ? BigDecimal.ZERO : new BigDecimal("50");
+//
+//        // Calculate grand total
+//        BigDecimal grandTotal = discountedTotal.add(taxAmount).add(BigDecimal.ZERO);
+//
+//        order.setTotalAmount(grandTotal);
+//        order.setTax(taxAmount);
+//        order.setConvenienceFee(order.getConvenienceFee());
+//    }
 
     private OrderResponse createSuccessResponse(OrderEntity order) {
         OrderResponse response = new OrderResponse(
@@ -768,43 +877,6 @@ public class OrderServiceImpl implements OrderService {
             return new OrderResponse(false, "error", "Failed to update order status: " + e.getMessage(), null);
         }
     }
-
-//    @Override
-//    public Map<String, Object> getOrderStatistics() {
-//        LocalDate today = LocalDate.now();
-//        LocalDate yesterday = today.minusDays(1);
-//        int currentYear = today.getYear();
-//        int currentMonth = today.getMonthValue();
-//        int lastMonth = today.minusMonths(1).getMonthValue();
-//        int lastMonthYear = today.minusMonths(1).getYear();
-//
-//        Map<String, Object> stats = new HashMap<>();
-////        stats.put("todayOrders", orderRepository.countOrdersByDate(today));
-////        stats.put("yesterdayOrders", orderRepository.countOrdersByDate(yesterday));
-////        stats.put("thisMonthOrders", orderRepository.countOrdersByMonth(currentYear, currentMonth));
-////        stats.put("lastMonthOrders", orderRepository.countOrdersByMonth(lastMonthYear, lastMonth));
-////        stats.put("allTimeSales", orderRepository.getTotalSales());
-////        stats.put("totalOrders", orderRepository.countTotalOrders());
-//
-//        // Order status counts
-//        Map<String, Long> statusCounts = new HashMap<>();
-//        statusCounts.put("placed", orderRepository.countOrdersByStatus("placed"));
-//        statusCounts.put("confirmed", orderRepository.countOrdersByStatus("confirmed"));
-//        statusCounts.put("preparing", orderRepository.countOrdersByStatus("preparing"));
-//        statusCounts.put("ready", orderRepository.countOrdersByStatus("ready"));
-//        statusCounts.put("out_for_delivery", orderRepository.countOrdersByStatus("out_for_delivery"));
-//        statusCounts.put("delivered", orderRepository.countOrdersByStatus("delivered"));
-//        statusCounts.put("cancelled", orderRepository.countOrdersByStatus("cancelled"));
-//        stats.put("orderStatus", statusCounts);
-//
-//        // Payment method counts
-//        Map<String, Long> paymentMethods = new HashMap<>();
-//        paymentMethods.put("cod", orderRepository.countOrdersByPaymentMethod("cod"));
-//        paymentMethods.put("prepaid", orderRepository.countOrdersByPaymentMethod("prepaid"));
-//        stats.put("paymentMethods", paymentMethods);
-//
-//        return stats;
-//    }
 
 
     //============= PRODUCT STOCK QTY UPDATE ==========//

@@ -45,7 +45,7 @@ public class OrderEntity {
     @Column(name = "coupon_applied_code") // Added to store coupon code
     private String couponAppliedCode;
 
-    @Column(name = "convenience_fee", nullable = false, precision = 10, scale = 2)
+    @Column(name = "convenience_fee")
     private BigDecimal convenienceFee;
 
     @Column(name = "discount_percent", precision = 10, scale = 2)

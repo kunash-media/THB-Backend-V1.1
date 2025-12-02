@@ -203,5 +203,16 @@ public class BannerServiceImpl implements BannerService {
 
         return dto;
     }
+
+    @Override
+    public BannerResponseDto getBannerByPageName(String pageName) {
+        logger.info("Fetching banner for page name: {}", pageName);
+        return bannerRepository.findByPageName(pageName)
+            .map(this::convertToResponseDto)
+            .orElseThrow(() -> {
+                logger.warn("Banner not found for page name: {}", pageName);
+                return new RuntimeException("Banner not found for page name: " + pageName);
+            });
+    }
 }
 

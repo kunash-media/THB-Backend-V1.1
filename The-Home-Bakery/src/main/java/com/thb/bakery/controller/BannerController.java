@@ -101,4 +101,11 @@ public class BannerController {
         byte[] image = bannerService.getBannerFileFourImage(id);
         return ResponseEntity.ok(image);
     }
+
+    @GetMapping("/get-by-page-name/{pageName}")
+    public ResponseEntity<BannerResponseDto> getBannerByPageName(@PathVariable String pageName) {
+        logger.info("Received request to get banner by page name: {}", pageName);
+        BannerResponseDto dto = bannerService.getBannerByPageName(pageName);
+        return ResponseEntity.ok(dto);
+    }
 }

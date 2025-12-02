@@ -1,5 +1,6 @@
 package com.thb.bakery.service.serviceImpl;
 
+import com.thb.bakery.Config.EmployeeIdGenerator;
 import com.thb.bakery.dto.request.IncentiveDto;
 import com.thb.bakery.dto.request.StaffCreateRequest;
 import com.thb.bakery.dto.response.AdvanceDto;
@@ -33,6 +34,9 @@ public class StaffServiceImpl implements StaffService {
 
     @Autowired
     private StaffRepository staffRepository;
+
+    @Autowired
+    private EmployeeIdGenerator employeeIdGenerator; // NEW
 
     @Autowired
     private AdvanceRepository advanceRepository;
@@ -69,6 +73,12 @@ public class StaffServiceImpl implements StaffService {
 
             logger.debug("🏗️ Creating new staff entity");
             StaffEntity staff = new StaffEntity();
+
+            // Generate employee ID
+            String employeeId = generateEmployeeId();
+            staff.setEmployeeId(employeeId); // NEW: Set auto-generated employee ID
+
+
             staff.setName(request.getName());
             staff.setEmail(request.getEmail());
             staff.setPhone(request.getPhone());
@@ -98,6 +108,41 @@ public class StaffServiceImpl implements StaffService {
             logger.error("💥 Unexpected error while creating staff. Name: {}, Email: {}",
                     request.getName(), request.getEmail(), e);
             throw new RuntimeException("Failed to create staff due to unexpected error", e);
+        }
+    }
+
+
+    /**
+     * NEW PATCH METHOD: Generate unique employee ID starting from THB0013
+     */
+    private String generateEmployeeId() {
+        try {
+            // Get the latest staff by employeeId
+            List<StaffEntity> latestStaff = staffRepository.findAllOrderByEmployeeIdDesc();
+
+            if (latestStaff.isEmpty()) {
+                // No staff exists yet, start from THB0013
+                String firstId = employeeIdGenerator.generateFirstEmployeeId();
+                logger.debug("📊 No existing staff found. Generating first Employee ID: {}", firstId);
+                return firstId;
+            }
+
+            // Get the latest employee ID
+            String latestEmployeeId = latestStaff.get(0).getEmployeeId();
+
+            // Generate next employee ID
+            String nextEmployeeId = employeeIdGenerator.generateNextEmployeeId(latestEmployeeId);
+            logger.debug("📊 Latest Employee ID: {}, Next Employee ID: {}",
+                    latestEmployeeId, nextEmployeeId);
+
+            return nextEmployeeId;
+
+        } catch (Exception e) {
+            logger.error("❌ Error generating employee ID: {}", e.getMessage(), e);
+            // Fallback: generate a timestamp-based ID
+            String fallbackId = "THB" + System.currentTimeMillis();
+            logger.warn("⚠️ Using fallback Employee ID: {}", fallbackId);
+            return fallbackId;
         }
     }
 
@@ -331,12 +376,15 @@ public class StaffServiceImpl implements StaffService {
         }
     }
 
+
+
     private StaffResponse mapToResponse(StaffEntity staff) {
         logger.debug("📄 Mapping staff entity to response. StaffId: {}, Name: {}",
                 staff.getStaffid(), staff.getName());
 
         StaffResponse response = new StaffResponse();
         response.setId(staff.getStaffid());
+        response.setEmployeeId(staff.getEmployeeId());   //NEW ADDED
         response.setName(staff.getName());
         response.setEmail(staff.getEmail());
         response.setPhone(staff.getPhone());

@@ -24,4 +24,6 @@ public interface BannerService {
     byte[] getBannerFileThreeImage(Long id);
 
     byte[] getBannerFileFourImage(Long id);
+
+    public BannerResponseDto getBannerByPageName(String pageName);
 }

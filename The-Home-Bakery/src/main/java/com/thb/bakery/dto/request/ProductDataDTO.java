@@ -24,20 +24,43 @@ public class ProductDataDTO {
     @JsonProperty("skuNumber")
     private String skuNumber;
 
-    @JsonProperty("nameOnCake")
-    private String nameOnCake;
-
-    @JsonProperty("orderCount")
-    private Integer orderCount;
-
     @JsonProperty("description")
     private String description;
 
-    @JsonProperty("productIngredients")
-    private String productIngredients;
+    @JsonProperty("productOldPrice")
+    private BigDecimal productOldPrice;
+
+    @JsonProperty("productNewPrice")
+    private BigDecimal productNewPrice;
+
+    @JsonProperty("weights")
+    private List<String> weights;
+
+    @JsonProperty("weightPrices")
+    private List<BigDecimal> weightPrices;
+
+    @JsonProperty("ratings")
+    private Double ratings;
+
+    @JsonProperty("reviews")
+    private Integer reviews;
+
+
+    // ADD THESE MISSING ONES — THIS IS THE REAL FIX
+    @JsonProperty("flavor")
+    private String flavor;
+
+    @JsonProperty("shape")
+    private String shape;
+
+    @JsonProperty("serves")
+    private String serves;
 
     @JsonProperty("allergenInfo")
     private String allergenInfo;
+
+    @JsonProperty("productIngredients")
+    private String productIngredients;
 
     @JsonProperty("careInstructions")
     private String careInstructions;
@@ -54,44 +77,17 @@ public class ProductDataDTO {
     @JsonProperty("preparationTime")
     private String preparationTime;
 
-    @JsonProperty("flavor")
-    private String flavor;
-
-    @JsonProperty("shape")
-    private String shape;
-
     @JsonProperty("defaultWeight")
     private String defaultWeight;
 
     @JsonProperty("layers")
     private String layers;
 
-    @JsonProperty("serves")
-    private String serves;
-
     @JsonProperty("note")
     private String note;
 
-    @JsonProperty("productOldPrice")
-    private BigDecimal productOldPrice;
-
-    @JsonProperty("productNewPrice")
-    private BigDecimal productNewPrice;
-
-    @JsonProperty("weights")
-    private List<String> weights;
-
-    @JsonProperty("weightPrices")
-    private List<BigDecimal> weightPrices;
-
     @JsonProperty("features")
     private List<String> features;
-
-    @JsonProperty("ratings")
-    private Double ratings;
-
-    @JsonProperty("reviews")
-    private Integer reviews;
 
     @JsonProperty("productDiscount")
     private String productDiscount;
@@ -101,6 +97,8 @@ public class ProductDataDTO {
 
     @JsonProperty("freeDeliveryThreshold")
     private BigDecimal freeDeliveryThreshold;
+
+
 
     // Getters and Setters
     public String getProductName() { return productName; }
@@ -115,11 +113,6 @@ public class ProductDataDTO {
     public String getSkuNumber() { return skuNumber; }
     public void setSkuNumber(String skuNumber) { this.skuNumber = skuNumber; }
 
-    public String getNameOnCake() { return nameOnCake; }
-    public void setNameOnCake(String nameOnCake) { this.nameOnCake = nameOnCake; }
-
-    public Integer getOrderCount() { return orderCount; }
-    public void setOrderCount(Integer orderCount) { this.orderCount = orderCount; }
 
     public String getDescription() { return description; }
     public void setDescription(String description) { this.description = description; }

@@ -85,8 +85,8 @@ public class ProductController {
 
         requestDTO.setProductFoodType(productDataDTO.getProductFoodType());
         requestDTO.setSkuNumber(productDataDTO.getSkuNumber());
-        requestDTO.setNameOnCake(productDataDTO.getNameOnCake());
-        requestDTO.setOrderCount(productDataDTO.getOrderCount());
+//        requestDTO.setNameOnCake(productDataDTO.getNameOnCake());
+//        requestDTO.setOrderCount(productDataDTO.getOrderCount());
         requestDTO.setDescription(productDataDTO.getDescription());
         requestDTO.setProductIngredients(productDataDTO.getProductIngredients());
         requestDTO.setAllergenInfo(productDataDTO.getAllergenInfo());
@@ -472,9 +472,9 @@ public class ProductController {
 
             if (productDataDTO.getProductFoodType() != null) patchRequest.setProductFoodType(productDataDTO.getProductFoodType());
             if (productDataDTO.getSkuNumber() != null) patchRequest.setSkuNumber(productDataDTO.getSkuNumber());
-            if (productDataDTO.getNameOnCake() != null) patchRequest.setNameOnCake(productDataDTO.getNameOnCake());
-            if (productDataDTO.getOrderCount() != null) patchRequest.setOrderCount(productDataDTO.getOrderCount());
-            if (productDataDTO.getDescription() != null) patchRequest.setDescription(productDataDTO.getDescription());
+//            if (productDataDTO.getNameOnCake() != null) patchRequest.setNameOnCake(productDataDTO.getNameOnCake());
+//            if (productDataDTO.getOrderCount() != null) patchRequest.setOrderCount(productDataDTO.getOrderCount());
+//            if (productDataDTO.getDescription() != null) patchRequest.setDescription(productDataDTO.getDescription());
             if (productDataDTO.getProductIngredients() != null) patchRequest.setProductIngredients(productDataDTO.getProductIngredients());
             if (productDataDTO.getAllergenInfo() != null) patchRequest.setAllergenInfo(productDataDTO.getAllergenInfo());
             if (productDataDTO.getCareInstructions() != null) patchRequest.setCareInstructions(productDataDTO.getCareInstructions());

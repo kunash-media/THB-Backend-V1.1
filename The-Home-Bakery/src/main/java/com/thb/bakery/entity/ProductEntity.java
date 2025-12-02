@@ -32,7 +32,7 @@ public class ProductEntity {
    @Column(name = "product_quantity")
    private Integer productQuantity;
 
-   @Column(name = "product_food_type", nullable = false)
+   @Column(name = "product_food_type")
    private String productFoodType;
 
    @Column(name = "sku_number", nullable = false, unique = true)
@@ -74,7 +74,7 @@ public class ProductEntity {
    @Column(name = "shape")
    private String shape;
 
-   @Column(name = "default_weight", nullable = false)
+   @Column(name = "default_weight")
    private String defaultWeight;
 
    @Column(name = "layers")

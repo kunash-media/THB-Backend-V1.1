@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface StaffRepository extends JpaRepository<StaffEntity, Long> {
 
@@ -14,4 +15,16 @@ public interface StaffRepository extends JpaRepository<StaffEntity, Long> {
             "AND (:role IS NULL OR s.role = :role) " +
             "AND (:status IS NULL OR s.status = :status)")
     List<StaffEntity> findFiltered(@Param("search") String search, @Param("role") String role, @Param("status") String status);
+
+
+    // NEW METHOD: Find the latest employee by employeeId
+    @Query("SELECT s FROM StaffEntity s ORDER BY s.employeeId DESC")
+    List<StaffEntity> findAllOrderByEmployeeIdDesc();
+
+    // Find by employeeId
+    Optional<StaffEntity> findByEmployeeId(String employeeId);
+
+    // Check if employeeId exists
+    boolean existsByEmployeeId(String employeeId);
+
 }

@@ -24,6 +24,7 @@ public class CreateOrderRequest {
     private BigDecimal discountAmount;
 
     private String couponAppliedCode;
+    private BigDecimal convenienceFee;
 
     private String addressType;
     private String houseNo;
@@ -271,4 +272,11 @@ public class CreateOrderRequest {
     }
 
 
+    public BigDecimal getConvenienceFee() {
+        return convenienceFee;
+    }
+
+    public void setConvenienceFee(BigDecimal convenienceFee) {
+        this.convenienceFee = convenienceFee;
+    }
 }

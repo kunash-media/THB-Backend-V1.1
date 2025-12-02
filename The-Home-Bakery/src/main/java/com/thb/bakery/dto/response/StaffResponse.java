@@ -7,6 +7,7 @@ import java.util.List;
 
 public class StaffResponse {
     private Long id;
+    private String employeeId; // NEW FIELD
     private String name;
     private String email;
     private String phone;
@@ -62,4 +63,12 @@ public class StaffResponse {
 
     public LocalDate getLastActive() { return lastActive; }
     public void setLastActive(LocalDate lastActive) { this.lastActive = lastActive; }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
 }

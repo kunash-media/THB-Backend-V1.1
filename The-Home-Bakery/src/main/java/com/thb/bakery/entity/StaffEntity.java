@@ -14,6 +14,9 @@ public class StaffEntity {
     @Column(name = "staffid")
     private Long staffid;
 
+    @Column(name = "employee_id", unique = true, updatable = false)
+    private String employeeId; // NEW FIELD: Auto-generated like THB0013, THB0014, etc.
+
     @Column(nullable = false)
     private String name;
 
@@ -23,7 +26,7 @@ public class StaffEntity {
     @Column
     private String phone;
 
-    @Column(name = "account_no")
+    @Column(name = "account_no", nullable = false)
     private String accountNo; // NEW FIELD
 
     @Column(name = "date_of_joining")
@@ -98,4 +101,12 @@ public class StaffEntity {
 
     public LocalDate getLastActive() { return lastActive; }
     public void setLastActive(LocalDate lastActive) { this.lastActive = lastActive; }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
 }

@@ -3,6 +3,10 @@ package com.thb.bakery.dto.response;
 public class StaffPaymentResponse {
 
     private Long staffId;
+
+    private String employeeId; // NEW FIELD
+
+
     private String staffName;
     private String month;
     private Double baseSalary;
@@ -77,5 +81,13 @@ public class StaffPaymentResponse {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 }

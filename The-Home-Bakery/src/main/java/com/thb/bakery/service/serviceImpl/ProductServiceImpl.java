@@ -511,19 +511,19 @@ public class ProductServiceImpl implements ProductService {
         if (!StringUtils.hasText(requestDTO.getProductCategory())) {
             validationErrors.add("Product category is required");
         }
-        if (!StringUtils.hasText(requestDTO.getProductFoodType())) {
-            validationErrors.add("Product food type is required");
-        }
+//        if (!StringUtils.hasText(requestDTO.getProductFoodType())) {
+//            validationErrors.add("Product food type is required");
+//        }
         if (requestDTO.getProductNewPrice() == null) {
             validationErrors.add("Product new price is required");
         }
-        if (!StringUtils.hasText(requestDTO.getDefaultWeight())) {
-            validationErrors.add("Default weight is required");
-        }
-        if (requestDTO.getWeights() != null && requestDTO.getWeightPrices() != null &&
-                requestDTO.getWeights().size() != requestDTO.getWeightPrices().size()) {
-            validationErrors.add("Weights and weightPrices must have the same size");
-        }
+//        if (!StringUtils.hasText(requestDTO.getDefaultWeight())) {
+//            validationErrors.add("Default weight is required");
+//        }
+//        if (requestDTO.getWeights() != null && requestDTO.getWeightPrices() != null &&
+//                requestDTO.getWeights().size() != requestDTO.getWeightPrices().size()) {
+//            validationErrors.add("Weights and weightPrices must have the same size");
+//        }
 
         if (!validationErrors.isEmpty()) {
             String errorMessage = String.join(", ", validationErrors);
