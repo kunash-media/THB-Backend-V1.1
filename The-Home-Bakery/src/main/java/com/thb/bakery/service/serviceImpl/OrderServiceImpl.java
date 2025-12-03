@@ -513,7 +513,28 @@ public class OrderServiceImpl implements OrderService {
                 }
 
                 orderItem.setProduct(product);
-                unitPrice = product.getProductNewPrice();               // <-- unchanged
+
+                // SMART PRICE LOOKUP BASED ON SELECTED WEIGHT
+                if (itemRequest.getSelectedWeight() != null && !itemRequest.getSelectedWeight().isEmpty()) {
+                    String selected = itemRequest.getSelectedWeight().trim();
+
+                    // Try to match from weightPrices array (your current API structure)
+                    if (product.getWeights() != null && product.getWeightPrices() != null) {
+                        for (int i = 0; i < product.getWeights().size(); i++) {
+                            if (product.getWeights().get(i).equalsIgnoreCase(selected)) {
+                                unitPrice = product.getWeightPrices().get(i);
+                                logger.info("Price overridden by size: {} → ₹{}", selected, unitPrice);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Fallback to default price if no match
+//                if (unitPrice.compareTo(BigDecimal.ZERO) == 0) {
+//                    unitPrice = product.getProductNewPrice();
+//                }
+                //unitPrice = product.getProductNewPrice();               // <-- unchanged
             }
 
             // --------------------------------------------------------------
@@ -642,7 +663,7 @@ public class OrderServiceImpl implements OrderService {
                 order.getTotalAmount(),
                 order.getOrderStatus(),
                 order.getOrderDateTime(),
-                "Order placed successfully! In case of any delivery issues, please contact: 8983448510"
+                "Order placed successfully!"
         );
 
         response.setTax(order.getTax());

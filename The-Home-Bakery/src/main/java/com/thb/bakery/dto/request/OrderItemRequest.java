@@ -6,7 +6,6 @@ import java.util.List;
 public class OrderItemRequest {
 
     private Long productId;
-
     private Long snackId;
 
     private Integer quantity;
