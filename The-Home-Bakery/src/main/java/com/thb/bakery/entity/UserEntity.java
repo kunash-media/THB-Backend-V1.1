@@ -37,8 +37,10 @@ public class UserEntity {
     @JsonIgnore
     private List<PaymentOrder> paymentOrders = new ArrayList<>();
 
+
     // Constructors
     public UserEntity() {}
+
 
     public UserEntity(String customerName, String email, String mobile, String password) {
         this.customerName = customerName;

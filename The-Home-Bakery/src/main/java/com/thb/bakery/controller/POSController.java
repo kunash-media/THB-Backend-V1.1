@@ -42,6 +42,7 @@ public class POSController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
+
     /**
      * Get all POS orders with pagination
      * GET /api/pos/get-all-orders?page={page}&size={size}

@@ -11,23 +11,50 @@ public class WishlistItemEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id")
+    @Column(name = "user_id", nullable = false, updatable = false)
     private Long userId;
 
-    @Column(name = "product_id")
-    private Long productId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private ProductEntity product;
 
-    @Column(name = "added_date")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "snack_id")
+    private SnacksEntity snack;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customize_cake_id")
+    private CustomizeCakeEntity customizeCake;
+
+    @Column(name = "item_type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private ItemType itemType;
+
+    @Column(name = "added_date", nullable = false)
     private LocalDateTime addedDate = LocalDateTime.now();
 
-    // Getters/Setters (similar to above)
-    public Long getId() {
-        return id;
+    public enum ItemType {
+        PRODUCT, SNACK, CUSTOMIZE_CAKE
     }
 
-    public void setId(Long id) {
+    // Constructors
+    public WishlistItemEntity() {}
+
+    public WishlistItemEntity(Long id, Long userId, ProductEntity product,
+                              SnacksEntity snack, CustomizeCakeEntity customizeCake,
+                              ItemType itemType, LocalDateTime addedDate) {
         this.id = id;
+        this.userId = userId;
+        this.product = product;
+        this.snack = snack;
+        this.customizeCake = customizeCake;
+        this.itemType = itemType;
+        this.addedDate = addedDate;
     }
+
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
     public Long getUserId() {
         return userId;
@@ -37,19 +64,18 @@ public class WishlistItemEntity {
         this.userId = userId;
     }
 
-    public Long getProductId() {
-        return productId;
-    }
+    public ProductEntity getProduct() { return product; }
+    public void setProduct(ProductEntity product) { this.product = product; }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+    public SnacksEntity getSnack() { return snack; }
+    public void setSnack(SnacksEntity snack) { this.snack = snack; }
 
-    public LocalDateTime getAddedDate() {
-        return addedDate;
-    }
+    public CustomizeCakeEntity getCustomizeCake() { return customizeCake; }
+    public void setCustomizeCake(CustomizeCakeEntity customizeCake) { this.customizeCake = customizeCake; }
 
-    public void setAddedDate(LocalDateTime addedDate) {
-        this.addedDate = addedDate;
-    }
+    public ItemType getItemType() { return itemType; }
+    public void setItemType(ItemType itemType) { this.itemType = itemType; }
+
+    public LocalDateTime getAddedDate() { return addedDate; }
+    public void setAddedDate(LocalDateTime addedDate) { this.addedDate = addedDate; }
 }

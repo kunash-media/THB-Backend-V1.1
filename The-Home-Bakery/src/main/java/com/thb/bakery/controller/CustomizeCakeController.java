@@ -25,7 +25,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/customize-cakes")
-@CrossOrigin("*")
 public class CustomizeCakeController {
     private static final Logger logger = LoggerFactory.getLogger(CustomizeCakeController.class);
 
