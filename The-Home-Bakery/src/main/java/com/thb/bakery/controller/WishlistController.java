@@ -184,43 +184,60 @@ public class WishlistController {
     @PostMapping("/remove-wishlist-item")
     @Transactional
     public ResponseEntity<?> removeFromWishlist(@RequestBody Map<String, Object> payload) {
-        logger.debug("Remove from wishlist request: {}", payload);
+        logger.info("Remove from wishlist request: {}", payload);
 
         try {
             Long userId = Long.valueOf(payload.get("userId").toString());
-            Long wishlistItemId = Long.valueOf(payload.get("wishlistItemId").toString());
+            String itemTypeStr = (String) payload.get("itemType");
 
-            if (userId == null || wishlistItemId == null) {
-                return ResponseEntity.badRequest().body(Map.of("error", "userId and wishlistItemId are required"));
+            if (userId == null || itemTypeStr == null) {
+                return ResponseEntity.badRequest().body(Map.of("error", "userId and itemType required"));
             }
 
-            Optional<WishlistItemEntity> existing = wishlistRepository.findById(wishlistItemId);
+            WishlistItemEntity.ItemType itemType;
+            try {
+                itemType = WishlistItemEntity.ItemType.valueOf(itemTypeStr.toUpperCase());
+            } catch (Exception e) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Invalid itemType"));
+            }
+
+            Optional<WishlistItemEntity> existing = Optional.empty();
+
+            switch (itemType) {
+                case PRODUCT -> {
+                    Long productId = payload.get("productId") != null ? Long.valueOf(payload.get("productId").toString()) : null;
+                    if (productId == null) return ResponseEntity.badRequest().body(Map.of("error", "productId required"));
+                    existing = wishlistRepository.findByUserIdAndProductProductId(userId, productId);
+                }
+                case SNACK -> {
+                    Long snackId = payload.get("snackId") != null ? Long.valueOf(payload.get("snackId").toString()) : null;
+                    if (snackId == null) return ResponseEntity.badRequest().body(Map.of("error", "snackId required"));
+                    existing = wishlistRepository.findByUserIdAndSnackSnackId(userId, snackId);
+                }
+                case CUSTOMIZE_CAKE -> {
+                    Long cakeId = payload.get("customizeCakeId") != null ? Long.valueOf(payload.get("customizeCakeId").toString()) : null;
+                    if (cakeId == null) return ResponseEntity.badRequest().body(Map.of("error", "customizeCakeId required"));
+                    existing = wishlistRepository.findByUserIdAndCustomizeCakeId(userId, cakeId);
+                }
+            }
+
             if (existing.isEmpty()) {
-                return ResponseEntity.badRequest().body(Map.of("error", "Item not found"));
+                return ResponseEntity.ok(Map.of("status", "success", "message", "Already removed"));
             }
 
-            WishlistItemEntity item = existing.get();
-            if (!item.getUserId().equals(userId)) {
-                return ResponseEntity.badRequest().body(Map.of("error", "Unauthorized"));
-            }
-
-            wishlistRepository.delete(item);
-            logger.info("Removed wishlist item {} for user {}", wishlistItemId, userId);
+            wishlistRepository.delete(existing.get());
+            logger.info("Removed wishlist item for user {} (type: {})", userId, itemType);
 
             return ResponseEntity.ok(Map.of(
                     "status", "success",
-                    "message", "Removed from wishlist successfully"
+                    "message", "Removed successfully"
             ));
 
-        } catch (NumberFormatException e) {
-            logger.error("Invalid number format in payload", e);
-            return ResponseEntity.badRequest().body(Map.of("error", "Invalid number format"));
         } catch (Exception e) {
-            logger.error("Error removing from wishlist", e);
-            return ResponseEntity.internalServerError().body(Map.of("error", "Internal server error"));
+            logger.error("Error in remove-wishlist-item", e);
+            return ResponseEntity.internalServerError().body(Map.of("error", "Server error"));
         }
     }
-
     /**
      * Clear entire wishlist
      */
